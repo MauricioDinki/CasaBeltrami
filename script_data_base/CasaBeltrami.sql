@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-02-2016 a las 15:16:30
+-- Tiempo de generación: 09-03-2016 a las 06:01:08
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sistem_galery`
+-- Base de datos: `CasaBeltrami`
 --
 
 -- --------------------------------------------------------
@@ -36,61 +36,36 @@ CREATE TABLE IF NOT EXISTS `content` (
   `status` varchar(10) NOT NULL,
   `creation_date` date NOT NULL,
   `modification_date` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `content`
---
-
-INSERT INTO `content` (`id_content`, `title`, `route`, `url`, `short_description`, `long_description`, `status`, `creation_date`, `modification_date`) VALUES
-(23, 'paisaje', 'descarga.jpg', NULL, 'paisaje', 'paisaje de algo', 'activo', '2016-02-17', '2016-02-17');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `content_galery`
+-- Estructura de tabla para la tabla `content_party_room`
 --
 
-CREATE TABLE IF NOT EXISTS `content_galery` (
+CREATE TABLE IF NOT EXISTS `content_party_room` (
   `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
   `id_galery` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `content_galery`
---
-
-INSERT INTO `content_galery` (`id`, `id_content`, `id_galery`) VALUES
-(1, 1, 10),
-(2, 1, 9),
-(3, 1, 10),
-(4, 1, 15);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `galery`
+-- Estructura de tabla para la tabla `party_room`
 --
 
-CREATE TABLE IF NOT EXISTS `galery` (
-  `id_galery` int(11) NOT NULL,
-  `title_galery` varchar(45) NOT NULL,
-  `short_description` varchar(45) DEFAULT NULL,
-  `long_description` text,
-  `status` varchar(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `party_room` (
+  `id_party_room` int(11) NOT NULL,
+  `sparty_room_name` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `short_description` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+  `long_description` text CHARACTER SET latin1,
+  `status` varchar(10) CHARACTER SET latin1 NOT NULL,
   `creation_date` date DEFAULT NULL,
   `modification_date` date DEFAULT NULL,
-  `section` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `galery`
---
-
-INSERT INTO `galery` (`id_galery`, `title_galery`, `short_description`, `long_description`, `status`, `creation_date`, `modification_date`, `section`) VALUES
-(15, 'Prueba', 'Prueba', 'Prueba de modificacion', 'Activo', '2016-02-17', '2016-02-17', 'Home'),
-(16, 'platos', 'platos para toda ocacion', 'platos de todos colores', 'activo', '2016-02-17', NULL, 'home');
+  `section` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -123,16 +98,16 @@ ALTER TABLE `content`
   ADD PRIMARY KEY (`id_content`);
 
 --
--- Indices de la tabla `content_galery`
+-- Indices de la tabla `content_party_room`
 --
-ALTER TABLE `content_galery`
+ALTER TABLE `content_party_room`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `galery`
+-- Indices de la tabla `party_room`
 --
-ALTER TABLE `galery`
-  ADD PRIMARY KEY (`id_galery`);
+ALTER TABLE `party_room`
+  ADD PRIMARY KEY (`id_party_room`);
 
 --
 -- Indices de la tabla `Users`
@@ -148,17 +123,17 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT de la tabla `content`
 --
 ALTER TABLE `content`
-  MODIFY `id_content` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+  MODIFY `id_content` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `content_galery`
+-- AUTO_INCREMENT de la tabla `content_party_room`
 --
-ALTER TABLE `content_galery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+ALTER TABLE `content_party_room`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `galery`
+-- AUTO_INCREMENT de la tabla `party_room`
 --
-ALTER TABLE `galery`
-  MODIFY `id_galery` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+ALTER TABLE `party_room`
+  MODIFY `id_party_room` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `Users`
 --
