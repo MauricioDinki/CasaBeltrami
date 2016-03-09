@@ -36,7 +36,7 @@
                 <form method="post">
                     <table align="center" width="30%" border="0">
                         <tr>
-                            <td><input type="text" name="email" placeholder="Your Email" required /></td>
+                            <td><input type="text" name="email" placeholder="Tu Correo" required /></td>
                         </tr>
                         <tr>
                             <td><input type="password" name="pass" placeholder="Your Password" required /></td>
