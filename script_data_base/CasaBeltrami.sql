@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `content` (
 CREATE TABLE IF NOT EXISTS `content_party_room` (
   `id` int(11) NOT NULL,
   `id_content` int(11) NOT NULL,
-  `id_galery` int(11) NOT NULL
+  `id_party_room` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -79,6 +79,22 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `user` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Estructura de tabla para la tabla `events`
+--
+
+CREATE TABLE IF NOT EXISTS `events` (
+  `id_event` int(11) NOT NULL,
+  `nombre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `events`
+--
+
+INSERT INTO `events` (`id_event`, 'nombre') VALUES
+(1, 'Cumpleaños');
 
 --
 -- Volcado de datos para la tabla `Users`
@@ -116,6 +132,12 @@ ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id_event`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -139,6 +161,12 @@ ALTER TABLE `party_room`
 --
 ALTER TABLE `Users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `events`
+--
+ALTER TABLE `events`
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT;
+--
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
