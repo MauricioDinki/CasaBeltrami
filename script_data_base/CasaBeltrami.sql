@@ -94,7 +94,11 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`id_event`, 'nombre') VALUES
-(1, 'Cumpleaños');
+  (1, 'Cumpleaños'),
+  (2, 'Boda'),
+  (3, 'Graduacion'),
+  (4, 'Proyecto Completo'),
+  (5, 'XV años');
 
 --
 -- Volcado de datos para la tabla `Users`
