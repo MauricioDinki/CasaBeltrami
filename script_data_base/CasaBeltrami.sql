@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-03-2016 a las 06:01:08
+-- Tiempo de generación: 09-03-2016 a las 06:38:29
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -33,10 +33,12 @@ CREATE TABLE IF NOT EXISTS `content` (
   `url` varchar(45) DEFAULT NULL,
   `short_description` varchar(45) DEFAULT NULL,
   `long_description` text,
+  `id_event` int(11) NOT NULL,
+  `decoration` tinyint(1) NOT NULL,
   `status` varchar(10) NOT NULL,
   `creation_date` date NOT NULL,
   `modification_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -123,7 +125,7 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT de la tabla `content`
 --
 ALTER TABLE `content`
-  MODIFY `id_content` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_content` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `content_party_room`
 --
