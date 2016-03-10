@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `content` (
   `id_content` int(11) NOT NULL,
-  `title` varchar(45) NOT NULL,
+  `tittle` varchar(45) NOT NULL,
   `route` text,
   `url` varchar(45) DEFAULT NULL,
   `short_description` varchar(45) DEFAULT NULL,
