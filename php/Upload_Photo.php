@@ -9,6 +9,7 @@
     $cd = $_GET['creation_date'];
     $decoration = $_GET['decoration'];
     $event = $_GET['event'];
+    $id_party = $_GET['party'];
     $foto = trim($_FILES['foto']['name']);
     
     $ingresar = mysqli_query($mysqli, "INSERT INTO content (title,route, short_description,long_description,id_event,decoration,status,creation_date)"
@@ -18,13 +19,12 @@
     $mysqli->close(); //cerramos la conexió del primer query
     
     //query para relacionar imagen con galeria(s) 
-    $idgallery=$_GET['galery'];
-    if ($idgallery){
-        foreach ($idgallery as $g){
-            mysqli_query($mysqli2,"INSERT INTO content_galery (id_content,id_galery) 
-                VALUES ('".$id_img."',".mysqli_real_escape_string($mysqli2,$g).")");
-            }
+    
+   
+            $relacion = mysqli_query($mysqli2, "INSERT INTO content_party_room (id_content,id_party_room)"
+                             . "VALUES('$id_img','$id_party')");
+          
             $mysqli2->close(); 
        
-        }
+       
 ?>

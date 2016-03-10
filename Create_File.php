@@ -27,7 +27,27 @@
                 <input type="file" id="foto" name="foto"/> 
             </div>
             <h4>salones Disponibles</h4>
-            <hr>
+           
+                      <div>
+             <select name="party" id="party" >
+             <?php
+                $condition='true';
+                $sql1 = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
+                $result1 = $mysqli->query($sql1);
+                 if ($result1->num_rows > 0) { 
+                            $combobit1 = "";
+                            while ($row1 = $result1->fetch_array(MYSQLI_ASSOC)) {
+                            $combobit1 .=" <option value='" . $row1['id_party_room'] . "'>" . $row1['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                           }
+                        } else {
+                                echo "No hubo resultados";
+                                }
+                        $mysqli->close(); //cerramos la conexión
+                        echo $combobit1;
+                    ?>
+                </select>
+            </div>
+             <hr>
               <h4>Tipo De evento</h4>
             <div>
              <select name="event" id="event" >
