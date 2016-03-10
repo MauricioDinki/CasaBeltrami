@@ -20,13 +20,13 @@
                 }
             ?>
             <p>
-                <a href="Create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Categoria</a><br/>
+                <a href="Create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Salón</a><br/>
             </p>
             <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre de la galeria</th>
+                        <th>Nombre del Salón</th>
                         <th>Descripcion Corta</th>
                         <th>Descripcion Larga</th>
                         <th>Estatus</th>
@@ -37,13 +37,13 @@
                 </thead>
                 <tbody>
                     <?php
-                        $res = $mysqli->query("SELECT * FROM galery");
+                        $res = $mysqli->query("SELECT * FROM party_room");
                         $mysqli->close();
                         while ($row = $res->fetch_assoc()):
                     ?>
                         <tr>
-                            <td><?php echo $row['id_galery'] ?></td>
-                            <td><?php echo $row['title_galery'] ?></td>
+                            <td><?php echo $row['id_party_room'] ?></td>
+                            <td><?php echo $row['party_room_name'] ?></td>
                             <td><?php echo $row['short_description'] ?></td>
                             <td><?php echo $row['long_description'] ?></td>
                             <td>
