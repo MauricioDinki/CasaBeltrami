@@ -26,23 +26,26 @@
                 <label for="name_galery">Imagen</label>
                 <input type="file" id="foto" name="foto"/> 
             </div>
-            <h4>Galerias Disponibles</h4>
-            <select name="galery[]" id="galery" multiple="multiple">
+            <h4>salones Disponibles</h4>
+            <hr>
+              <h4>Tipo De evento</h4>
+            <div>
+             <select name="event" id="event" >
                     <?php
                         
-                        $condition='true';
-                        $sql = "SELECT id_galery,title_galery from galery WHERE status='".$condition."'";
+                    
+                        $sql = "SELECT id_event,nombre from events ";
                         $result = $mysqli2->query($sql);
                         if ($result->num_rows > 0) { 
-                            $combobit = "";
+                            $combobit2 = "";
                             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit .=" <option value='" . $row['id_galery'] . "'>" . $row['title_galery'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                            $combobit2 .=" <option value='" . $row['id_event'] . "'>" . $row['nombre'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                            }
                         } else {
                                 echo "No hubo resultados";
                                 }
                         $mysqli2->close(); //cerramos la conexión
-                        echo $combobit;
+                        echo $combobit2;
                     ?>
                 </select>
             <div class="form-group">
@@ -58,6 +61,13 @@
                 <select class="form-control" id="status" name="status">
                     <option value="true">Activa</option>
                     <option value="false">Inactivo</option>
+                </select>
+            </div>
+               <div class="form-group">
+                <label for="estatus">Decoracion</label>
+                <select class="form-control" id="decoration" name="decoration">
+                    <option value="1">Propia</option>
+                    <option value="0">terceros</option>
                 </select>
             </div>
             <div class="form-group">

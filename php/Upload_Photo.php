@@ -7,10 +7,12 @@
     $ld = $_GET['desc_long'];
     $st = $_GET['status'];
     $cd = $_GET['creation_date'];
+    $decoration = $_GET['decoration'];
+    $event = $_GET['event'];
     $foto = trim($_FILES['foto']['name']);
-    echo $foto;
-    $ingresar = mysqli_query($mysqli, "INSERT INTO content (title,route, short_description,long_description,status,creation_date)"
-                             . "VALUES('$title','$foto','$sd','$ld','$st','$cd')");
+    
+    $ingresar = mysqli_query($mysqli, "INSERT INTO content (title,route, short_description,long_description,id_event,decoration,status,creation_date)"
+                             . "VALUES('$title','$foto','$sd','$ld','$event','$decoration','$st','$cd')");
     move_uploaded_file($_FILES['foto']['tmp_name'], 'album/' . $foto);
     $id_img = mysqli_insert_id($mysqli); //obtenemos el id del ultimo insert realizado
     $mysqli->close(); //cerramos la conexió del primer query
