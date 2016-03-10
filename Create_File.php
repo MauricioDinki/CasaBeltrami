@@ -1,7 +1,6 @@
 <?php
     include "config.php";
     include "header.php";
-        error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
         header("Location: login.php");
@@ -27,19 +26,17 @@
                 <label for="name_galery">Imagen</label>
                 <input type="file" id="foto" name="foto"/> 
             </div>
-            <br>
             <h4>Galerias Disponibles</h4>
-            <div>
-                <select name="party[]" id="party" >
+            <select name="galery[]" id="galery" multiple="multiple">
                     <?php
                         
                         $condition='true';
-                        $sql = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
+                        $sql = "SELECT id_galery,title_galery from galery WHERE status='".$condition."'";
                         $result = $mysqli2->query($sql);
                         if ($result->num_rows > 0) { 
                             $combobit = "";
                             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit .=" <option value='" . $row['id_party_room'] . "'>" . $row['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                            $combobit .=" <option value='" . $row['id_galery'] . "'>" . $row['title_galery'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                            }
                         } else {
                                 echo "No hubo resultados";
@@ -48,28 +45,6 @@
                         echo $combobit;
                     ?>
                 </select>
-            </div>
-                  <h4>Tipo De evento</h4>
-            <div>
-                <select name="event[]" id="event" >
-                    <?php
-                        
-                        $condition='true';
-                        $sql = "SELECT id_event,nombre from events ";
-                        $result = $mysqli->query($sql);
-                        if ($result->num_rows > 0) { 
-                            $combobit2 = "";
-                            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit2 .=" <option value='" . $row['id_event'] . "'>" . $row['nombre'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
-                           }
-                        } else {
-                                echo "No hubo resultados";
-                                }
-                        $mysqli->close(); //cerramos la conexión
-                        echo $combobit2;
-                    ?>
-                </select>
-            </div>
             <div class="form-group">
                 <label for="short_description">Descripcion Corta</label>
                 <input type="text" id="desc_short" class="form-control" name="desc_short" placeholder="Enter Name">
@@ -83,13 +58,6 @@
                 <select class="form-control" id="status" name="status">
                     <option value="true">Activa</option>
                     <option value="false">Inactivo</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="decoracion">Decoracion</label>
-                <select class="form-control" id="decoracion" name="decoracion">
-                    <option value="true">Propia</option>
-                    <option value="false">Terceros</option>
                 </select>
             </div>
             <div class="form-group">
