@@ -22,7 +22,7 @@
     <body>
         <div id="header">
             <div id="left">
-                <label>Sistema administrador de imagenes</label>
+                <label>Sistema administración</label>
             </div>
             <div id="right">
                 <div id="content">
@@ -31,10 +31,10 @@
             </div>
         </div>
         <div id="body">
-            <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
+            <p>Aqui podras subir todas la imagenes para que puedas asignar a un salón</p>
             <br/>
         </div>
-        <a href="Galery.php"><p style="text-align: center">Galerias</p></a>
+        <a href="Galery.php"><p style="text-align: center">Salones</p></a>
         <br></br>
         <a href="Galery_Photos.php"><p style="text-align: center">Imagenes</p></a>
         <br></br>

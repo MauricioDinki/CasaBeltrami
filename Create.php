@@ -6,15 +6,15 @@
     header("Location: index.php");
     }
 if (isset($_POST['bts'])):
-    if ($_POST['name_galery'] != null && $_POST['short_description'] != null && $_POST['status'] != null && $_POST['section'] != null) {
-        $stmt = $mysqli->prepare("INSERT INTO galery(title_galery,short_description,long_description,status,creation_date,section) VALUES (?,?,?,?,?,?)");
-        $stmt->bind_param('ssssss', $name_galery, $short_desc, $long_desc, $status, $creation_date, $section);
-        $name_galery = $_POST['name_galery'];
+    if ($_POST['party_room_name'] != null && $_POST['short_description'] != null && $_POST['status'] != null ) {
+        $stmt = $mysqli->prepare("INSERT INTO party_room(party_room_name,short_description,long_description,status,creation_date) VALUES (?,?,?,?,?)");
+        $stmt->bind_param('sssss', $party_room_name, $short_desc, $long_desc, $status, $creation_date);
+        $party_room_name = $_POST['party_room_name'];
         $short_desc = $_POST['short_description'];
         $long_desc = $_POST['long_description'];
         $status = $_POST['status'];
         $creation_date = $_POST['creation_date'];
-        $section = $_POST['section'];
+        
         if ($stmt->execute()):
             $mysqli->close();
             header('Location: Galery.php');
@@ -52,8 +52,8 @@ if (isset($_POST['bts'])):
     <div class="panel-body">
         <form role="form" method="post">
             <div class="form-group">
-                <label for="name_galery">Nombre de la galeria</label>
-                <input type="text" class="form-control" name="name_galery" id="nm" placeholder="Enter Name">
+                <label for="name_galery">Nombre del Salón</label>
+                <input type="text" class="form-control" name="party_room_name" id="nm" placeholder="Enter Party Room Name">
             </div>
             <div class="form-group">
                 <label for="short_description">Descripción Corta</label>
@@ -73,10 +73,10 @@ if (isset($_POST['bts'])):
             <div class="form-group">
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="" value="<?php echo date("Y/m/d") ?>">
             </div>  
-            <div class="form-group">
+<!--            <div class="form-group">
                 <label for="section">Seccion a la que pertenece</label>
                 <input type="text" class="form-control" name="section" id="">
-            </div>
+            </div>-->
 
             <button type="submit" name="bts" class="btn btn-default">Guardar</button>
         </form>
