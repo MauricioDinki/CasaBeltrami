@@ -1,7 +1,21 @@
 $(function () {
     $('#subida').submit(function () {
+<<<<<<< HEAD
         var comprobar = $('#title').val().length * $('#foto').val().length*  $('#desc_short').val().length * $('#desc_long').val().length * $('#status').val().length * $('#creation_date').val().length;
 
+=======
+        
+        var comprobar = $('#title').val().length * $('#foto').val().length * $('#party').val().length * $('#desc_short').val().length * $('#desc_long').val().length * $('#status').val().length * $('#creation_date').val().length * $('#event').val().length * $('#decoracion').val().length;
+//             console.log ( $('#title').val() );     
+//            console.log ( $('#party').val() );
+//             console.log ( $('#desc_short').val() );
+//              console.log ( $('#dec_long').val() );
+//               console.log ( $('#status').val() );
+//                console.log ( $('#creation_date').val() );
+//                 console.log ( $('#event').val() );
+                  console.log ( $('#decoracion').val() );
+                  console.log ( $('#foto').val() );          
+>>>>>>> 6d9be24e01863f8fe7c9722ba07d1fea186298f3
         if (comprobar > 0) {
 
             var formulario = $('#subida');
