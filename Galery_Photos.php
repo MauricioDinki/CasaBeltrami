@@ -44,7 +44,7 @@
                     ?>
                         <tr>
                             <td><?php echo $row['id_content'] ?></td>
-                            <td><?php echo $row['title'] ?></td>
+                            <td><?php echo $row['tittle'] ?></td>
                             <td><?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" >' ?></img></td>
                             <td><?php echo $row['short_description'] ?></td>
                             <td><?php echo $row['long_description'] ?></td>
