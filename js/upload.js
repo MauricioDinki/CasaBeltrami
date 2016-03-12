@@ -1,30 +1,23 @@
 $(function () {
     $('#subida').submit(function () {
-        
-        var comprobar = $('#title').val().length * $('#foto').val().length * $('#party').val().length * $('#desc_short').val().length * $('#desc_long').val().length * $('#status').val().length * $('#creation_date').val().length * $('#event').val().length * $('#decoracion').val().length;
-//             console.log ( $('#title').val() );     
-//            console.log ( $('#party').val() );
-//             console.log ( $('#desc_short').val() );
-//              console.log ( $('#dec_long').val() );
-//               console.log ( $('#status').val() );
-//                console.log ( $('#creation_date').val() );
-//                 console.log ( $('#event').val() );
-                  console.log ( $('#decoracion').val() );
-                  console.log ( $('#foto').val() );          
+
+        var comprobar = $('#title').val().length * $('#foto').val().length*  $('#party').val().length *  $('#event').val().length*  $('#desc_short').val().length * $('#desc_long').val().length * $('#status').val().length * $('#decoration').val().length* $('#creation_date').val().length;
+
+
         if (comprobar > 0) {
-            
+
             var formulario = $('#subida');
-            
+
             var datos = formulario.serialize();
-                      console.log ( datos);
+
             var archivos = new FormData();
-            
+
             var url = 'php/Upload_Photo.php';
-            console.log(url);
+
             for (var i = 0; i < (formulario.find('input[type=file]').length); i++) {
-                  
+
                 archivos.append((formulario.find('input[type="file"]:eq(' + i + ')').attr("name")), ((formulario.find('input[type="file"]:eq(' + i + ')')[0]).files[0]));
-            
+
             }
 
             $.ajax({
@@ -33,16 +26,15 @@ $(function () {
                 contentType: false,
                 data: archivos,
                 processData: false,
-                
                 beforeSend: function () {
-                    
+
                     $('#cargando').show(300);
 
                 },
                 success: function (data) {
 
                     $('#cargando').hide(900);
-                   // $(location).attr('href', 'Galery_Photos.php');
+                   $(location).attr('href', 'Galery_Photos.php');
 
                     return false;
                 }

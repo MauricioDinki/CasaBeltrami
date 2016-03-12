@@ -1,7 +1,6 @@
 <?php
     include "config.php";
     include "header.php";
-        error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
         header("Location: login.php");
@@ -27,36 +26,36 @@
                 <label for="name_galery">Imagen</label>
                 <input type="file" id="foto" name="foto"/> 
             </div>
-            <br>
-            <h4>Galerias Disponibles</h4>
-            <div>
-                <select name="party[]" id="party" >
-                    <?php
-                        
-                        $condition='true';
-                        $sql = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
-                        $result = $mysqli2->query($sql);
-                        if ($result->num_rows > 0) { 
-                            $combobit = "";
-                            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit .=" <option value='" . $row['id_party_room'] . "'>" . $row['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+            <h4>salones Disponibles</h4>
+           
+                      <div>
+             <select name="party" id="party" >
+             <?php
+                $condition='true';
+                $sql1 = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
+                $result1 = $mysqli->query($sql1);
+                 if ($result1->num_rows > 0) { 
+                            $combobit1 = "";
+                            while ($row1 = $result1->fetch_array(MYSQLI_ASSOC)) {
+                            $combobit1 .=" <option value='" . $row1['id_party_room'] . "'>" . $row1['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                            }
                         } else {
                                 echo "No hubo resultados";
                                 }
-                        $mysqli2->close(); //cerramos la conexión
-                        echo $combobit;
+                        $mysqli->close(); //cerramos la conexión
+                        echo $combobit1;
                     ?>
                 </select>
             </div>
-                  <h4>Tipo De evento</h4>
+             <hr>
+              <h4>Tipo De evento</h4>
             <div>
-                <select name="event[]" id="event" >
+             <select name="event" id="event" >
                     <?php
                         
-                        $condition='true';
+                    
                         $sql = "SELECT id_event,nombre from events ";
-                        $result = $mysqli->query($sql);
+                        $result = $mysqli2->query($sql);
                         if ($result->num_rows > 0) { 
                             $combobit2 = "";
                             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -65,11 +64,10 @@
                         } else {
                                 echo "No hubo resultados";
                                 }
-                        $mysqli->close(); //cerramos la conexión
+                        $mysqli2->close(); //cerramos la conexión
                         echo $combobit2;
                     ?>
                 </select>
-            </div>
             <div class="form-group">
                 <label for="short_description">Descripcion Corta</label>
                 <input type="text" id="desc_short" class="form-control" name="desc_short" placeholder="Enter Name">
@@ -85,11 +83,11 @@
                     <option value="false">Inactivo</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="decoracion">Decoracion</label>
-                <select class="form-control" id="decoracion" name="decoracion">
-                    <option value="true">Propia</option>
-                    <option value="false">Terceros</option>
+               <div class="form-group">
+                <label for="estatus">Decoracion</label>
+                <select class="form-control" id="decoration" name="decoration">
+                    <option value="1">Propia</option>
+                    <option value="0">terceros</option>
                 </select>
             </div>
             <div class="form-group">
