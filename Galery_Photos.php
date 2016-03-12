@@ -55,40 +55,43 @@
                                         }elseif($row['status']=='false') {
                                             echo 'inactivo';
                                         }    
-                                    
-                                        
-                                ?>
+                                 ?>
                             </td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['modification_date'] ?></td>
                             <td>
                                 <a class="btn btn-lg btn-success" href="Update_Photo.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
                             </td>
-                            <td>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
-                            </td>
                             
-                        </tr>
-                    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel">Atención</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <h3>¿Estas seguro de eliminar el contenido?</h3>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
-                                    <a href="Delete_Photo.php?d=<?php echo $row['id_content'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                            
+                            <td>
+                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal"  >
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                            </td>
+                             <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>¿Estas seguro de eliminar el contenido?<?php echo $row['id_content'] ?></h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
+                                            <a href="Delete_Photo.php?d=<?php echo $row['id_content'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            
+                        </tr>
+             
                         <?php
                             endwhile;
                         ?>
+                    
                 </tbody>
             </table>	    
             <?php
