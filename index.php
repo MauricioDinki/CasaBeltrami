@@ -1,11 +1,11 @@
-<?php
+    <?php
     include "config.php";
     session_start();
     if (isset($_SESSION['user_name']) != "") {
         header("Location: Home.php");
     }
     if (isset($_POST['btn-login'])) {
-        $email = mysql_real_escape_string($_POST['email']);
+        $email = $_POST['email'];
         $pass = mysql_real_escape_string($_POST['pass']);
         $email = trim($email);
         $query = "SELECT user FROM Users WHERE user='$email' AND password='$pass'";

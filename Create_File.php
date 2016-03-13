@@ -3,7 +3,7 @@
     include "header.php";
     session_start();
     if (!isset($_SESSION['user_name'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     }
 ?>
 <script src="js/jquery.js"></script>
