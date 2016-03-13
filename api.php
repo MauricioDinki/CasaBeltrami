@@ -65,7 +65,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
         );
     }
 
-    $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_party_room LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "'");
+    $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "'");
     while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
         $sh_des_im = mysql_real_escape_string($row['short_description']);
         $path= mysql_real_escape_string('php/album/' . $row['route']);
@@ -102,7 +102,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
         }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_party_room LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
             $sh_des_im = mysql_real_escape_string($row['short_description']);
             $path= mysql_real_escape_string('php/album/' . $row['route']);
@@ -139,7 +139,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
         }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_party_room LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.decoration = '" . $decoration . "'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.decoration = '" . $decoration . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
             $sh_des_im = mysql_real_escape_string($row['short_description']);
             $path= mysql_real_escape_string('php/album/' . $row['route']);
@@ -175,7 +175,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
         }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_party_room LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_event ='" . $event . "'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_event ='" . $event . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
             $sh_des_im = mysql_real_escape_string($row['short_description']);
             $path= mysql_real_escape_string('php/album/' . $row['route']);
@@ -211,7 +211,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
         );
     }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_party_room LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.decoration ='" . $decoration . "'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.decoration ='" . $decoration . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
             $sh_des_im = mysql_real_escape_string($row['short_description']);
             $path= mysql_real_escape_string('php/album/' . $row['route']);
@@ -249,7 +249,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
        );
    }
 
-       $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr RIGHT JOIN content AS c ON c.id_content = cpr.id_party_room LEFT JOIN events AS e ON e.id_event = cpr.id_event WHERE cpr.id_event ='" . $event . "' AND cpr.decoration = '" . $decoration . "'");
+       $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr RIGHT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_event WHERE cpr.id_event ='" . $event . "' AND cpr.decoration = '" . $decoration . "'");
        while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
            $sh_des_im = mysql_real_escape_string($row['short_description']);
            $path= mysql_real_escape_string('php/album/' . $row['route']);
