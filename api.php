@@ -41,12 +41,13 @@ if ($id!=null && empty($event) && empty($decoration)) {
         );
         array_push($response['partyRoom']['images'], $partialImage);
     }
+    var_dump ( $response['partyRoom']);
     $json2 = json_encode($response['partyRoom']);
     echo $json2;
 }   
 //Query by Party Room and Event
     elseif($id!=null && $event!=null && empty ($decoration)) {
-    echo 'By party room';
+    echo 'By party room and event';
     $result = $mysqli->query("SELECT id_party_room,sparty_room_name,short_description,long_description,creation_date,modification_date, "
             . "status FROM party_room WHERE id_party_room = '" . $id . "'");
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -76,12 +77,13 @@ if ($id!=null && empty($event) && empty($decoration)) {
         );
         array_push($response['partyRoom']['images'], $partialImage);
     }
+    var_dump ( $response['partyRoom']);
     $json2 = json_encode($response['partyRoom']);
     echo $json2;
 }   
 //Query by Party Room, Event and Decoration
     elseif($id!=null && $event!=null && $decoration!=null){
-    echo 'By party room';
+    echo 'By party room event and decoration';
         $result = $mysqli->query("SELECT id_party_room,sparty_room_name,short_description,long_description,creation_date,modification_date, "
                 . "status FROM party_room WHERE id_party_room = '" . $id . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -111,11 +113,12 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
+        var_dump ( $response['partyRoom']);
         $json2 = json_encode($response['partyRoom']);
         echo $json2;
 }   //query with id and section
     elseif ($id!=null && empty ($st) && $sc!=null) {
-    echo 'By party room';
+    echo 'By party room and decoration';
         echo $st;
         $result = $mysqli->query("SELECT id_party_room,sparty_room_name,short_description,long_description,creation_date,modification_date, "
                 . "status FROM party_room WHERE id_party_room = '" . $id . "'");
@@ -146,11 +149,12 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
+        var_dump ( $response['partyRoom']);
         $json2 = json_encode($response['partyRoom']);
         echo $json2;
 } //query with status and section
     elseif (empty ($id) && empty ($decoration) && $event!=null) {
-    echo 'By party room';
+    echo 'By event';
         $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
                 . "status FROM content_party_room AS pr LEFT JOIN party_room WHERE cpr.id_event = '" . $event . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -180,11 +184,12 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
+        var_dump ( $response['partyRoom']);
         $json2 = json_encode($response['partyRoom']);
         echo $json2;
 }//query with section
     elseif (empty ($id) && empty ($event) && $decoration!=null) {
-    echo 'By party room';
+    echo 'By decoration';
     $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
             . "status FROM content_party_room AS pr LEFT JOIN party_room WHERE cpr.decoration = '" . $decoration . "'");
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -214,13 +219,14 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
+        var_dump ( $response['partyRoom']);
         $json2 = json_encode($response['partyRoom']);
         echo $json2;
 }
 //query with status
     elseif (empty ($id) && $decoration!==null && $event!==null) {
     
-   echo 'By party room';
+   echo 'By event and decoration';
    $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
            . "status FROM content_party_room AS pr LEFT JOIN party_room WHERE cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -250,6 +256,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
            );
            array_push($response['partyRoom']['images'], $partialImage);
        }
+       var_dump ( $response['partyRoom']);
        $json2 = json_encode($response['partyRoom']);
        echo $json2;
 }
