@@ -6,7 +6,7 @@
     }
     if (isset($_POST['btn-login'])) {
         $email = $_POST['email'];
-        $pass = mysql_real_escape_string($_POST['pass']);
+        $pass = $_POST['pass'];
         $email = trim($email);
         $query = "SELECT user FROM Users WHERE user='$email' AND password='$pass'";
         $result = mysqli_query($mysqli, $query)or die(mysqli_error());

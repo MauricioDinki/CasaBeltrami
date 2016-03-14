@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-    <title>The Wedding Factory</title>  
+    <title>Casa Beltrami</title>  
     <meta name="description" content="Sailor is a Creative and Unique Corporate and Portfolio Web Template">
     <meta name="keywords" content="portfolio, creative, corporate, responsive, bootstrap">
     <meta name="author" content="JLT Media/ThemeForces">
