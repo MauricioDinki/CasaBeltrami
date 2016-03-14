@@ -160,7 +160,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
     elseif (empty ($id) && empty ($decoration) && $event!=null) {
     echo 'By event';
         $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
-                . "status FROM content_party_room AS pr LEFT JOIN party_room WHERE cpr.id_event = '" . $event . "'");
+                . "status FROM content_party_room AS cpr  LEFT JOIN party_room AS pr on pr.id_party_room = cpr.id_party_room WHERE cpr.id_event = '" . $event . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             
             $response ['partyRoom'] = array(
@@ -196,7 +196,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
     elseif (empty ($id) && empty ($event) && $decoration!=null) {
     echo 'By decoration';
     $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
-            . "status FROM content_party_room AS pr LEFT JOIN party_room WHERE cpr.decoration = '" . $decoration . "'");
+            . "status FROM content_party_room AS cpr  LEFT JOIN party_room AS pr on pr.id_party_room = cpr.id_party_room WHERE cpr.decoration = '" . $decoration . "'");
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
         
         $response ['partyRoom'] = array(
@@ -234,7 +234,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
     
    echo 'By event and decoration';
    $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
-           . "status FROM content_party_room AS pr LEFT JOIN party_room WHERE cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
+           . "status FROM content_party_room AS cpr  LEFT JOIN party_room AS pr on pr.id_party_room = cpr.id_party_room WHERE cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
        
        $response ['partyRoom'] = array(
