@@ -1,7 +1,7 @@
 <?php
 
 include "config.php";
-header("Content-Type: application/json; charset=UTF-8");
+//header("Content-Type: application/json; charset=UTF-8");
 error_reporting(0);
 
 $id = mysql_real_escape_string($_GET["id"]);
@@ -42,9 +42,9 @@ if ($id!=null && empty($event) && empty($decoration)) {
         );
         array_push($response['partyRoom']['images'], $partialImage);
     }
-    var_dump ( $response['partyRoom']);
+    
     $json2 = json_encode($response['partyRoom']);
-    echo $json2;
+    //echo $json2;
 }   
 //Query by Party Room and Event
     elseif($id!=null && $event!=null && empty ($decoration)) {
@@ -79,7 +79,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
         );
         array_push($response['partyRoom']['images'], $partialImage);
     }
-    var_dump ( $response['partyRoom']);
+   
     $json2 = json_encode($response['partyRoom']);
     echo $json2;
 }   
@@ -116,9 +116,9 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        var_dump ( $response['partyRoom']);
+        
         $json2 = json_encode($response['partyRoom']);
-        echo $json2;
+       
 }   //query with id and section
     elseif ($id!=null && empty ($st) && $sc!=null) {
     echo 'By party room and decoration';
@@ -153,9 +153,9 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        var_dump ( $response['partyRoom']);
+        
         $json2 = json_encode($response['partyRoom']);
-        echo $json2;
+        
 } //query with status and section
     elseif (empty ($id) && empty ($decoration) && $event!=null) {
     echo 'By event';
@@ -189,7 +189,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        var_dump ( $response['partyRoom']);
+        
         $json2 = json_encode($response['partyRoom']);
         echo $json2;
 }//query with section
@@ -225,9 +225,9 @@ if ($id!=null && empty($event) && empty($decoration)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        var_dump ( $response['partyRoom']);
+        
         $json2 = json_encode($response['partyRoom']);
-        echo $json2;
+        
 }
 //query with status
     elseif (empty ($id) && $decoration!==null && $event!==null) {
@@ -263,9 +263,9 @@ if ($id!=null && empty($event) && empty($decoration)) {
            );
            array_push($response['partyRoom']['images'], $partialImage);
        }
-       var_dump ( $response['partyRoom']);
+      
        $json2 = json_encode($response['partyRoom']);
-       echo $json2;
+      
 }
     else {
 
