@@ -4,9 +4,9 @@ include "config.php";
 //header("Content-Type: application/json; charset=UTF-8");
 error_reporting(0);
 
-$id = mysql_real_escape_string($_GET["id"]);
-$event = mysql_real_escape_string($_GET["event"]);
-$decoration = mysql_real_escape_string($_GET["decoration"]);
+$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
+$event =mysqli_real_escape_string($mysqli2,$_GET["event"]);
+$decoration = mysqli_real_escape_string($mysqli3,$_GET["decoration"]);
 
 
 //query only by Party Room (ID)
@@ -27,11 +27,11 @@ if ($id!=null && empty($event) && empty($decoration)) {
             'images' => array(),
         );
     }
-
+    //var_dump($response);
     $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "'");
     while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-        $sh_des_im = mysql_real_escape_string($row['short_description']);
-        $path= mysql_real_escape_string('php/album/' . $row['route']);
+        $sh_des_im =mysqli_real_escape_string($mysqli2,$row['short_description']);
+        $path= 'php/album/' . $row['route'];
         $partialImage = array(
             'path' =>  $path,
             'tittle' => $row ['tittle'],
@@ -67,8 +67,8 @@ if ($id!=null && empty($event) && empty($decoration)) {
 
     $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "'");
     while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-        $sh_des_im = mysql_real_escape_string($row['short_description']);
-        $path= mysql_real_escape_string('php/album/' . $row['route']);
+        $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+        $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
         $partialImage = array(
             'path' =>  $path,
             'tittle' => $row ['tittle'],
@@ -81,7 +81,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
     }
    
     $json2 = json_encode($response['partyRoom']);
-    echo $json2;
+    //echo $json2;
 }   
 //Query by Party Room, Event and Decoration
     elseif($id!=null && $event!=null && $decoration!=null){
@@ -104,8 +104,8 @@ if ($id!=null && empty($event) && empty($decoration)) {
 
         $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysql_real_escape_string($row['short_description']);
-            $path= mysql_real_escape_string('php/album/' . $row['route']);
+            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+            $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
             $partialImage = array(
                 'path' =>  $path,
                 'tittle' => $row ['tittle'],
@@ -141,8 +141,8 @@ if ($id!=null && empty($event) && empty($decoration)) {
 
         $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.decoration = '" . $decoration . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysql_real_escape_string($row['short_description']);
-            $path= mysql_real_escape_string('php/album/' . $row['route']);
+            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+            $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
             $partialImage = array(
                 'path' =>  $path,
                 'tittle' => $row ['tittle'],
@@ -177,8 +177,8 @@ if ($id!=null && empty($event) && empty($decoration)) {
 
         $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_event ='" . $event . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysql_real_escape_string($row['short_description']);
-            $path= mysql_real_escape_string('php/album/' . $row['route']);
+            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+            $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
             $partialImage = array(
                 'path' =>  $path,
                 'tittle' => $row ['tittle'],
@@ -191,7 +191,7 @@ if ($id!=null && empty($event) && empty($decoration)) {
         }
         
         $json2 = json_encode($response['partyRoom']);
-        echo $json2;
+        //echo $json2;
 }//query with section
     elseif (empty ($id) && empty ($event) && $decoration!=null) {
     echo 'By decoration';
@@ -213,8 +213,8 @@ if ($id!=null && empty($event) && empty($decoration)) {
 
         $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.decoration ='" . $decoration . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysql_real_escape_string($row['short_description']);
-            $path= mysql_real_escape_string('php/album/' . $row['route']);
+            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+            $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
             $partialImage = array(
                 'path' =>  $path,
                 'tittle' => $row ['tittle'],
@@ -251,8 +251,8 @@ if ($id!=null && empty($event) && empty($decoration)) {
 
        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr RIGHT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_event WHERE cpr.id_event ='" . $event . "' AND cpr.decoration = '" . $decoration . "'");
        while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-           $sh_des_im = mysql_real_escape_string($row['short_description']);
-           $path= mysql_real_escape_string('php/album/' . $row['route']);
+           $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+           $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
            $partialImage = array(
                'path' =>  $path,
                'tittle' => $row ['tittle'],
