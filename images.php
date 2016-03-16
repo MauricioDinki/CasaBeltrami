@@ -139,7 +139,9 @@
 			</ul>
 
 			<div class="row-fluid">
-			
+			 <p>
+                <a href="Create_File.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Archivo</a><br/>
+            </p>
                               <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
                 <thead>
                     <tr>

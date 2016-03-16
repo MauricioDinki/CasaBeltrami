@@ -128,102 +128,102 @@
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
-			
-						
-			<ul class="breadcrumb">
-				<li>
-					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
-					<i class="icon-angle-right"></i>
-				</li>
-				<li><a href="#">Charts</a></li>
-			</ul>
-
-			<div class="row-fluid">
-                                <?php
-                include "config.php";
-              
-               
-            ?>
-            <p>
-                <a href="create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Salón</a><br/>
-            </p>
-            <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre del Salón</th>
-                        <th>Descripcion Corta</th>
-                        <th>Descripcion Larga</th>
-                        <th>Estatus</th>
-                        <th>Fecha de Creación</th>
-                        <th>Fecha de Modificación</th>
-                        <th>Seccion a la que pertenece</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $res = $mysqli->query("SELECT * FROM party_room");
-                        $mysqli->close();
-                        while ($row = $res->fetch_assoc()):
+                       <?php
+    include "config.php";
+    
+?>
+<script src="js/jquery.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/bootbox.js"></script>
+<script src="js/bootbox.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script src="js/bootbox.min.js"></script>
+<p><br/></p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form  id="subida">
+            <div class="form-group">
+                <label for="name_galery">Titulo</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="name_galery">Imagen</label>
+                <input type="file" id="foto" name="foto"/> 
+            </div>
+            <h4>salones Disponibles</h4>
+           
+                      <div>
+             <select name="party" id="party" >
+             <?php
+                $condition='true';
+                $sql1 = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
+                $result1 = $mysqli->query($sql1);
+                 if ($result1->num_rows > 0) { 
+                            $combobit1 = "";
+                            while ($row1 = $result1->fetch_array(MYSQLI_ASSOC)) {
+                            $combobit1 .=" <option value='" . $row1['id_party_room'] . "'>" . $row1['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                           }
+                        } else {
+                                echo "No hubo resultados";
+                                }
+                        $mysqli->close(); //cerramos la conexión
+                        echo $combobit1;
                     ?>
-                        <tr>
-                            <td><?php echo $row['id_party_room'] ?></td>
-                            <td><?php echo $row['party_room_name'] ?></td>
-                            <td><?php echo $row['short_description'] ?></td>
-                            <td><?php echo $row['long_description'] ?></td>
-                            <td>
-                                <?php 
-                                        if ($row['status']=='true'){
-                                            echo 'acitvo';
-                                        }elseif($row['status']=='false') {
-                                            echo 'inactivo';
-                                        }    
-                                ?>
-                            </td>
-                            <td><?php echo $row['creation_date'] ?></td>
-                            <td><?php echo $row['modification_date'] ?></td>
-                            <td><?php echo $row['section'] ?></td>
-                            <td>
-                                <a class="btn btn-lg btn-success" href="update_register.php?u=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
-                            </td> 
-                            <td>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
-                            </td>
-                        </tr>
-                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title" id="myModalLabel">Atención</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>¿Estas seguro de eliminar la galeria?</h3>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
-                                        <a href="Delete.php?d=<?php echo $row['id_galery'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                            endwhile;
-                        ?>
-                </tbody>
-            </table>	
-	
-
-			</div><!--/row-->
-			
-			
-		
-			<hr>
-		
-			
-
-	</div><!--/.fluid-container-->
+                </select>
+            </div>
+             <hr>
+              <h4>Tipo De evento</h4>
+            <div>
+             <select name="event" id="event" >
+                    <?php
+                        
+                    
+                        $sql = "SELECT id_event,nombre from events ";
+                        $result = $mysqli2->query($sql);
+                        if ($result->num_rows > 0) { 
+                            $combobit2 = "";
+                            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                            $combobit2 .=" <option value='" . $row['id_event'] . "'>" . $row['nombre'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                           }
+                        } else {
+                                echo "No hubo resultados";
+                                }
+                        $mysqli2->close(); //cerramos la conexión
+                        echo $combobit2;
+                    ?>
+                </select>
+            <div class="form-group">
+                <label for="short_description">Descripcion Corta</label>
+                <input type="text" id="desc_short" class="form-control" name="desc_short" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="short_description">Descripcion larga</label>
+                <input type="text" id="desc_long" class="form-control" name="desc_long" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="estatus">Estatus</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="true">Activa</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+               <div class="form-group">
+                <label for="estatus">Decoracion</label>
+                <select class="form-control" id="decoration" name="decoration">
+                    <option value="1">Propia</option>
+                    <option value="0">terceros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
+            </div>
+            <button type="submit"  class="btn btn-default">Guardar</button>
+        </form>
+    </div>
+</div>
+                        </div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
