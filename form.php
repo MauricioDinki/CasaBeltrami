@@ -28,7 +28,8 @@
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
-	
+	   
+        
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
@@ -139,7 +140,79 @@
 			</ul>
 
 			<div class="row-fluid">
-			
+                                <?php
+                include "config.php";
+              
+               
+            ?>
+            <p>
+                <a href="Create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Salón</a><br/>
+            </p>
+            <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Salón</th>
+                        <th>Descripcion Corta</th>
+                        <th>Descripcion Larga</th>
+                        <th>Estatus</th>
+                        <th>Fecha de Creación</th>
+                        <th>Fecha de Modificación</th>
+                        <th>Seccion a la que pertenece</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $res = $mysqli->query("SELECT * FROM party_room");
+                        $mysqli->close();
+                        while ($row = $res->fetch_assoc()):
+                    ?>
+                        <tr>
+                            <td><?php echo $row['id_party_room'] ?></td>
+                            <td><?php echo $row['party_room_name'] ?></td>
+                            <td><?php echo $row['short_description'] ?></td>
+                            <td><?php echo $row['long_description'] ?></td>
+                            <td>
+                                <?php 
+                                        if ($row['status']=='true'){
+                                            echo 'acitvo';
+                                        }elseif($row['status']=='false') {
+                                            echo 'inactivo';
+                                        }    
+                                ?>
+                            </td>
+                            <td><?php echo $row['creation_date'] ?></td>
+                            <td><?php echo $row['modification_date'] ?></td>
+                            <td><?php echo $row['section'] ?></td>
+                            <td>
+                                <a class="btn btn-lg btn-success" href="update_register.php?u=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
+                            </td> 
+                            <td>
+                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                            </td>
+                        </tr>
+                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>¿Estas seguro de eliminar la galeria?</h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
+                                        <a href="Delete.php?d=<?php echo $row['id_galery'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            endwhile;
+                        ?>
+                </tbody>
+            </table>	
 	
 
 			</div><!--/row-->

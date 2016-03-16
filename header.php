@@ -8,7 +8,7 @@
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+        
     </head>
     <body>
         <p><br/></p>

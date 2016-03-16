@@ -28,7 +28,8 @@
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
-	
+	   
+        
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
@@ -72,7 +73,10 @@
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-			
+
+
+						
+						
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -82,13 +86,10 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-menu-title">
-                                                                    <span>Opciones</span>
+ 									<span>Opciones</span>
 								</li>
 								
-                                                                <li><a href="logout.php?logout">
-                                                                        <i class="halflings-icon off">
-                                                                            </i> Cerrar Sesión
-                                                                    </a>  </li>
+								<li><a href="logout.php?logout"><i class="halflings-icon off"></i> Cerrar Sesión</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -109,9 +110,9 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						
-						<li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
-                                                <li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
+                                            <li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
+						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
 						
 					</ul>
 				</div>
@@ -127,100 +128,84 @@
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
-			
-						
-			<ul class="breadcrumb">
-				<li>
-					<i class="icon-home"></i>
-                                        <a href="Home.php">Inicio</a> 
-					<i class="icon-angle-right"></i>
-				</li>
-				<li><a href="#">Imagenes</a></li>
-			</ul>
+                            <?php
+    include "config.php";
+    include "header.php";
+    session_start();
+    if (!isset($_SESSION['user_name'])) {
+        header("Location: index.php");
+    }
 
-			<div class="row-fluid">
-			
-                              <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Titulo</th>
-                        <th>Imagen</th>
-                        <th>Descripcion Corta</th>
-                        <th>Descripcion Larga</th>
-                        <th>Estatus</th>
-                        <th>Fecha de Creación</th>
-                        <th>Fecha de Modificación</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $res = $mysqli2->query("SELECT * FROM content");
-                        $mysqli2->close();
-                        while ($row = $res->fetch_assoc()):
-                    ?>
-                        <tr>
-                            <td><?php echo $row['id_content'] ?></td>
-                            <td><?php echo $row['tittle'] ?></td>
-                            <td><?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" >' ?></img></td>
-                            <td><?php echo $row['short_description'] ?></td>
-                            <td><?php echo $row['long_description'] ?></td>
-                            <td>
-                                <?php 
-                                        if ($row['status']=='true'){
-                                            echo 'acitvo';
-                                        }elseif($row['status']=='false') {
-                                            echo 'inactivo';
-                                        }    
-                                 ?>
-                            </td>
-                            <td><?php echo $row['creation_date'] ?></td>
-                            <td><?php echo $row['modification_date'] ?></td>
-                            <td>
-                                <a class="btn btn-lg btn-success" href="Update_Photo.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
-                            </td>
-                            
-                            
-                            <td>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal"  >
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
-                            </td>
-                             <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel">Atención</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h3>¿Estas seguro de eliminar el contenido?<?php echo $row['id_content'] ?></h3>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
-                                            <a href="Delete_Photo.php?d=<?php echo $row['id_content'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </tr>
-             
-                        <?php
-                            endwhile;
-                        ?>
-                    
-                </tbody>
-            </table>
+    if (isset($_GET['u'])):
+        $id = $_GET['u'];
+        if (isset($_POST['bts'])):
+        $stmt = $mysqli->prepare("UPDATE content SET title=?,short_description=?, long_description=?, status=?,modification_date=? WHERE id_content=?");
+        $stmt->bind_param('ssssss', $title, $short_d, $long_d, $status_photo, $m_date_photo, $id_content);
+        $title = $_POST['title'];
+        $short_d = $_POST['sd'];
+        $long_d = $_POST['ld'];
+        $status_photo = $_POST['st'];
+        $m_date_photo = $_POST['md'];
+        $id_content = $_POST['id_content'];
+        if ($stmt->execute()):
+            echo "<script>location.href='Galery_Photos.php'</script>";
+        else:
+            echo "<script>alert('" . $stmt->error . "')</script>";
+        endif;
+    endif;
+        $res = $mysqli->query("SELECT * FROM content WHERE id_content=" . $_GET['u']);
+        $row = $res->fetch_assoc();
+        $mysqli->close();
+    endif;
+?>
 
-			</div><!--/row-->
-			
-			
-		
-			<hr>
-		
+    <p><br/></p>
+    <a href="Galery_Photos.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form  role="form" method="post">
+                <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
+                <div class="form-group">
+                    <label for="nm">Nombre de la Galeria</label>
+                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $row['title'] ?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tl">Descripcion Corta</label>
+                    <input type="tel" class="form-control" name="sd" id="sd" value="<?php echo $row['short_description'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="ar">Descripcion Larga</label>
+                    <textarea class="form-control" name="ld" id="ar" rows="3" id="lg"><?php echo $row['long_description'] ?></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="gd">Estatus de la galeria</label>
+                        <?php if ($row['status'] == 'true') { ?>
+                            <select class="form-control" id="st" name="st">
+                                <option value="true"><?php echo 'activo' ?></option>
+                                <option value="false">Inactivo</option>
+                            </select>
+                        <?php } else {?>
+                        <select class="form-control" id="st" name="st">
+                            <option value="false"><?php echo 'inactivo' ?></option>
+                            <option value="true">activo</option>
+                        </select>
+                         <?php } ?>
+                </div>
+                <div class="form-group">
+                    <label for="ar">Fecha de Creacion</label>
+                    <input type="text" class="form-control" name="cd" id="tl" value="<?php echo $row['creation_date'] ?>" disabled="">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" class="form-control" name="md" id="tl" value="<?php echo date("Y/m/d") ?>">
+                </div>
+                <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
 			
 
-	</div><!--/.fluid-container-->
+                        </div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
