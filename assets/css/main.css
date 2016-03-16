@@ -321,7 +321,10 @@ button:active{
 }
 .left-img{
 
-	background: url('../img/foto-2.jpg') no-repeat center center;
+	background: linear-gradient(
+      rgba(255, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.85)
+    ),url('../img/foto-2.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -330,7 +333,10 @@ button:active{
 }
 .right-img{
 
-	background: url('../img/b1.jpg') no-repeat center center;
+	background: linear-gradient(
+      rgba(255, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.85)
+    ),url('../img/b1.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -340,7 +346,10 @@ button:active{
 }
 .right-img2{
 
-	background: url('../img/header.jpg') no-repeat center center;
+	background: linear-gradient(
+      rgba(255, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.85)
+    ),url('../img/header.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -433,7 +442,10 @@ button:active{
 	
 }
 .img-events-one{
-	background: url('../img/header.jpg') no-repeat center center;
+	background: linear-gradient(
+      rgba(255, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.85)
+    ),url('../img/header.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -442,7 +454,10 @@ button:active{
 	
 }
 .img-events-two{
-	background: url('../img/foto-2.jpg') no-repeat center center;
+	background: linear-gradient(
+      rgba(255, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.85)
+    ),url('../img/foto-2.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -451,7 +466,10 @@ button:active{
 	
 }
 .img-events-three{
-	background: url('../img/b1.jpg') no-repeat center center;
+	background: linear-gradient(
+      rgba(255, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.85)
+    ),url('../img/b1.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -523,9 +541,110 @@ button:active{
 	padding-top: 30px;
 }
 .CB-logo{
-	width: 100px;
+	width: 120px;
 	height: auto;
+	padding-bottom: 50px;
 }
 .info-header{
-	padding-top: 180px;
+	padding-top: 80px;
+}
+@media (min-width: 992px) {
+    .navbar-centered .navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .navbar-centered .navbar-nav > li {
+        float: none;
+    }
+    .navbar-centered .nav > li {
+        display: inline;
+    }
+    .navbar-centered .nav > li > a {
+        display: inline-block;
+    }
+}
+.nav-web{
+	background: rgba(255, 255, 255, 0.60);
+}
+a{
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+a:hover{
+	background: rgba(255, 255, 255, 0.60);
+	text-decoration: none;
+	color: #4d4d4d;
+}
+a:focus{
+	background: rgba(255, 255, 255, 0.60);
+	text-decoration: none;
+	color: #4d4d4d;
+}
+ul{
+	margin-bottom: 0;
+}
+.nav-links{
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999 !important;
+}
+.navbar-toggle{
+	padding: 0px;
+	padding-top: 5px;
+	border-color: transparent !important;
+}
+.navbar-toggle .icon-bar{
+	width: 20px;
+	border: none;
+	border-color: transparent;
+	padding-top: 3px !important;
+}
+@media (max-width: 937px) {
+.nav-web{
+	display: none;
+}
+.navbar-default{
+	display: block;
+}
+}
+@media (min-width: 938px) {
+.nav-web{
+	display: block;
+}
+.navbar-default{
+	display: none;
+}
+}
+@media (max-width: 907px) {
+  .nav-links{
+  	padding-bottom: 10px;
+  	padding-left:5px !important;
+  	padding-right: 5px !important;
+  	padding-top: 10px;
+  }
+}
+@media (max-width: 991px) {
+  .right-img{
+  	margin-bottom: 0px;
+  }
+  .col-md-3{
+  	padding-right: 0px;
+  }
+  .col-md-4{
+  	padding: 20px;
+  	margin-left: 15px 
+  }
+  .three-img{
+  	padding-bottom: 0px;
+  }
 }
