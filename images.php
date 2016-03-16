@@ -72,10 +72,7 @@
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-
-
-						
-						
+			
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -85,10 +82,13 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-menu-title">
- 									<span>Opciones</span>
+                                                                    <span>Opciones</span>
 								</li>
 								
-								<li><a href="logout.php?logout"><i class="halflings-icon off"></i> Cerrar Sesión</a></li>
+                                                                <li><a href="logout.php?logout">
+                                                                        <i class="halflings-icon off">
+                                                                            </i> Cerrar Sesión
+                                                                    </a>  </li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -109,9 +109,9 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						
-                                            <li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
-						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
+						<li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
+                                                <li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
+						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
 						
 					</ul>
 				</div>
@@ -132,10 +132,10 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+                                        <a href="Home.php">Inicio</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Charts</a></li>
+				<li><a href="#">Imagenes</a></li>
 			</ul>
 
 			<div class="row-fluid">

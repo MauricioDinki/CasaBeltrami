@@ -1,6 +1,7 @@
 <?php
 include "config.php";
 include "header.php";
+error_reporting(E_ALL);
 session_start();
     if (!isset($_SESSION['user_name'])) {
         header("Location: index.php");
@@ -23,7 +24,7 @@ if (isset($_GET['u'])):
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;
     endif;
-    $res = $mysqli->query("SELECT * FROM galery WHERE id_galery=" . $_GET['u']);
+    $res = $mysqli->query("SELECT * FROM party_room WHERE id_party_room=" . $_GET['u']);
     $row = $res->fetch_assoc();
     $mysqli->close();
 endif;
@@ -32,10 +33,10 @@ endif;
     <div class="panel panel-default">
         <div class="panel-body">
             <form role="form" method="post">
-                <input type="hidden" value="<?php echo $row['id_galery'] ?>" name="id_galery"/>
+                <input type="hidden" value="<?php echo $row['id_party_room'] ?>" name="id_party_room"/>
                 <div class="form-group">
                     <label for="nm">Nombre de la Galeria</label>
-                    <input type="text" class="form-control" name="title_galery" id="nm" value="<?php echo $row['title_galery'] ?>">
+                    <input type="text" class="form-control" name="title_galery" id="nm" value="<?php echo $row['party_room_name'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="tl">Descripcion Corta</label>
