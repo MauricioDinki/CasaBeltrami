@@ -130,11 +130,8 @@
 			<div id="content" class="span10">
                             <?php
     include "config.php";
-    include "header.php";
-    session_start();
-    if (!isset($_SESSION['user_name'])) {
-        header("Location: index.php");
-    }
+    
+    
 
     if (isset($_GET['u'])):
         $id = $_GET['u'];
