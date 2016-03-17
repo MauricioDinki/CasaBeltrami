@@ -160,12 +160,12 @@
     </section>
     <section class="party-halls">
       <div class="row" style="min-height: 100%; margin-right: 0px;">
-        <div class="col-md-7 left-img" style="position: relative;">
+        <div class="col-md-7 left-img col-xs-6" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
             <h4 class="Montserrat white sixteen">Salón L'incanto</h4>
           </div>
         </div>
-        <div class="col-md-5" style="padding-right: 0px;">
+        <div class="col-md-5 col-xs-6" style="padding-right: 0px;">
           <div class="right-img" style="position: relative;">
             <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
             <h4 class="Montserrat white sixteen no-margin">Salón Farfalla</h4>
@@ -215,25 +215,50 @@
       </div>
     </section>
     <section class="three-img">
-      <div class="row" style="margin-right: 0px;" id="scrolling">
-        <div class="col-md-4 img-events-one slide-img" style="position: relative;">
+      <div class="row events-web" style="margin-right: 0px;" id="scrolling">
+        <div class="col-md-4 img-events-one" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
           <h4 class="Montserrat white sixteen no-margin">XV años</h4>
           </div>
         </div>
-        <div class="col-md-4 img-events-two slide-img" style="position: relative;">
+        <div class="col-md-4 img-events-two" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
           <h4 class="Montserrat white sixteen no-margin">Primera comunión</h4>
           </div>
         </div>        
-        <div class="col-md-4 img-events-three slide-img" style="position: relative;">
+        <div class="col-md-4 img-events-three" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
           <h4 class="Montserrat white sixteen no-margin">Cumpleaños</h4>
           </div>
         </div> 
-      </div> 
+      </div>
+      <div id="scrolling" class="scrolling events-mobile">
+      <ul class="slide-img">
+          <li class="img-in">
+              <div class="img-events-one" style="position: relative;">
+                <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+                <h4 class="Montserrat white sixteen no-margin">XV años</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-two" style="position: relative;">
+                <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+                <h4 class="Montserrat white sixteen no-margin">Primera comunión</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-three" style="position: relative;">
+                <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+                <h4 class="Montserrat white sixteen no-margin">Cumpleaños</h4>
+                </div>
+              </div>
+          </li>
+      </ul>
+      </div>
     </section>
-    <section class="info-services-one">
+    <section class="info-services-two">
       <div class="row" style="margin-right: 0px;">
         <div class="col-md-3 col-md-offset-1">
           <div class="img-events-left-two">
@@ -541,12 +566,12 @@
             $(document).ready(function() {
               $('#nav').affix({
                   offset: {
-                    top: 250
+                    top: 240
                   }
               });
-              // var carousel;
-              //     carousel = $(".slide-img");
-              //     carousel.itemslide();
+            var carousel;
+                carousel = $(".slide-img");
+                carousel.itemslide();
             });
         </script>
   </body>
