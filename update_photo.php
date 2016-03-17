@@ -157,46 +157,62 @@
 ?>
 
     <p><br/></p>
-    <a href="Galery_Photos.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+    
     <div class="panel panel-default">
         <div class="panel-body">
-            <form  role="form" method="post">
-                <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
-                <div class="form-group">
-                    <label for="nm">Nombre de la Galeria</label>
-                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $row['title'] ?>">
+            <form  role="form" method="post" class="form-horizontal">
+                <input type="hidden" value="<?php echo $row['id_party_room'] ?>" name="id_party_room"/>
+                <div class="control-group">
+                    <label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['tittle'] ?>"
+                               id="title" name="title">
+		    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="tl">Descripcion Corta</label>
-                    <input type="tel" class="form-control" name="sd" id="sd" value="<?php echo $row['short_description'] ?>">
+                  <div class="control-group">
+                    <label class="control-label" for="focusedInput">Descripción Corta </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description']?>"
+                               id="title" name="sd">
+		    </div>
                 </div>
-                <div class="form-group">
-                    <label for="ar">Descripcion Larga</label>
-                    <textarea class="form-control" name="ld" id="ar" rows="3" id="lg"><?php echo $row['long_description'] ?></textarea>
+                  <div class="control-group">
+                    <label class="control-label" for="focusedInput">Descripcion Larga</label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['long_description']?>"
+                               id="title" name="ld">
+		    </div>
                 </div>
-                <div class="form-group">
-                    <label for="gd">Estatus de la galeria</label>
-                        <?php if ($row['status'] == 'true') { ?>
-                            <select class="form-control" id="st" name="st">
+                     <div class="control-group">
+		<label class="control-label" for="selectError">Estatus</label>
+		<div class="controls">
+                     <?php if ($row['status'] == 'true') { ?>
+                            <select id="selectError" data-rel="chosen" name="status">
                                 <option value="true"><?php echo 'activo' ?></option>
                                 <option value="false">Inactivo</option>
                             </select>
                         <?php } else {?>
-                        <select class="form-control" id="st" name="st">
+                        <select id="selectError" data-rel="chosen" name="status">
                             <option value="false"><?php echo 'inactivo' ?></option>
                             <option value="true">activo</option>
                         </select>
                          <?php } ?>
+		</div>
+            </div>
+                <div class="control-group">
+                    <label class="control-label" for="focusedInput">Fecha de Creación </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo date("Y/m/d") ?>"
+                               id="title" name="ld">
+		    </div>
                 </div>
+                
+                
                 <div class="form-group">
-                    <label for="ar">Fecha de Creacion</label>
-                    <input type="text" class="form-control" name="cd" id="tl" value="<?php echo $row['creation_date'] ?>" disabled="">
-                </div>
-                <div class="form-group">
-                    <input type="hidden" class="form-control" name="md" id="tl" value="<?php echo date("Y/m/d") ?>">
+                    <input type="hidden" class="form-control" name="md" id="tl" value="">
                 </div>
                 <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
+                <a href="Galery_Photos.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
             </form>
         </div>
     </div>
