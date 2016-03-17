@@ -160,41 +160,49 @@ endif;
 <p><br/></p>
     <div class="panel panel-default">
         <div class="panel-body">
-            <form role="form" method="post">
+            <form role="form" method="post" class="form-horizontal">
                 <input type="hidden" value="<?php echo $row['id_party_room'] ?>" name="id_party_room"/>
-                <div class="form-group">
-                    <label for="nm">Nombre de la Galeria</label>
-                    <input type="text" class="form-control" name="title_galery" id="nm" value="<?php echo $row['party_room_name'] ?>">
+                <div class="control-group">
+                    <label class="control-label" for="focusedInput">Nombre del salón </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['party_room_name'] ?>"
+                               id="title" name="title">
+		    </div>
                 </div>
-                <div class="form-group">
-                    <label for="tl">Descripcion Corta</label>
-                    <input type="tel" class="form-control" name="short_desc" id="tl" value="<?php echo $row['short_description'] ?>">
+                <div class="control-group">
+                    <label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description'] ?>"
+                               id="title" name="title">
+		    </div>
                 </div>
-                <div class="form-group">
-                    <label for="ar">Descripcion Larga</label>
-                    <textarea class="form-control" name="long_desc" id="ar" rows="3"><?php echo $row['long_description'] ?></textarea>
+                <div class="control-group">
+                    <label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['long_description'] ?>"
+                               id="title" name="title">
+		    </div>
                 </div>
-                <div class="form-group">
-                    <label for="gd">Estatus de la galeria</label>
-                        <?php if ($row['status'] == 'true') { ?>
-                            <select class="form-control" id="st" name="status">
-                                <option value="true">Activa</option>
+                <div class="control-group">
+		<label class="control-label" for="selectError">Estatus</label>
+		<div class="controls">
+                     <?php if ($row['status'] == 'true') { ?>
+                            <select id="selectError" data-rel="chosen" name="status">
+                                <option value="true"><?php echo 'activo' ?></option>
                                 <option value="false">Inactivo</option>
                             </select>
                         <?php } else {?>
-                            <select class="form-control" id="st" name="status">
-                                <option value="false">Inactiva</option>
-                                <option value="true">Activa</option>
-                            </select>
-                        <?php } ?>
-                </div>
+                        <select id="selectError" data-rel="chosen" name="status">
+                            <option value="false"><?php echo 'inactivo' ?></option>
+                            <option value="true">activo</option>
+                        </select>
+                         <?php } ?>
+		</div>
+            </div>
                 <div class="form-group">
                     <input type="hidden" class="form-control" name="modification_date" id="tl" value="<?php echo date("Y/m/d") ?>">
                 </div>
-                <div class="form-group">
-                    <label for="tl">Seccion a la que pertence</label>
-                    <input type="tel" class="form-control" name="section" id="tl" value="<?php echo $row['section'] ?>">
-                </div>
+               
                 <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
             </form>
         </div>
