@@ -2,20 +2,22 @@
     include "config.php";
     session_start();
     if (isset($_SESSION['user_name']) != "") {
-        header("Location: Home.php");
+       // header("Location: Home.php");
     }
-    if (isset($_POST['btn-login'])) {
+    ?>
+   
+<?php
+if (isset($_POST['btn-login'])) {
         $email = $_POST['email'];
-        $pass =$_POST['pass'];
+        
         $email = trim($email);
-        $query = "SELECT user FROM Users WHERE user='$email' AND password='$pass'";
+        $query = "SELECT user FROM Users WHERE user='$email' ";
         $result = mysqli_query($mysqli, $query)or die(mysqli_error());
         $num_row = mysqli_num_rows($result);
         $row = mysqli_fetch_array($result);
         if ($num_row >= 1) {
             echo 'true';
-            $_SESSION['user_name'] = $row['user'];
-            header("Location:Home.php");
+            
         } else {
 ?>
         <script>alert('Username / Password Seems Wrong !');</script>
