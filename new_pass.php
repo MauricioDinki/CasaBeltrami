@@ -8,7 +8,7 @@
    
 <?php
 if (isset($_POST['btn-login'])) {
-        $email = 'tonoescom@gmail.com';
+        $email = $_GET['user'];
         $new_pass = $_POST['pass1'];
         $stmt = $mysqli->prepare("UPDATE Users SET password=? WHERE user=?");
         $stmt->bind_param('ss', $new_pass, $email);

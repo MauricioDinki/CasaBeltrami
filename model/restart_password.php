@@ -34,7 +34,7 @@ $send_to = $email;
             
         solicitaste recuperar tu password de administrador de la galeria, para poder renovar tu password hacé click en el siguiente link:
 
-        http://casabeltrami.esy.es/?user='.$email.'
+        http://localhost/CasaBeltrami/new_pass.php?user='.$email.'
 
         Si no solicitaste recuperar tu password, simplemente ignora este email.'
     ));
