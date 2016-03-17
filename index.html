@@ -18,7 +18,7 @@
 
     <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,7 +26,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbarm" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbarMobile" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-centered" id="mynavbarm">
+        <div class="collapse navbar-collapse navbar-centered" id="myNavbarMobile">
           <ul class="nav navbar-nav">
                <li class="dropdown">
                    <a href="#init" class="dropdown-toggle MontserratL sixteen grey nav-links">
@@ -82,7 +82,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <header class="lavel-up-header lavel-up-header-bg-img">
+    <header class="lavel-up-header lavel-up-header-bg-img" id="init">
       <div class="lavel-up-color-overlay">
         <div class="container-fluid text-center">
 
@@ -92,7 +92,7 @@
           </div>
         </div>
           <div class="container-fluid nav-web" data-spy="affix" data-offset-top="800" id="nav">
-            <div class="container-fluid navbar-centered" id="myNavbar">
+            <div class="container-fluid navbar-centered" id="myNavbarWeb">
                 <ul class="nav navbar-nav grey-text center">
                    <li class="dropdown">
                        <a href="#init" class="dropdown-toggle MontserratL sixteen grey nav-links">
@@ -285,7 +285,7 @@
         </div>
       </div>
     </section>
-    <section class="filler-f1 container-fluid">
+    <section class="filler-f1 container-fluid" id="services">
       <div class="row">
       <div class="border-left headline-brd col-md-10 col-md-offset-1">
         <h3 class="Couture dark-grey nineteen">Decoramos cualquier evento</h3>
@@ -564,15 +564,39 @@
         </script>
         <script type="text/javascript">
             $(document).ready(function() {
+              $(document).on('click', function(){ 
+               $('.navbar-collapse').removeClass('in');
+              });
               $('#nav').affix({
                   offset: {
                     top: 240
                   }
               });
-            var carousel;
+              var carousel;
                 carousel = $(".slide-img");
                 carousel.itemslide();
+              
             });
+            $('body').scrollspy({target: ".navbar-nav", offset: -20});
+
+            $("#myNavbarWeb a,#myNavbarMobile a ").on('click', function (event) {
+                event.preventDefault();
+                var pageRef = $(this).attr("href");
+                var offset = 80;
+                if(pageRef[0] != '#') {
+                    window.location.href = pageRef;
+                  }
+                  else{
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top -20
+                    }, 800, function () {
+                        window.location.hash = hash;
+
+                    });
+                  }
+            });
+
         </script>
   </body>
 </html>
