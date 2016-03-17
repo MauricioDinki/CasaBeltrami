@@ -8,22 +8,18 @@
    
 <?php
 if (isset($_POST['btn-login'])) {
-        $email = $_POST['email'];
+        $email = 'tonoescom@gmail.com';
+        $new_pass = $_POST['pass1'];
+        $stmt = $mysqli->prepare("UPDATE Users SET password=? WHERE user=?");
+        $stmt->bind_param('ss', $new_pass, $email);
         
-        $email = trim($email);
-        $query = "SELECT user FROM Users WHERE user='$email' ";
-        $result = mysqli_query($mysqli, $query)or die(mysqli_error());
-        $num_row = mysqli_num_rows($result);
-        $row = mysqli_fetch_array($result);
-        if ($num_row >= 1) {
-            echo 'true';
-            
-        } else {
-?>
-        <script>alert('Username / Password Seems Wrong !');</script>
-        <?php
-        }
-    }
+        if ($stmt->execute()):
+            echo "<script>alert('exito')</script>";
+        else:
+            echo "<script>alert('" . $stmt->error . "')</script>";
+        endif;
+        
+}
 ?>
 
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -64,11 +60,11 @@ if (isset($_POST['btn-login'])) {
                             <form class="form-horizontal"  method="post" onSubmit="return validarPasswd()" >
                                 <div class="input-prepend" title="Username">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
-                                    <input class="input-large span10" name="pass1" id="pass1"type="text" placeholder="Nueva Constraseña"/>
+                                    <input class="input-large span10" name="pass1" id="pass1"type="password" placeholder="Nueva Constraseña"/>
                                 </div>
                                 <div class="input-prepend" title="Username">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
-                                    <input class="input-large span10" name="pass2" id="pass2"type="text" placeholder="Repetir Contraseña"/>
+                                    <input class="input-large span10" name="pass2" id="pass2"type="password" placeholder="Repetir Contraseña"/>
                                 </div>
                                 
                                 <div class="button-login">	
