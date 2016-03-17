@@ -173,30 +173,44 @@ if (isset($_POST['bts'])):
     endif;
 ?>
     <br>
-    <a href="Galery.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+    
     <p><br/></p>
     <div class="panel panel-default">
     <div class="panel-body">
-        <form role="form" method="post">
-            <div class="form-group">
-                <label for="name_galery">Nombre del Salón</label>
-                <input type="text" class="form-control" name="party_room_name" id="nm" placeholder="Enter Party Room Name">
+        <form role="form" method="post" class="form-horizontal">
+            
+            <div class="control-group">
+		<label class="control-label" for="focusedInput">Nombre</label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                               name="party_room_name" id="nm">
+		    </div>
+	    </div>
+            
+            <div class="control-group">
+		<label class="control-label" for="focusedInput">Descripción Corta</label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                               name="short_description" id="nm">
+		    </div>
+	    </div>
+            <div class="control-group">
+		<label class="control-label" for="focusedInput">Descripción Corta</label>
+		    <div class="controls">
+                        <textarea class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                                  name="short_description" id="nm"></textarea>
+		    </div>
+	    </div>
+            <div class="control-group">
+		<label class="control-label" for="selectError">Estatus</label>
+		<div class="controls">
+                    <select id="selectError" data-rel="chosen" name="status">
+                        <option value=true>Activa</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+		</div>
             </div>
-            <div class="form-group">
-                <label for="short_description">Descripción Corta</label>
-                <input type="text" class="form-control" name="short_description" id="nm" placeholder="Enter Name">
-            </div>  
-            <div class="form-group">
-                <label for="long_description">Descripcion Larga</label>
-                <textarea class="form-control" name="long_description" id="ar" rows="3"></textarea>
-            </div>  
-            <div class="form-group">
-                <label for="estatus">Estatus</label>
-                <select class="form-control" id="gd" name="status">
-                    <option value=true>Activa</option>
-                    <option value="false">Inactivo</option>
-                </select>
-            </div>
+            
             <div class="form-group">
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="" value="<?php echo date("Y/m/d") ?>">
             </div>  
@@ -206,6 +220,7 @@ if (isset($_POST['bts'])):
             </div>-->
 
             <button type="submit" name="bts" class="btn btn-default">Guardar</button>
+            <a href="form.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
         </form>
     </div>
 </div>

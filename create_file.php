@@ -36,20 +36,14 @@
 	<link id="base-style" href="css_template/admin.css" rel="stylesheet">
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
-	
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css_template/ie.css" rel="stylesheet">
-	<![endif]-->
-	
-	<!--[if IE 9]>
-		<link id="ie9style" href="css_template/ie9.css" rel="stylesheet">
-	<![endif]-->
-		
-	<!-- start: Favicon -->
+	<script src="js/jquery.js"></script>
+        <script src="js/upload.js"></script>
+        <script src="js/bootbox.js"></script>
+        <script src="js/bootbox.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script src="js/bootbox.min.js"></script>
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
 	
@@ -132,31 +126,31 @@
     include "config.php";
     
 ?>
-<script src="js/jquery.js"></script>
-<script src="js/upload.js"></script>
-<script src="js/bootbox.js"></script>
-<script src="js/bootbox.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<script src="js/bootbox.min.js"></script>
+
 <p><br/></p>
 <div class="panel panel-default">
     <div class="panel-body">
-        <form  id="subida">
-            <div class="form-group">
-                <label for="name_galery">Titulo</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Name">
+        <form  id="subida" class="form-horizontal">
+            
+             <div class="control-group">
+		<label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                               id="title" id="nm">
+		    </div>
+	    </div>
+            
+            <div class="control-group">
+                <label class="control-label">Seleccionar Archivo</label>
+                <div class="controls">
+                    <input type="file" id="foto" name="foto">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="name_galery">Imagen</label>
-                <input type="file" id="foto" name="foto"/> 
-            </div>
-            <h4>salones Disponibles</h4>
-           
-                      <div>
-             <select name="party" id="party" >
-             <?php
+            <div class="control-group">
+		<label class="control-label" for="selectError">Asignar salón</label>
+		<div class="controls">
+                    <select  data-rel="chosen" name="id_party" id="party">
+                        <?php
                 $condition='true';
                 $sql1 = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
                 $result1 = $mysqli->query($sql1);
@@ -172,12 +166,13 @@
                         echo $combobit1;
                     ?>
                 </select>
+		</div>
             </div>
-             <hr>
-              <h4>Tipo De evento</h4>
-            <div>
-             <select name="event" id="event" >
-                    <?php
+            <div class="control-group">
+		<label class="control-label" for="selectError">Tipo de evento</label>
+		<div class="controls">
+                    <select  data-rel="chosen" name="event" id="event">
+                 <?php
                         
                     
                         $sql = "SELECT id_event,nombre from events ";
@@ -194,28 +189,42 @@
                         echo $combobit2;
                     ?>
                 </select>
-            <div class="form-group">
-                <label for="short_description">Descripcion Corta</label>
-                <input type="text" id="desc_short" class="form-control" name="desc_short" placeholder="Enter Name">
+		</div>
             </div>
-            <div class="form-group">
-                <label for="short_description">Descripcion larga</label>
-                <input type="text" id="desc_long" class="form-control" name="desc_long" placeholder="Enter Name">
+            
+            <div class="control-group">
+		<label class="control-label" for="focusedInput">Descripcion Corta </label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                               id="desc_short" id="nm">
+		    </div>
+	    </div>
+            <div class="control-group">
+		<label class="control-label" for="focusedInput">Descripcion Larga </label>
+		    <div class="controls">
+                        <textarea class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                                  id="desc_long" id="nm"> </textarea>
+		    </div>
+	    </div>
+            <div class="control-group">
+		<label class="control-label" for="selectError">Estatus</label>
+		<div class="controls">
+                    <select id="selectError" data-rel="chosen" name="status">
+                        <option value=true>Activa</option>
+                        <option value="false">Inactivo</option>
+                    </select>
+		</div>
             </div>
-            <div class="form-group">
-                <label for="estatus">Estatus</label>
-                <select class="form-control" id="status" name="status">
-                    <option value="true">Activa</option>
-                    <option value="false">Inactivo</option>
-                </select>
-            </div>
-               <div class="form-group">
-                <label for="estatus">Decoracion</label>
-                <select class="form-control" id="decoration" name="decoration">
-                    <option value="1">Propia</option>
+            <div class="control-group">
+		<label class="control-label" for="selectError">Estatus</label>
+		<div class="controls">
+                    <select  data-rel="chosen" name="status">
+                        <option value="1">Propia</option>
                     <option value="0">terceros</option>
-                </select>
+                    </select>
+		</div>
             </div>
+            
             <div class="form-group">
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
             </div>
@@ -223,6 +232,7 @@
         </form>
     </div>
 </div>
+
                         </div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
