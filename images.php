@@ -28,8 +28,7 @@
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
-	   
-        
+	
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
@@ -73,10 +72,7 @@
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-
-
-						
-						
+			
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -86,10 +82,13 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-menu-title">
- 									<span>Opciones</span>
+                                                                    <span>Opciones</span>
 								</li>
 								
-								<li><a href="logout.php?logout"><i class="halflings-icon off"></i> Cerrar Sesión</a></li>
+                                                                <li><a href="logout.php?logout">
+                                                                        <i class="halflings-icon off">
+                                                                            </i> Cerrar Sesión
+                                                                    </a>  </li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -110,9 +109,9 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						
-                                            <li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet"> Salones</span></a></li>
-                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet">Imagenes</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
+						<li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
+                                                <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
+						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
 						
 					</ul>
 				</div>
@@ -133,43 +132,39 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+                                        <a href="Home.php">Inicio</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Charts</a></li>
+				<li><a href="#">Imagenes</a></li>
 			</ul>
 
 			<div class="row-fluid">
-                                <?php
-                include "config.php";
-              
-               
-            ?>
-            <p>
-                <a href="create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Salón</a><br/>
+			 <p>
+                             <a href="create_file.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Archivo</a><br/>
             </p>
-            <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
+                              <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre del Salón</th>
+                        <th>Titulo</th>
+                        <th>Imagen</th>
                         <th>Descripcion Corta</th>
                         <th>Descripcion Larga</th>
                         <th>Estatus</th>
                         <th>Fecha de Creación</th>
                         <th>Fecha de Modificación</th>
-                        <th>Seccion a la que pertenece</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                        $res = $mysqli->query("SELECT * FROM party_room");
-                        $mysqli->close();
+                        $res = $mysqli2->query("SELECT * FROM content");
+                        $mysqli2->close();
                         while ($row = $res->fetch_assoc()):
                     ?>
                         <tr>
-                            <td><?php echo $row['id_party_room'] ?></td>
-                            <td><?php echo $row['party_room_name'] ?></td>
+                            <td><?php echo $row['id_content'] ?></td>
+                            <td><?php echo $row['tittle'] ?></td>
+                            <td><?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" >' ?></img></td>
                             <td><?php echo $row['short_description'] ?></td>
                             <td><?php echo $row['long_description'] ?></td>
                             <td>
@@ -179,41 +174,45 @@
                                         }elseif($row['status']=='false') {
                                             echo 'inactivo';
                                         }    
-                                ?>
+                                 ?>
                             </td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['modification_date'] ?></td>
-                            <td><?php echo $row['section'] ?></td>
                             <td>
-                                <a class="btn btn-lg btn-success" href="update_register.php?u=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
-                            </td> 
-                            <td>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                                <a class="btn btn-lg btn-success" href="update_photo.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
                             </td>
-                        </tr>
-                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title" id="myModalLabel">Atención</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>¿Estas seguro de eliminar la galeria?</h3>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
-                                        <a href="Delete.php?d=<?php echo $row['id_galery'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                            
+                            
+                            <td>
+                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal"  >
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                            </td>
+                             <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>¿Estas seguro de eliminar el contenido?<?php echo $row['id_content'] ?></h3>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
+                                            <a href="Delete_Photo.php?d=<?php echo $row['id_content'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            
+                        </tr>
+             
                         <?php
                             endwhile;
                         ?>
+                    
                 </tbody>
-            </table>	
-	
+            </table>
 
 			</div><!--/row-->
 			
