@@ -11,12 +11,14 @@ if (isset($_POST['btn-login'])) {
         $email = $_POST['email'];
         
         $email = trim($email);
-        $query = "SELECT user FROM Users WHERE user='$email' ";
+        $query = "SELECT nombre,user FROM Users WHERE user='$email' ";
         $result = mysqli_query($mysqli, $query)or die(mysqli_error());
         $num_row = mysqli_num_rows($result);
         $row = mysqli_fetch_array($result);
         if ($num_row >= 1) {
-            echo 'true';
+            $user= $row['nombre'];
+            $email_restart= $row['user'];
+            require_once 'model/restart_password.php';
             
         } else {
 ?>
