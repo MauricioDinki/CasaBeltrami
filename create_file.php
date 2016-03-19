@@ -37,14 +37,14 @@
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<script src="js/jquery.js"></script>
-        <script src="js/upload.js"></script>
-        <script src="js/bootbox.js"></script>
-        <script src="js/bootbox.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+<script src="js/upload.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/bootbox.js"></script>
+<script src="js/bootbox.min.js"></script>
         
-        <script src="js/bootbox.min.js"></script>
-	<link rel="shortcut icon" href="img/favicon.ico">
+        	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
 	
 		
@@ -135,8 +135,7 @@
              <div class="control-group">
 		<label class="control-label" for="focusedInput">Titulo De la Imagen </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
-                               id="title" id="nm">
+		        <input class="input-xlarge focused" type="text" id="tittle" id="nm">
 		    </div>
 	    </div>
             
@@ -195,30 +194,30 @@
             <div class="control-group">
 		<label class="control-label" for="focusedInput">Descripcion Corta </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+		        <input class="input-xlarge focused"  type="text" value="This is focused…"
                                id="desc_short" id="nm">
 		    </div>
 	    </div>
             <div class="control-group">
 		<label class="control-label" for="focusedInput">Descripcion Larga </label>
 		    <div class="controls">
-                        <textarea class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                        <textarea class="input-xlarge focused" type="text" value="This is focused…"
                                   id="desc_long" id="nm"> </textarea>
 		    </div>
 	    </div>
             <div class="control-group">
 		<label class="control-label" for="selectError">Estatus</label>
 		<div class="controls">
-                    <select id="selectError" data-rel="chosen" name="status">
+                    <select id="status" data-rel="chosen" name="status">
                         <option value=true>Activa</option>
                         <option value="false">Inactivo</option>
                     </select>
 		</div>
             </div>
             <div class="control-group">
-		<label class="control-label" for="selectError">Estatus</label>
+		<label class="control-label" for="selectError">Decoration</label>
 		<div class="controls">
-                    <select  data-rel="chosen" name="status">
+                    <select id="decoration" data-rel="chosen" name="status">
                         <option value="1">Propia</option>
                     <option value="0">terceros</option>
                     </select>
