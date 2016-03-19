@@ -1,6 +1,7 @@
 <?php
     include "config.php";
     session_start();
+     error_reporting(0);
     if (isset($_SESSION['user_name']) != "") {
         header("Location: Home.php");
     }
@@ -17,9 +18,7 @@
             $_SESSION['user_name'] = $row['user'];
             header("Location:Home.php");
         } else {
-?>
-        <script>alert('Username / Password Seems Wrong !');</script>
-        <?php
+           $result='<div class="alert alert-danger">Lo sentimos! Usuario y/o constraseña invalido</div>';
         }
     }
 ?>
@@ -52,14 +51,21 @@
 <body>
     <div class="container-fluid-full">
         <div class="row-fluid">
+           
             <div class="row-fluid">
+                 
                 <div class="login-box">
+                    <div class="col-sm-10 col-sm-offset-2">
+                            <?php echo $result; ?>    
+                            </div>
                     <div class="icons">
                         <a href="index.html"><i class="halflings-icon home"></i></a>
                         <a href="#"><i class="halflings-icon cog"></i></a>
                     </div>
                         <h2>Login to your account</h2>
+                           
                             <form class="form-horizontal"  method="post">
+                                
                                 <div class="input-prepend" title="Username">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
                                     <input class="input-large span10" name="email" type="text" placeholder="Usuario"/>
