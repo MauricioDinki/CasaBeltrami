@@ -18,7 +18,7 @@
 
     <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,7 +26,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbarm" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbarMobile" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-centered" id="mynavbarm">
+        <div class="collapse navbar-collapse navbar-centered" id="myNavbarMobile">
           <ul class="nav navbar-nav">
                <li class="dropdown">
                    <a href="#init" class="dropdown-toggle MontserratL sixteen grey nav-links">
@@ -82,7 +82,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <header class="lavel-up-header lavel-up-header-bg-img">
+    <header class="lavel-up-header lavel-up-header-bg-img" id="init">
       <div class="lavel-up-color-overlay">
         <div class="container-fluid text-center">
 
@@ -92,7 +92,7 @@
           </div>
         </div>
           <div class="container-fluid nav-web" data-spy="affix" data-offset-top="800" id="nav">
-            <div class="container-fluid navbar-centered" id="myNavbar">
+            <div class="container-fluid navbar-centered" id="myNavbarWeb">
                 <ul class="nav navbar-nav grey-text center">
                    <li class="dropdown">
                        <a href="#init" class="dropdown-toggle MontserratL sixteen grey nav-links">
@@ -160,12 +160,12 @@
     </section>
     <section class="party-halls">
       <div class="row" style="min-height: 100%; margin-right: 0px;">
-        <div class="col-md-7 left-img" style="position: relative;">
+        <div class="col-md-7 left-img col-xs-6" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
             <h4 class="Montserrat white sixteen">Salón L'incanto</h4>
           </div>
         </div>
-        <div class="col-md-5" style="padding-right: 0px;">
+        <div class="col-md-5 col-xs-6" style="padding-right: 0px;">
           <div class="right-img" style="position: relative;">
             <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
             <h4 class="Montserrat white sixteen no-margin">Salón Farfalla</h4>
@@ -215,25 +215,50 @@
       </div>
     </section>
     <section class="three-img">
-      <div class="row" style="margin-right: 0px;" id="scrolling">
-        <div class="col-md-4 img-events-one slide-img" style="position: relative;">
+      <div class="row events-web" style="margin-right: 0px;" id="scrolling">
+        <div class="col-md-4 img-events-one" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
           <h4 class="Montserrat white sixteen no-margin">XV años</h4>
           </div>
         </div>
-        <div class="col-md-4 img-events-two slide-img" style="position: relative;">
+        <div class="col-md-4 img-events-two" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
           <h4 class="Montserrat white sixteen no-margin">Primera comunión</h4>
           </div>
         </div>        
-        <div class="col-md-4 img-events-three slide-img" style="position: relative;">
+        <div class="col-md-4 img-events-three" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
           <h4 class="Montserrat white sixteen no-margin">Cumpleaños</h4>
           </div>
         </div> 
-      </div> 
+      </div>
+      <div id="scrolling" class="scrolling events-mobile">
+      <ul class="slide-img">
+          <li class="img-in">
+              <div class="img-events-one" style="position: relative;">
+                <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+                <h4 class="Montserrat white sixteen no-margin">XV años</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-two" style="position: relative;">
+                <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+                <h4 class="Montserrat white sixteen no-margin">Primera comunión</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-three" style="position: relative;">
+                <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+                <h4 class="Montserrat white sixteen no-margin">Cumpleaños</h4>
+                </div>
+              </div>
+          </li>
+      </ul>
+      </div>
     </section>
-    <section class="info-services-one">
+    <section class="info-services-two">
       <div class="row" style="margin-right: 0px;">
         <div class="col-md-3 col-md-offset-1">
           <div class="img-events-left-two">
@@ -260,7 +285,7 @@
         </div>
       </div>
     </section>
-    <section class="filler-f1 container-fluid">
+    <section class="filler-f1 container-fluid" id="services">
       <div class="row">
       <div class="border-left headline-brd col-md-10 col-md-offset-1">
         <h3 class="Couture dark-grey nineteen">Decoramos cualquier evento</h3>
@@ -383,32 +408,38 @@
           </div>
         </div>
         <div class="col-md-2 col-xs-6">
-            <div class="in-box-icon-block center-block">
-            <br>
-              <img src="assets/img/icons/iconos-08.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat grey text-center">BABY <br>SHOWER</h3>
+            <div class="out-border-icon">
+              <div class="in-box-icon center-block">
+                <br>
+                <img src="assets/img/icons/iconos-08.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat grey text-center">BABY <br>SHOWER</h3>
+              </div>
             </div>
         </div>
         <div class="col-md-2 col-xs-6">
-            <div class="in-box-icon-block center-block">
-            <br>
-              <img src="assets/img/icons/iconos-06.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat grey text-center">BODA</h3>
-              <br>
+            <div class="out-border-icon">
+              <div class="in-box-icon center-block">
+                <br>
+                <img src="assets/img/icons/iconos-06.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat grey text-center">BODA</h3>
+                <br>
+            </div>
             </div>
         </div>
         <div class="col-md-2 col-xs-6">
-            <div class="in-box-icon-block center-block">
-            <br>
-              <img src="assets/img/icons/iconos-09.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat grey text-center">COMUNIÓN</h3>
-              <br>
+            <div class="out-border-icon">
+              <div class="in-box-icon center-block">
+                <br>
+                <img src="assets/img/icons/iconos-09.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat grey text-center">COMUNIÓN</h3>
+                <br>
+              </div>
             </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="out-border-icon">
               <div class="in-box-icon center-block">
-              <br>
+                <br>
                 <img src="assets/img/icons/iconos-10.png" alt="" class="icon-event center-block">
                 <h3 class="nineteen Montserrat grey text-center">CUMPLEAÑOS</h3>
                 <br>
@@ -418,7 +449,7 @@
         <div class="col-md-2 col-xs-6 col-md-offset-3">
             <div class="out-border-icon">
                 <div class="in-box-icon center-block">
-                <br>
+                  <br>
                   <img src="assets/img/icons/iconos-11.png" alt="" class="icon-event center-block">
                   <h3 class="nineteen Montserrat grey text-center">DESPEDIDA DE SOLTERA</h3>
                   <br>
@@ -426,17 +457,19 @@
             </div>
         </div>
         <div class="col-md-2 col-xs-6">
-            <div class="in-box-icon-block center-block">
-            <br>
-              <img src="assets/img/icons/iconos-12.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat grey text-center">EVENTO EMPRESARIAL </h3>
-              <br>
+            <div class="out-border-icon">
+              <div class="in-box-icon center-block">
+                <br>
+                <img src="assets/img/icons/iconos-12.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat grey text-center">EVENTO EMPRESARIAL </h3>
+                <br>
+              </div>
             </div>
         </div>
         <div class="col-md-2 col-xs-6">
             <div class="out-border-icon">
                 <div class="in-box-icon center-block">
-                <br>
+                  <br>
                   <img src="assets/img/icons/iconos-13.png" alt="" class="icon-event center-block">
                   <h3 class="nineteen Montserrat grey text-center">FIESTA <br>INFANTIL</h3>
                   <br>
@@ -444,28 +477,32 @@
             </div>
         </div>
         <div class="col-md-2 col-xs-6 col-md-offset-3">
-              <div class="in-box-icon-block center-block">
-              <br>
-                <img src="assets/img/icons/iconos-14.png" alt="" class="icon-event center-block">
-                <h3 class="nineteen Montserrat grey text-center">FIESTA <br>PRIVADA</h3>
+              <div class="out-border-icon">
+                <div class="in-box-icon center-block">
+                  <br>
+                  <img src="assets/img/icons/iconos-14.png" alt="" class="icon-event center-block">
+                  <h3 class="nineteen Montserrat grey text-center">FIESTA <br>PRIVADA</h3>
+                </div>
               </div>
         </div>
         <div class="col-md-2 col-xs-6">
           <div class="out-border-icon">
               <div class="in-box-icon center-block">
-              <br>
-                <img src="assets/img/icons/iconos-15.png" alt="" class="icon-event center-block">
-                <h3 class="nineteen Montserrat grey text-center">GRADUACIÓN</h3>
-                <br>
+                  <br>
+                  <img src="assets/img/icons/iconos-15.png" alt="" class="icon-event center-block">
+                  <h3 class="nineteen Montserrat grey text-center">GRADUACIÓN</h3>
+                  <br>
               </div>
           </div>
         </div>
         <div class="col-md-2 col-xs-6 col-xs-offset-3">
-            <div class="in-box-icon-block center-block">
-            <br>
-              <img src="assets/img/icons/iconos-16.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat grey text-center">XV AÑOS</h3>
-              <br>
+            <div class="out-border-icon">
+              <div class="in-box-icon center-block">
+                <br>
+                <img src="assets/img/icons/iconos-16.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat grey text-center">XV AÑOS</h3>
+                <br>
+              </div>
             </div>
         </div>
       </div>
@@ -539,15 +576,39 @@
         </script>
         <script type="text/javascript">
             $(document).ready(function() {
+              $(document).on('click', function(){ 
+               $('.navbar-collapse').removeClass('in');
+              });
               $('#nav').affix({
                   offset: {
-                    top: 250
+                    top: 240
                   }
               });
-              // var carousel;
-              //     carousel = $(".slide-img");
-              //     carousel.itemslide();
+              var carousel;
+                carousel = $(".slide-img");
+                carousel.itemslide();
+              
             });
+            $('body').scrollspy({target: ".navbar-nav", offset: -20});
+
+            $("#myNavbarWeb a,#myNavbarMobile a ").on('click', function (event) {
+                event.preventDefault();
+                var pageRef = $(this).attr("href");
+                var offset = 80;
+                if(pageRef[0] != '#') {
+                    window.location.href = pageRef;
+                  }
+                  else{
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top -20
+                    }, 800, function () {
+                        window.location.hash = hash;
+
+                    });
+                  }
+            });
+
         </script>
   </body>
 </html>
