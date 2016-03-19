@@ -1,5 +1,6 @@
 <?php
     include "config.php";
+    error_reporting(0);
     session_start();
     if (isset($_SESSION['user_name']) != "") {
        // header("Location: Home.php");
@@ -14,9 +15,9 @@ if (isset($_POST['btn-login'])) {
         $stmt->bind_param('ss', $new_pass, $email);
         
         if ($stmt->execute()):
-            echo "<script>alert('exito')</script>";
+            $result='<div class="alert alert-success">Tu contraseña ha sido reestablecida exitosamente</div>';
         else:
-            echo "<script>alert('" . $stmt->error . "')</script>";
+            $result='<div class="alert alert-error">Lo sentimos! Por el momento no podemos procesar tu solicitud, intentalo más tarde</div>';
         endif;
         
 }
@@ -52,6 +53,11 @@ if (isset($_POST['btn-login'])) {
         <div class="row-fluid">
             <div class="row-fluid">
                 <div class="login-box">
+                    <div class="col-sm-10 col-sm-offset-2">
+                            <?php echo $result; ?>    
+                            </div>
+                    <div id="messages_content"></div>
+                    <div data-alerts="alerts" data-titles="{'warning': '<em>Warning!</em>'}" data-ids="myid" data-fade="3000"></div>
                     <div class="icons">
                         <a href="index.html"><i class="halflings-icon home"></i></a>
                         <a href="#"><i class="halflings-icon cog"></i></a>
@@ -83,14 +89,16 @@ if (isset($_POST['btn-login'])) {
                 var p1 = document.getElementById("pass1").value;
                 var p2 = document.getElementById("pass2").value;
                 if (p1.length == 0 || p2.length == 0) {
-                alert("Los campos de la password no pueden quedar vacios");
+                $('#messages_content').html('<div class="alert alert-error">Por favor ingresa tu nueva contraseña</div>');
                 return false;
                 }
                 if (p1 != p2) {
-  alert("Las passwords deben de coincidir");
+                      
+                $('#messages_content').html('<div class="alert alert-error">Las constraseñas no coniciden</div>');
+                
   return false;
 } else {
-  alert("Todo esta correcto");
+  
   return true; 
 }
                 

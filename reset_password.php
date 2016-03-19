@@ -25,7 +25,7 @@ if (isset($_POST['btn-login'])) {
              
             
         } else {
- $result='<div class="alert alert-danger">Lo sentimos! Usuario y/o constraseña invalido</div>';
+ $result='<div class="alert alert-error">Lo sentimos! el usuario no existe</div>';
       
         
         }

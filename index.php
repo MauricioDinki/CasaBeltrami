@@ -18,7 +18,7 @@
             $_SESSION['user_name'] = $row['user'];
             header("Location:Home.php");
         } else {
-           $result='<div class="alert alert-danger">Lo sentimos! Usuario y/o constraseña invalido</div>';
+           $result='<div class="alert alert-error">Lo sentimos! Usuario y/o constraseña son invalidos</div>';
         }
     }
 ?>
