@@ -55,9 +55,9 @@
             <div class="row-fluid">
                  
                 <div class="login-box">
-                    <div class="col-sm-10 col-sm-offset-2">
-                            <?php echo $result; ?>    
-                            </div>
+                    <div>
+                        <?php echo $result; ?>    
+                    </div>
                     <div class="icons">
                         <a href="index.html"><i class="halflings-icon home"></i></a>
                         <a href="#"><i class="halflings-icon cog"></i></a>
