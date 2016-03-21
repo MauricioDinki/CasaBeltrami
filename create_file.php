@@ -132,20 +132,21 @@
     <div class="panel-body">
         <form  id="subida" class="form-horizontal">
             
-             <div class="control-group">
+             <div class="control-group col-sm-5">
 		<label class="control-label" for="focusedInput">Titulo De la Imagen </label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" type="text" id="tittle" id="nm">
 		    </div>
 	    </div>
             
-            <div class="control-group">
+            <div class="control-group ">
                 <label class="control-label">Seleccionar Archivo</label>
                 <div class="controls">
                     <input type="file" id="foto" name="foto">
                 </div>
             </div>
-            <div class="control-group">
+            
+            <div class="control-group col-sm-5">
 		<label class="control-label" for="selectError">Asignar salón</label>
 		<div class="controls">
                     <select  data-rel="chosen" name="id_party" id="party">
@@ -167,9 +168,9 @@
                 </select>
 		</div>
             </div>
-            <div class="control-group">
+            <div class="control-group col-sm-5">
 		<label class="control-label" for="selectError">Tipo de evento</label>
-		<div class="controls">
+		<div class="controls ">
                     <select  data-rel="chosen" name="event" id="event">
                  <?php
                         
@@ -191,21 +192,21 @@
 		</div>
             </div>
             
-            <div class="control-group">
+            <div class="control-group col-sm-5 ">
 		<label class="control-label" for="focusedInput">Descripcion Corta </label>
 		    <div class="controls">
 		        <input class="input-xlarge focused"  type="text" value="This is focused…"
                                id="desc_short" id="nm">
 		    </div>
 	    </div>
-            <div class="control-group">
+            <div class="control-group col-sm-5">
 		<label class="control-label" for="focusedInput">Descripcion Larga </label>
 		    <div class="controls">
                         <textarea class="input-xlarge focused" type="text" value="This is focused…"
                                   id="desc_long" id="nm"> </textarea>
 		    </div>
 	    </div>
-            <div class="control-group">
+            <div class="control-group col-sm-5">
 		<label class="control-label" for="selectError">Estatus</label>
 		<div class="controls">
                     <select id="status" data-rel="chosen" name="status">
@@ -214,7 +215,7 @@
                     </select>
 		</div>
             </div>
-            <div class="control-group">
+            <div class="control-group col-sm-5">
 		<label class="control-label" for="selectError">Decoration</label>
 		<div class="controls">
                     <select id="decoration" data-rel="chosen" name="status">

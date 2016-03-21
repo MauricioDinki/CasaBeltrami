@@ -173,36 +173,38 @@ if (isset($_POST['bts'])):
     endif;
 ?>
     <br>
-    
+    <div style="text-align: center"><h1 >Llena los siguientes Campos </h1></div>
     <p><br/></p>
+    
     <div class="panel panel-default">
+        
     <div class="panel-body">
         <form role="form" method="post" class="form-horizontal">
             
-            <div class="control-group">
-		<label class="control-label" for="focusedInput">Nombre</label>
+            <div class="control-group col-sm-5 mar-top40">
+		<label class="control-label" for="focusedInput">Nombre:</label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="party_room_name" id="nm">
 		    </div>
 	    </div>
             
-            <div class="control-group">
-		<label class="control-label" for="focusedInput">Descripción Corta</label>
+            <div class="control-group col-sm-5 mar-top41">
+		<label class="control-label" for="focusedInput">Descripción Corta:</label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="short_description" id="nm">
 		    </div>
 	    </div>
-            <div class="control-group">
-		<label class="control-label" for="focusedInput">Descripción Corta</label>
+            <div class="control-group col-sm-5">
+		<label class="control-label" for="focusedInput">Descripción Larga:</label>
 		    <div class="controls">
-                        <textarea class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
+                        <textarea  rows="6" class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
                                   name="short_description" id="nm"></textarea>
 		    </div>
 	    </div>
-            <div class="control-group">
-		<label class="control-label" for="selectError">Estatus</label>
+            <div class="control-group col-sm-5 mar-top50">
+		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
                     <select id="selectError" data-rel="chosen" name="status">
                         <option value=true>Activa</option>
@@ -219,8 +221,8 @@ if (isset($_POST['bts'])):
                 <input type="text" class="form-control" name="section" id="">
             </div>-->
 
-            <button type="submit" name="bts" class="btn btn-default">Guardar</button>
-            <a href="form.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+            <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
+            <a href="form.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
         </form>
     </div>
 </div>
