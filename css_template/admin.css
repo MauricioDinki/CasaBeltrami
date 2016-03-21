@@ -1731,8 +1731,8 @@ fieldset[disabled] .btn-danger:active {
 }
 
 .btn-success {
-  background-color: #43B5AD;
-  border-color: #43B5AD;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-success:hover,
@@ -3004,4 +3004,81 @@ ul.messagesList li span.date {
 }
 .navbar .brand{
 	font-size: 35px;
+}
+
+
+.mar-top50{
+    margin-top: 50px;
+}
+@media only screen and (max-width:768px) { 
+   .mar-top50{
+    margin-top: 20px;
+}
+}
+@media only screen and (max-width:480px) { 
+  .mar-top50{
+    margin-top: 20px;
+}  
+}
+@media only screen and (max-width:360px) { 
+  .mar-top50{
+    margin-top: 20px;
+}  
+}
+@media only screen and (max-width:320px) { 
+  .mar-top50{
+    margin-top: 20px;
+}
+  
+}
+
+
+.mar-top40{
+    margin-top: 40px;
+}
+@media only screen and (max-width:768px) { 
+   .mar-top40{
+    margin-top: 40px;
+}
+}
+@media only screen and (max-width:480px) { 
+  .mar-top40{
+    margin-top: 40px;
+}  
+}
+@media only screen and (max-width:360px) { 
+  .mar-top40{
+    margin-top: 40px;
+}  
+}
+@media only screen and (max-width:320px) { 
+  .mar-top40{
+    margin-top: 40px;
+}
+  
+}
+
+.mar-top41{
+    margin-top: 40px;
+}
+@media only screen and (max-width:768px) { 
+   .mar-top41{
+    margin-top: auto;
+}
+}
+@media only screen and (max-width:480px) { 
+  .mar-top41{
+    margin-top: auto;
+}  
+}
+@media only screen and (max-width:360px) { 
+  .mar-top41{
+   margin-top: auto;
+}  
+}
+@media only screen and (max-width:320px) { 
+  .mar-top41{
+    margin-top: auto;
+}
+  
 }
