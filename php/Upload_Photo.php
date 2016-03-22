@@ -2,7 +2,7 @@
     include "../config.php";
     error_reporting(E_ALL);
     //query para insertar imagen obtenemos valores por get los cuales los recibimos de query por post
-    $title = $_GET['title'];
+    $title = $_GET['tittle'];
     $sd = $_GET['desc_short'];
     $ld = $_GET['desc_long'];
     $st = $_GET['status'];

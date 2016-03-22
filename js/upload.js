@@ -2,8 +2,11 @@ $(function () {
     $('#subida').submit(function () {
 
         var comprobar = $('#tittle').val().length * $('#foto').val().length*  $('#party').val().length *  $('#event').val().length*  $('#desc_short').val().length * $('#desc_long').val().length * $('#status').val().length * $('#decoration').val().length* $('#creation_date').val().length;
-
-
+        console.log("nombre: "+$('#tittle').val());
+        console.log("party: "+$('#party').val());
+        console.log("event: "+$('#event').val());
+        console.log("desc_long: "+$('#desc_long').val());
+        console.log("desc_short: "+$('#desc_short').val());
         if (comprobar > 0) {
 
             var formulario = $('#subida');
