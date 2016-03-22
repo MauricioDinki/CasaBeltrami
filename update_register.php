@@ -137,17 +137,17 @@ error_reporting(E_ALL);
   
 if (isset($_GET['u'])):
     if (isset($_POST['bts'])):
-        $stmt = $mysqli2->prepare("UPDATE galery SET title_galery=?, short_description=?, long_description=?, status=?,modification_date=?,section=? WHERE id_galery=?");
-        $stmt->bind_param('sssssss', $title, $short_decription, $long_description, $status_galery, $modification_date, $section_galery, $id_galery);
+        $stmt = $mysqli2->prepare("UPDATE party_room SET party_room_name=?, short_description=?, long_description=?, status=?,modification_date=? WHERE id_party_room=?");
+        $stmt->bind_param('ssssss', $title, $short_decription, $long_description, $status_galery, $modification_date,$id_galery);
         $title = $_POST['title_galery'];
         $short_decription = $_POST['short_desc'];
         $long_description = $_POST['long_desc'];
         $status_galery = $_POST['status'];
         $modification_date = $_POST['modification_date'];
-        $section_galery = $_POST['section'];
-        $id_galery = $_POST['id_galery'];
+       
+        $id_galery = $_POST['id_party_room'];
         if ($stmt->execute()):
-            echo "<script>location.href='Galery.php'</script>";
+            echo "<script>location.href='form.php'</script>";
         else:
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;
@@ -162,28 +162,28 @@ endif;
         <div class="panel-body">
             <form role="form" method="post" class="form-horizontal">
                 <input type="hidden" value="<?php echo $row['id_party_room'] ?>" name="id_party_room"/>
-                <div class="control-group">
-                    <label class="control-label" for="focusedInput">Nombre del salón </label>
+                <div class="control-group col-sm-5 mar-top40">
+                    <label class="control-label" for="title_galery">Nombre del salón: </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['party_room_name'] ?>"
-                               id="title" name="title">
+		        <input class="input-xlarge focused" id="title_galery" type="text" value="<?php echo $row['party_room_name'] ?>"
+                        name="title_galery">
 		    </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+                <div class="control-group col-sm-5 mar-top41">
+                    <label class="control-label" for="short_desc">Descripcion Corta </label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description'] ?>"
-                               id="title" name="title">
+                               id="short_desc" name="short_desc">
 		    </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+                <div class="control-group col-sm-5 mar-top41">
+                    <label class="control-label" for="long_desct">Descripcion Larga </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['long_description'] ?>"
-                               id="title" name="title">
+                        <textarea class="input-xlarge focused" id="focusedInput" rows="5" type="text" value="<?php echo $row['long_description'] ?>"
+                                  id="long_desc" name="long_desc"></textarea>
 		    </div>
                 </div>
-                <div class="control-group">
+                <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus</label>
 		<div class="controls">
                      <?php if ($row['status'] == 'true') { ?>
@@ -202,8 +202,10 @@ endif;
                 <div class="form-group">
                     <input type="hidden" class="form-control" name="modification_date" id="tl" value="<?php echo date("Y/m/d") ?>">
                 </div>
-               
-                <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
+                <center>
+                     <a href="form.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                    <button type="submit" name="bts" class="btn btn-success">Guardar Cambios</button>
+                </center>
             </form>
         </div>
 

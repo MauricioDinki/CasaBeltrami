@@ -37,10 +37,10 @@
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<script src="js/jquery.js"></script>
-<script src="js/upload.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+<script src="js/upload.js"></script>
 <script src="js/bootbox.js"></script>
 <script src="js/bootbox.min.js"></script>
         
@@ -75,7 +75,7 @@
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
-                                                                <?php echo $row['nombre']; ?>
+                                                                <?php echo $row['nombre'] ?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -133,27 +133,27 @@
         <form  id="subida" class="form-horizontal">
             
              <div class="control-group col-sm-5">
-		<label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+		<label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" type="text" id="tittle" id="nm">
+                        <input class="input-xlarge focused" type="text" id="title" name="title" >
 		    </div>
 	    </div>
             
-            <div class="control-group ">
-                <label class="control-label">Seleccionar Archivo</label>
+            <div class="control-group col-sm-5 ">
+                <label class="control-label">Seleccionar Archivo:</label>
                 <div class="controls">
                     <input type="file" id="foto" name="foto">
                 </div>
             </div>
             
             <div class="control-group col-sm-5">
-		<label class="control-label" for="selectError">Asignar salón</label>
+		<label class="control-label" for="selectError">Asignar salón:</label>
 		<div class="controls">
-                    <select  data-rel="chosen" name="id_party" id="party">
+                    <select  data-rel="chosen" name="party" id="party">
                         <?php
                 $condition='true';
                 $sql1 = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
-                $result1 = $mysqli->query($sql1);
+                $result1 = $mysqli2->query($sql1);
                  if ($result1->num_rows > 0) { 
                             $combobit1 = "";
                             while ($row1 = $result1->fetch_array(MYSQLI_ASSOC)) {
@@ -162,21 +162,21 @@
                         } else {
                                 echo "No hubo resultados";
                                 }
-                        $mysqli->close(); //cerramos la conexión
+                        $mysqli2->close(); //cerramos la conexión
                         echo $combobit1;
                     ?>
                 </select>
 		</div>
             </div>
             <div class="control-group col-sm-5">
-		<label class="control-label" for="selectError">Tipo de evento</label>
+		<label class="control-label" for="selectError">Tipo de evento:</label>
 		<div class="controls ">
                     <select  data-rel="chosen" name="event" id="event">
                  <?php
                         
                     
                         $sql = "SELECT id_event,nombre from events ";
-                        $result = $mysqli2->query($sql);
+                        $result = $mysqli3->query($sql);
                         if ($result->num_rows > 0) { 
                             $combobit2 = "";
                             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -185,7 +185,7 @@
                         } else {
                                 echo "No hubo resultados";
                                 }
-                        $mysqli2->close(); //cerramos la conexión
+                        $mysqli3->close(); //cerramos la conexión
                         echo $combobit2;
                     ?>
                 </select>
@@ -193,21 +193,21 @@
             </div>
             
             <div class="control-group col-sm-5 ">
-		<label class="control-label" for="focusedInput">Descripcion Corta </label>
+		<label class="control-label" for="focusedInput">Descripcion Corta: </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused"  type="text" value="This is focused…"
-                               id="desc_short" id="nm">
+                        <input class="input-xlarge focused"  type="text" name="desc_short"
+                               id="desc_short" >
 		    </div>
 	    </div>
             <div class="control-group col-sm-5">
-		<label class="control-label" for="focusedInput">Descripcion Larga </label>
+		<label class="control-label" for="focusedInput">Descripcion Larga:</label>
 		    <div class="controls">
-                        <textarea class="input-xlarge focused" type="text" value="This is focused…"
-                                  id="desc_long" id="nm"> </textarea>
+                        <textarea class="input-xlarge focused" type="text" name="desc_long"
+                                  id="desc_long"> </textarea>
 		    </div>
 	    </div>
             <div class="control-group col-sm-5">
-		<label class="control-label" for="selectError">Estatus</label>
+		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
                     <select id="status" data-rel="chosen" name="status">
                         <option value=true>Activa</option>
@@ -216,9 +216,9 @@
 		</div>
             </div>
             <div class="control-group col-sm-5">
-		<label class="control-label" for="selectError">Decoration</label>
+		<label class="control-label" for="selectError">Decoration:</label>
 		<div class="controls">
-                    <select id="decoration" data-rel="chosen" name="status">
+                    <select id="decoration" data-rel="chosen" name="decoration">
                         <option value="1">Propia</option>
                     <option value="0">terceros</option>
                     </select>
@@ -228,7 +228,13 @@
             <div class="form-group">
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
             </div>
-            <button type="submit"  class="btn btn-default">Guardar</button>
+            <center>
+                <a href="images.php" class="btn btn-primary btn-md "><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+            <button type="submit"  class="btn btn-success ">Guardar</button>
+            </center>
+                
+            
+            
         </form>
     </div>
 </div>
@@ -239,29 +245,7 @@
 		</div><!--/#content.span10-->
 		</div><!--/fluid-row-->
 		
-	<div class="modal hide fade" id="myModal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Settings</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here settings can be configured...</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
-	<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<ul class="list-inline item-details">
-				<li><a href="http://themifycloud.com">Admin templates</a></li>
-				<li><a href="http://themescloud.org">Bootstrap themes</a></li>
-			</ul>
-		</div>
-	</div>
 	
-	<div class="clearfix"></div>
 	
 	<footer>
 
