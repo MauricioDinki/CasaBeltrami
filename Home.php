@@ -5,12 +5,12 @@
     if (!isset($_SESSION['user_name'])) {
         header("Location: index.php");
     }       
-//    $mail = $_SESSION['user_name'];
-//    $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
-//    $res = mysqli_query($mysqli, $query2);
-//    $mysqli->close(); //cerramos la conexió
-//    $num_row = mysqli_num_rows($res);
-//    $row = mysqli_fetch_array($res);
+    $mail = $_SESSION['user_name'];
+    $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
+    $res3 = mysqli_query($mysqli3, $query3);
+    $mysqli3->close(); //cerramos la conexió
+    $num_row3 = mysqli_num_rows($res3);
+    $row3 = mysqli_fetch_array($res3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +77,7 @@
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
-                                                                <?php echo $row['nombre']?>
+                                                                <?php echo $row3['nombre']?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -141,6 +141,8 @@
                             $res = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
+                                $id_pr=$row['id_party_room'];
+                                
                         ?>
                         <div class="row-fluid sortable">
 				<div class="box span12">
@@ -155,8 +157,18 @@
 					</div>
 					<div class="box-content">
 						<div class="masonry-gallery">
+                                                    <?php
+                                                        include "config.php";
+                                                        error_reporting(E_ALL);
+                                                        $res2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id_pr . "'");
+                                                         $mysqli2->close();
+                                                         while ($row2 = $res2->fetch_assoc()){
+                                                             $path= 'php/album/' . $row2['route'];
+                                                    ?>
+                                                        
 							<div id="image-1" class="masonry-thumb">
-								
+							
+                                                            <img class="grayscale" src="<?php echo $path= 'php/album/' . $row2['route'];?>">
 							</div>
                                                         <div id="image-2" class="masonry-thumb">
 								
@@ -164,8 +176,8 @@
                                                         <div id="image-3" class="masonry-thumb">
 								
 							</div>
-								
-					</div>
+						<?php	}	?>
+					        </div>
 					
 				</div><!--/span-->
 			
