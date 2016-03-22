@@ -144,7 +144,7 @@ if (isset($_POST['bts'])):
         
         if ($stmt->execute()):
             $mysqli->close();
-            header('Location: Galery.php');
+            header('Location: form.php');
 ?>
            <!-- <p></p>
             <div class="alert alert-success alert-dismissible" role="alert">
@@ -200,7 +200,7 @@ if (isset($_POST['bts'])):
 		<label class="control-label" for="focusedInput">Descripción Larga:</label>
 		    <div class="controls">
                         <textarea  rows="6" class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
-                                  name="short_description" id="nm"></textarea>
+                                  name="long_description" id="nm"></textarea>
 		    </div>
 	    </div>
             <div class="control-group col-sm-5 mar-top50">
