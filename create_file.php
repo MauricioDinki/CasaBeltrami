@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Añadir Nueva Imagen</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -62,7 +62,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>JANUX</span></a>
+				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -104,9 +104,9 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                            <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                           <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
+                                            <li class="active"><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
 					</ul>
 				</div>
@@ -122,6 +122,14 @@
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
+                            <ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href="index.html">Home</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Añadir Nueva Imagen</a></li>
+			</ul>
                        <?php
     include "config.php";
     
@@ -175,12 +183,12 @@
                  <?php
                         
                     
-                        $sql = "SELECT id_event,nombre from events ";
+                        $sql = "SELECT id_event,name_event from events ";
                         $result = $mysqli3->query($sql);
                         if ($result->num_rows > 0) { 
                             $combobit2 = "";
                             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit2 .=" <option value='" . $row['id_event'] . "'>" . $row['nombre'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                            $combobit2 .=" <option value='" . $row['id_event'] . "'>" . $row['name_event'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                            }
                         } else {
                                 echo "No hubo resultados";

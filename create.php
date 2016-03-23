@@ -110,8 +110,8 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            <li class="active"><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
@@ -121,15 +121,18 @@
 			</div>
 			<!-- end: Main Menu -->
 			
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
+			
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
+                            <ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href="index.html">Home</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Salones</a></li>
+			</ul>
                        <?php
     include "config.php";
   
@@ -203,7 +206,7 @@ if (isset($_POST['bts'])):
 		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
                     <select id="selectError" data-rel="chosen" name="status">
-                        <option value=true>Activa</option>
+                        <option value="true">Activa</option>
                         <option value="false">Inactivo</option>
                     </select>
 		</div>
@@ -217,7 +220,7 @@ if (isset($_POST['bts'])):
                 <input type="text" class="form-control" name="section" id="">
             </div>-->
             <center>
-                <a href="form.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                <a href="salon.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
                 <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
             </center> 
         </form>

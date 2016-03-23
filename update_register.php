@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Editar Salon</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -111,8 +111,8 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						
                                            	
-                                            <li><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            <li class="active"><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
 					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
@@ -131,6 +131,14 @@
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
+                                 <ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href="index.html">Home</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Editar Salón</a></li>
+			</ul>
                             <?php
 include "config.php";
 
@@ -181,8 +189,8 @@ endif;
                 <div class="control-group col-sm-5 mar-top41">
                     <label class="control-label" for="long_desct">Descripcion Larga </label>
 		    <div class="controls">
-                        <textarea class="input-xlarge focused" id="focusedInput" rows="5" type="text" value="<?php echo $row['long_description'] ?>"
-                                  id="long_desc" name="long_desc"></textarea>
+                        <textarea class="input-xlarge focused" id="focusedInput" rows="5" type="text" 
+                                  id="long_desc" name="long_desc"><?php echo $row['long_description'] ?></textarea>
 		    </div>
                 </div>
                 <div class="control-group col-sm-5 mar-top41">

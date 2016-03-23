@@ -11,6 +11,7 @@
     $mysqli3->close(); //cerramos la conexió
     $num_row3 = mysqli_num_rows($res3);
     $row3 = mysqli_fetch_array($res3);
+    $myuser=$row3['nombre'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +78,7 @@
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
-                                                                <?php echo $row3['nombre']?>
+                                                                <?php echo $myuser ?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -106,7 +107,7 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                             <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
@@ -158,7 +159,7 @@
                                                     <?php
                                                         include "config.php";
                                                         error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id_pr . "'");
+                                                        $res2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.name_event,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id_pr . "'");
                                                          $mysqli2->close();
                                                          while ($row2 = $res2->fetch_assoc()){
                                                              $path= 'php/album/' . $row2['route'];

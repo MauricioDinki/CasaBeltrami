@@ -110,7 +110,7 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                             <li class="active"><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
@@ -136,7 +136,7 @@
 					<a href="index.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Salones</a></li>
+                                <li><a href="#">Salones Disponibles</a></li>
 			</ul>
 
 			<div class="row-fluid">
@@ -151,14 +151,12 @@
             <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre del Salón</th>
-                        <th>Descripcion Corta</th>
-                        <th>Descripcion Larga</th>
-                        <th>Estatus</th>
-                        <th>Fecha de Creación</th>
-                        <th>Fecha de Modificación</th>
-                       
+                        <th style="text-align: center">ID</th>
+                        <th style="text-align: center">Nombre del Salón</th>
+                        <th style="text-align: center">Descripcion Corta</th>
+                        <th style="text-align: center">Descripcion Larga</th>
+                        <th style="text-align: center">Estatus</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -168,11 +166,11 @@
                         while ($row = $res->fetch_assoc()):
                     ?>
                         <tr>
-                            <td><?php echo $row['id_party_room'] ?></td>
-                            <td><?php echo $row['party_room_name'] ?></td>
-                            <td><?php echo $row['short_description'] ?></td>
-                            <td><?php echo $row['long_description'] ?></td>
-                            <td>
+                            <td style="text-align: center"><?php echo $row['id_party_room'] ?></td>
+                            <td style="text-align: center"><?php echo $row['party_room_name'] ?></td>
+                            <td style="text-align: center"><?php echo $row['short_description'] ?></td>
+                            <td style="text-align: center"><?php echo $row['long_description'] ?></td>
+                            <td style="text-align: center">
                                 <?php 
                                         if ($row['status']=='true'){
                                             echo 'acitvo';
@@ -181,14 +179,18 @@
                                         }    
                                 ?>
                             </td>
-                            <td><?php echo $row['creation_date'] ?></td>
-                            <td><?php echo $row['modification_date'] ?></td>
+                           
                             
-                            <td>
+                            <td >
+                            <center>
                                 <a class="btn btn-lg btn-success" href="update_register.php?u=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
+                            </center>
                             </td> 
                             <td>
+                            <center>
                                 <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                                
+                            </center>
                             </td>
                         </tr>
                         <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -203,7 +205,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
-                                        <a href="Delete.php?d=<?php echo $row['id_galery'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                        <a href="Delete.php?d=<?php echo $row['id_party_room'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
                                     </div>
                                 </div>
                             </div>

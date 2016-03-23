@@ -108,8 +108,8 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            <li><a href="form.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
@@ -143,12 +143,12 @@
                              <a href="create_file.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Archivo</a><br/>
             </p>
                               <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Titulo</th>
-                        <th>Imagen</th>
-                        <th>Estatus</th>
+                <thead >
+                    <tr >
+                        <th style="text-align: center">ID</th>
+                        <th style="text-align: center">Titulo</th>
+                        <th style="text-align: center">Imagen</th>
+                        <th style="text-align: center"> Estatus</th>
                        
                     </tr>
                 </thead>
@@ -159,10 +159,10 @@
                         while ($row = $res->fetch_assoc()):
                     ?>
                         <tr>
-                            <td><?php echo $row['id_content'] ?></td>
-                            <td><?php echo $row['tittle'] ?></td>
+                            <td style="text-align: center"><?php echo $row['id_content'] ?></td>
+                            <td style="text-align: center"><?php echo $row['tittle'] ?></td>
                             <td ><img class="grayscale" src="<?php echo 'php/album/' . $row['route'];?>" style="width: 250px"></td>
-                            <td>
+                            <td style="text-align: center">
                                 <?php 
                                         if ($row['status']=='true'){
                                             echo 'acitvo';
@@ -173,7 +173,9 @@
                             </td>
                            
                             <td>
+                                <center>
                                 <a class="btn btn-lg btn-success" href="update_photo.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
+                                </center>
                             </td>
                             
                             

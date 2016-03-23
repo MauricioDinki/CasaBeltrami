@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Editar Datos de Imagen</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -68,7 +68,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>JANUX</span></a>
+				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -111,7 +111,7 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						
                                             <li><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
-                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
 						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
@@ -138,16 +138,16 @@
     if (isset($_GET['u'])):
         $id = $_GET['u'];
         if (isset($_POST['bts'])):
-        $stmt = $mysqli->prepare("UPDATE content SET title=?,short_description=?, long_description=?, status=?,modification_date=? WHERE id_content=?");
+        $stmt = $mysqli->prepare("UPDATE content SET tittle=?,short_description=?, long_description=?, status=?,modification_date=? WHERE id_content=?");
         $stmt->bind_param('ssssss', $title, $short_d, $long_d, $status_photo, $m_date_photo, $id_content);
         $title = $_POST['title'];
         $short_d = $_POST['sd'];
         $long_d = $_POST['ld'];
-        $status_photo = $_POST['st'];
+        $status_photo = $_POST['status'];
         $m_date_photo = $_POST['md'];
         $id_content = $_POST['id_content'];
         if ($stmt->execute()):
-            echo "<script>location.href='Galery_Photos.php'</script>";
+            echo "<script>location.href='images.php'</script>";
         else:
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;
@@ -163,49 +163,49 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <form  role="form" method="post" class="form-horizontal">
-                <input type="hidden" value="<?php echo $row['id_party_room'] ?>" name="id_party_room"/>
-                <div class="control-group">
-                    <label class="control-label" for="focusedInput">Titulo De la Imagen </label>
+                <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
+                <div class="control-group col-sm-5 mar-top40">
+                    <label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['tittle'] ?>"
                                id="title" name="title">
 		    </div>
                 </div>
-                  <div class="control-group">
-                    <label class="control-label" for="focusedInput">Descripción Corta </label>
+                  <div class="control-group col-sm-5 mar-top41">
+                    <label class="control-label" for="focusedInput">Descripción Corta: </label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description']?>"
-                               id="title" name="sd">
+                               id="sd" name="sd">
 		    </div>
                 </div>
-                  <div class="control-group">
-                    <label class="control-label" for="focusedInput">Descripcion Larga</label>
+                  <div class="control-group col-sm-5 mar-top41">
+                    <label class="control-label" for="focusedInput">Descripcion Larga:</label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['long_description']?>"
-                               id="title" name="ld">
+                        <textarea class="input-xlarge focused" rows="5" id="focusedInput" type="text" 
+                                  id="ld" name="ld"><?php echo $row['long_description']?></textarea>
 		    </div>
                 </div>
-                     <div class="control-group">
-		<label class="control-label" for="selectError">Estatus</label>
+                     <div class="control-group col-sm-5 mar-top41">
+		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
                      <?php if ($row['status'] == 'true') { ?>
-                            <select id="selectError" data-rel="chosen" name="status">
+                            <select id="status" data-rel="chosen" name="status">
                                 <option value="true"><?php echo 'activo' ?></option>
                                 <option value="false">Inactivo</option>
                             </select>
                         <?php } else {?>
-                        <select id="selectError" data-rel="chosen" name="status">
+                        <select id="status" data-rel="chosen" name="status">
                             <option value="false"><?php echo 'inactivo' ?></option>
                             <option value="true">activo</option>
                         </select>
                          <?php } ?>
 		</div>
             </div>
-                <div class="control-group">
-                    <label class="control-label" for="focusedInput">Fecha de Creación </label>
+                <div class="control-group col-sm-5">
+                    <label class="control-label" for="focusedInput">Fecha de Creación: </label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo date("Y/m/d") ?>"
-                               id="title" name="ld">
+                               id="title" name="ld" disabled="">
 		    </div>
                 </div>
                 
@@ -213,8 +213,10 @@
                 <div class="form-group">
                     <input type="hidden" class="form-control" name="md" id="tl" value="">
                 </div>
-                <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
-                <a href="Galery_Photos.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                <center>
+                    <a href="images.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
+                </center>
             </form>
         </div>
     </div>
