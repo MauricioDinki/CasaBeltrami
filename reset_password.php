@@ -36,7 +36,7 @@ if (isset($_POST['btn-login'])) {
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Reset Password</title>
 	<meta name="description" content="Bootstrap Metro Dashboard"/>
 	<meta name="author" content="Dennis Ji"/>
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
@@ -62,7 +62,7 @@ if (isset($_POST['btn-login'])) {
         <div class="row-fluid">
             <div class="row-fluid">
                 <div class="login-box">
-                    <div class="col-sm-10 col-sm-offset-2">
+                    <div >
                             <?php echo $result; ?>    
                             </div>
                     <div class="icons">

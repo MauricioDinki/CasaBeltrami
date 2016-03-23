@@ -9,7 +9,7 @@
    
 <?php
 if (isset($_POST['btn-login'])) {
-        $email = $_GET['user'];
+        $email = base64_decode($_GET['user']);
         $new_pass = $_POST['pass1'];
         $stmt = $mysqli->prepare("UPDATE Users SET password=? WHERE user=?");
         $stmt->bind_param('ss', $new_pass, $email);
@@ -53,9 +53,9 @@ if (isset($_POST['btn-login'])) {
         <div class="row-fluid">
             <div class="row-fluid">
                 <div class="login-box">
-                    <div class="col-sm-10 col-sm-offset-2">
-                            <?php echo $result; ?>    
-                            </div>
+                    <div >
+                      <?php echo $result; ?>    
+                    </div>
                     <div id="messages_content"></div>
                     <div data-alerts="alerts" data-titles="{'warning': '<em>Warning!</em>'}" data-ids="myid" data-fade="3000"></div>
                     <div class="icons">

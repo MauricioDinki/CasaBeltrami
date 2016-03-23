@@ -6,6 +6,7 @@ use Mailgun\Mailgun;
 require 'vendor/autoload.php';
 $name = $user;
 $email = $email_restart;
+$mail_encrypt=  base64_encode($email_restart);
 
 
 /*JDB */
@@ -30,11 +31,13 @@ $send_to = $email;
         'text' => 
         
         'Hola ' . $user . ' 
+       
             
-            
-        solicitaste recuperar tu password de administrador de la galeria, para poder renovar tu password hacé click en el siguiente link:
+        solicitaste recuperar tu password de administrador de la galeria, para poder renovar tu password haz click en el siguiente link:
 
-        http://localhost/CasaBeltrami/new_pass.php?user='.$email.'
+        http://localhost/CasaBeltrami/new_pass.php?user='.$mail_encrypt .'
+            
+         
 
         Si no solicitaste recuperar tu password, simplemente ignora este email.'
     ));
