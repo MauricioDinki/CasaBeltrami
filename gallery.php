@@ -1,3 +1,17 @@
+<?php
+    include "config.php";
+    error_reporting(E_ALL);
+    session_start();
+    if (!isset($_SESSION['user_name'])) {
+        header("Location: index.php");
+    }       
+    $mail = $_SESSION['user_name'];
+    $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
+    $res3 = mysqli_query($mysqli3, $query3);
+    $mysqli3->close(); //cerramos la conexió
+    $num_row3 = mysqli_num_rows($res3);
+    $row3 = mysqli_fetch_array($res3);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,270 +66,26 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>JANUX</span></a>
+				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="icon-bell"></i>
-								<span class="badge red">
-								7 </span>
-							</a>
-							<ul class="dropdown-menu notifications">
-								<li class="dropdown-menu-title">
- 									<span>You have 11 notifications</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>	
-                            	<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">1 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">7 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">8 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">16 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">36 min</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon yellow"><i class="icon-shopping-cart"></i></span>
-										<span class="message">2 items sold</span>
-										<span class="time">1 hour</span> 
-                                    </a>
-                                </li>
-								<li class="warning">
-                                    <a href="#">
-										<span class="icon red"><i class="icon-user"></i></span>
-										<span class="message">User deleted account</span>
-										<span class="time">2 hour</span> 
-                                    </a>
-                                </li>
-								<li class="warning">
-                                    <a href="#">
-										<span class="icon red"><i class="icon-shopping-cart"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">6 hour</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon green"><i class="icon-comment-alt"></i></span>
-										<span class="message">New comment</span>
-										<span class="time">yesterday</span> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="icon blue"><i class="icon-user"></i></span>
-										<span class="message">New user registration</span>
-										<span class="time">yesterday</span> 
-                                    </a>
-                                </li>
-                                <li class="dropdown-menu-sub-footer">
-                            		<a>View all notifications</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- start: Notifications Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="icon-calendar"></i>
-								<span class="badge red">
-								5 </span>
-							</a>
-							<ul class="dropdown-menu tasks">
-								<li class="dropdown-menu-title">
- 									<span>You have 17 tasks in progress</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">iOS Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim red">80</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">Android Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim green">47</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">ARM Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim yellow">32</div> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">ARM Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim greenLight">63</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">ARM Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim orange">80</div> 
-                                    </a>
-                                </li>
-								<li>
-                            		<a class="dropdown-menu-sub-footer">View all tasks</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- end: Notifications Dropdown -->
-						<!-- start: Message Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="icon-envelope"></i>
-								<span class="badge red">
-								4 </span>
-							</a>
-							<ul class="dropdown-menu messages">
-								<li class="dropdown-menu-title">
- 									<span>You have 9 messages</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>	
-                            	<li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	6 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	56 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	3 hours
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	yesterday
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	Jul 25, 2012
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-								<li>
-                            		<a class="dropdown-menu-sub-footer">View all messages</a>
-								</li>	
-							</ul>
-						</li>
+				
 						
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white user"></i> Dennis Ji
+								<i class="halflings-icon white user"></i> 
+                                                                <?php echo $row3['nombre']?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-menu-title">
- 									<span>Account Settings</span>
+ 									<span>Opciones</span>
 								</li>
-								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+								
+								<li><a href="logout.php?logout"><i class="halflings-icon off"></i> Cerrar Sesión</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -335,28 +105,11 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
-						<li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Messages</span></a></li>
-						<li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
-						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
-						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
-						<li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
-							<ul>
-								<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
-								<li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
-							</ul>	
-						</li>
-						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
-						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
-						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
-						<li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
-						<li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
-						<li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
-						<li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
-						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+						<li><a href="form.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
+                                            <li class="active"><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -376,80 +129,64 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+                                        <a href="Home.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
 				<li><a href="#">Gallery</a></li>
 			</ul>
-
-			<div class="row-fluid sortable">
+                        <?php
+                            include "config.php";
+                            error_reporting(E_ALL);
+                            $res = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room");
+                            $mysqli->close();
+                            while ($row = $res->fetch_assoc()){
+                                $id_pr=$row['id_party_room'];
+                                
+                        ?>
+                        <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break"></span> Gallery</h2>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['party_room_name'];?></span></h2>
 						<div class="box-icon">
-							<a href="#" id="toggle-fullscreen" class="hidden-phone hidden-tablet"><i class="halflings-icon white fullscreen"></i></a>
-							<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+							
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+							
 						</div>
 					</div>
 					<div class="box-content">
 						<div class="masonry-gallery">
-														<div id="image-1" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo1.jpg)" title="Sample Image 1" href="img/gallery/photo1.jpg"><img class="grayscale" src="img/gallery/photo1.jpg" alt="Sample Image 1"></a>
+                                                    <?php
+                                                        include "config.php";
+                                                        error_reporting(E_ALL);
+                                                        $res2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id_pr . "'");
+                                                         $mysqli2->close();
+                                                         while ($row2 = $res2->fetch_assoc()){
+                                                             $path= 'php/album/' . $row2['route'];
+                                                    ?>
+                                                        
+							<div id="image-1" class="masonry-thumb">
+							
+                                                            <img  src="<?php echo $path= 'php/album/' . $row2['route'];?>">
 							</div>
-														<div id="image-2" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo2.jpg)" title="Sample Image 2" href="img/gallery/photo2.jpg"><img class="grayscale" src="img/gallery/photo2.jpg" alt="Sample Image 2"></a>
+                                                        <div id="image-2" class="masonry-thumb">
+								
 							</div>
-														<div id="image-3" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo3.jpg)" title="Sample Image 3" href="img/gallery/photo3.jpg"><img class="grayscale" src="img/gallery/photo3.jpg" alt="Sample Image 3"></a>
+                                                        <div id="image-3" class="masonry-thumb">
+								
 							</div>
-														<div id="image-4" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo4.jpg)" title="Sample Image 4" href="img/gallery/photo4.jpg"><img class="grayscale" src="img/gallery/photo4.jpg" alt="Sample Image 4"></a>
-							</div>
-														<div id="image-5" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo5.jpg)" title="Sample Image 5" href="img/gallery/photo5.jpg"><img class="grayscale" src="img/gallery/photo5.jpg" alt="Sample Image 5"></a>
-							</div>
-														<div id="image-6" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo6.jpg)" title="Sample Image 6" href="img/gallery/photo6.jpg"><img class="grayscale" src="img/gallery/photo6.jpg" alt="Sample Image 6"></a>
-							</div>
-														<div id="image-7" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo7.jpg)" title="Sample Image 7" href="img/gallery/photo7.jpg"><img class="grayscale" src="img/gallery/photo7.jpg" alt="Sample Image 7"></a>
-							</div>
-														<div id="image-8" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo8.jpg)" title="Sample Image 8" href="img/gallery/photo8.jpg"><img class="grayscale" src="img/gallery/photo8.jpg" alt="Sample Image 8"></a>
-							</div>
-														<div id="image-9" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo9.jpg)" title="Sample Image 9" href="img/gallery/photo9.jpg"><img class="grayscale" src="img/gallery/photo9.jpg" alt="Sample Image 9"></a>
-							</div>
-														<div id="image-10" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo10.jpg)" title="Sample Image 10" href="img/gallery/photo10.jpg"><img class="grayscale" src="img/gallery/photo10.jpg" alt="Sample Image 10"></a>
-							</div>
-														<div id="image-11" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo11.jpg)" title="Sample Image 11" href="img/gallery/photo11.jpg"><img class="grayscale" src="img/gallery/photo11.jpg" alt="Sample Image 11"></a>
-							</div>
-														<div id="image-12" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo12.jpg)" title="Sample Image 12" href="img/gallery/photo12.jpg"><img class="grayscale" src="img/gallery/photo12.jpg" alt="Sample Image 12"></a>
-							</div>
-														<div id="image-13" class="masonry-thumb">
-								<a style="background:url(img/gallery/photo13.jpg)" title="Sample Image 13" href="img/gallery/photo13.jpg"><img class="grayscale" src="img/gallery/photo13.jpg" alt="Sample Image 13"></a>
-							</div>
-													</div>
-					</div>
-					<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
-						<div class="modal-content">
-							<ul class="list-inline item-details">
-								<li><a href="http://themifycloud.com">Admin templates</a></li>
-								<li><a href="http://themescloud.org">Bootstrap themes</a></li>
-							</ul>
-						</div>
-					</div>
+						<?php	}	?>
+					        </div>
+					
 				</div><!--/span-->
 			
 			</div><!--/row-->
-    
+                    </div><!--/.fluid-container-->
+                                       <?php }
+                           
+                               
+                                
+                        ?>    
 
-	</div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->

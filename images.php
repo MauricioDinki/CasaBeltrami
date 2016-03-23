@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Imagenes Registradas</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -67,7 +67,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>JANUX</span></a>
+				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -108,11 +108,11 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						
-						<li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
-                                                <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
-						
+                                            <li><a href="form.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -148,11 +148,8 @@
                         <th>ID</th>
                         <th>Titulo</th>
                         <th>Imagen</th>
-                        <th>Descripcion Corta</th>
-                        <th>Descripcion Larga</th>
                         <th>Estatus</th>
-                        <th>Fecha de Creación</th>
-                        <th>Fecha de Modificación</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -164,9 +161,7 @@
                         <tr>
                             <td><?php echo $row['id_content'] ?></td>
                             <td><?php echo $row['tittle'] ?></td>
-                            <td><?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" >' ?></img></td>
-                            <td><?php echo $row['short_description'] ?></td>
-                            <td><?php echo $row['long_description'] ?></td>
+                            <td ><img class="grayscale" src="<?php echo 'php/album/' . $row['route'];?>" style="width: 250px"></td>
                             <td>
                                 <?php 
                                         if ($row['status']=='true'){
@@ -176,15 +171,14 @@
                                         }    
                                  ?>
                             </td>
-                            <td><?php echo $row['creation_date'] ?></td>
-                            <td><?php echo $row['modification_date'] ?></td>
+                           
                             <td>
                                 <a class="btn btn-lg btn-success" href="update_photo.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
                             </td>
                             
                             
                             <td>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal"  >
+                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal"   >
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
                             </td>
                              <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">

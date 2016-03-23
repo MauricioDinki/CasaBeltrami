@@ -18,7 +18,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Página Principal</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -105,12 +105,11 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						
-						 	
-                                            <li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
-                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
-                                            <li><a href="gallery.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
-						
+                                            <li><a href="form.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -133,7 +132,7 @@
                                         <a href="Home.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Galería</a></li>
 			</ul>
                         <?php
                             include "config.php";
@@ -149,10 +148,9 @@
 					<div class="box-header" data-original-title>
 						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['party_room_name'];?></span></h2>
 						<div class="box-icon">
-							<a href="#" id="toggle-fullscreen" class="hidden-phone hidden-tablet"><i class="halflings-icon white fullscreen"></i></a>
-							<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+						
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-							<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+							
 						</div>
 					</div>
 					<div class="box-content">
@@ -168,7 +166,7 @@
                                                         
 							<div id="image-1" class="masonry-thumb">
 							
-                                                            <img class="grayscale" src="<?php echo $path= 'php/album/' . $row2['route'];?>">
+                                                            <img  src="<?php echo $path= 'php/album/' . $row2['route'];?>">
 							</div>
                                                         <div id="image-2" class="masonry-thumb">
 								
