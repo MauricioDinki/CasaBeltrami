@@ -111,9 +111,11 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						
                                            	
-                                            <li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
+                                            <li><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
+                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
+					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
 						
 					</ul>
 				</div>
@@ -147,7 +149,7 @@ if (isset($_GET['u'])):
        
         $id_galery = $_POST['id_party_room'];
         if ($stmt->execute()):
-            echo "<script>location.href='form.php'</script>";
+            echo "<script>location.href='salon.php'</script>";
         else:
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;
@@ -203,7 +205,7 @@ endif;
                     <input type="hidden" class="form-control" name="modification_date" id="tl" value="<?php echo date("Y/m/d") ?>">
                 </div>
                 <center>
-                     <a href="form.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                     <a href="salon.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
                     <button type="submit" name="bts" class="btn btn-success">Guardar Cambios</button>
                 </center>
             </form>
