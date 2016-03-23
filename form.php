@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>Salónes Registrados</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -68,7 +68,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>JANUX</span></a>
+				<a class="brand" href="index.php"><span>Casa Beltrami</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -109,11 +109,11 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						
-                                            <li><a href="form.php"><i class="icon-edit"></i><span class="hidden-tablet"> Salones</span></a></li>
-                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet">Imagenes</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
-						
+                                            <li><a href="form.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="tasks.html"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -133,10 +133,10 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="index.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Charts</a></li>
+				<li><a href="#">Salones</a></li>
 			</ul>
 
 			<div class="row-fluid">
@@ -158,7 +158,7 @@
                         <th>Estatus</th>
                         <th>Fecha de Creación</th>
                         <th>Fecha de Modificación</th>
-                        <th>Seccion a la que pertenece</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -183,7 +183,7 @@
                             </td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['modification_date'] ?></td>
-                            <td><?php echo $row['section'] ?></td>
+                            
                             <td>
                                 <a class="btn btn-lg btn-success" href="update_register.php?u=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
                             </td> 
