@@ -134,27 +134,30 @@
     include "config.php";
     
 ?>
-
+<h1 style="text-align: center">LLENA LOS SIGUIENTES CAMPOS</h1>
 <p><br/></p>
+
 <div class="panel panel-default">
+    
     <div class="panel-body">
+        
         <form  id="subida" class="form-horizontal">
             
-             <div class="control-group col-sm-5">
+             <div class="control-group col-sm-5 mar-top40">
 		<label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
 		    <div class="controls">
                         <input class="input-xlarge focused" type="text" id="title" name="title" >
 		    </div>
 	    </div>
             
-            <div class="control-group col-sm-5 ">
+            <div class="control-group col-sm-5 mar-top41">
                 <label class="control-label">Seleccionar Archivo:</label>
                 <div class="controls">
                     <input type="file" id="foto" name="foto">
                 </div>
             </div>
             
-            <div class="control-group col-sm-5">
+            <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Asignar salón:</label>
 		<div class="controls">
                     <select  data-rel="chosen" name="party" id="party">
@@ -176,7 +179,7 @@
                 </select>
 		</div>
             </div>
-            <div class="control-group col-sm-5">
+            <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Tipo de evento:</label>
 		<div class="controls ">
                     <select  data-rel="chosen" name="event" id="event">
@@ -200,21 +203,21 @@
 		</div>
             </div>
             
-            <div class="control-group col-sm-5 ">
+            <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripcion Corta: </label>
 		    <div class="controls">
                         <input class="input-xlarge focused"  type="text" name="desc_short"
                                id="desc_short" >
 		    </div>
 	    </div>
-            <div class="control-group col-sm-5">
+            <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripcion Larga:</label>
 		    <div class="controls">
                         <textarea class="input-xlarge focused" type="text" name="desc_long"
                                   id="desc_long"> </textarea>
 		    </div>
 	    </div>
-            <div class="control-group col-sm-5">
+            <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
                     <select id="status" data-rel="chosen" name="status">
@@ -223,7 +226,7 @@
                     </select>
 		</div>
             </div>
-            <div class="control-group col-sm-5">
+            <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Decoration:</label>
 		<div class="controls">
                     <select id="decoration" data-rel="chosen" name="decoration">
@@ -237,7 +240,7 @@
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
             </div>
             <center>
-                <a href="images.php" class="btn btn-primary btn-md "><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                <a href="images.php" class="btn btn-primary btn-md mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
             <button type="submit"  class="btn btn-success ">Guardar</button>
             </center>
                 

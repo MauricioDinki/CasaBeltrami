@@ -213,7 +213,7 @@ endif;
                     <input type="hidden" class="form-control" name="modification_date" id="tl" value="<?php echo date("Y/m/d") ?>">
                 </div>
                 <center>
-                     <a href="salon.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                     <a href="salon.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
                     <button type="submit" name="bts" class="btn btn-success">Guardar Cambios</button>
                 </center>
             </form>

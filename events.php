@@ -131,7 +131,7 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="index.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
 				<li><a href="#">Eventos</a></li>
@@ -162,13 +162,13 @@
                             <td style="text-align: center"><?php echo $row['id_event'] ?></td>
                             <td style="text-align: center"><?php echo $row['name_event'] ?></td>
                             
-                            <td style="text-align: center"><?php echo $row['status'] ?></td>
+                            
                             <td style="text-align: center">
                                 <?php 
-                                        if ($row['status']=='true'){
-                                            echo 'acitvo';
-                                        }elseif($row['status']=='false') {
-                                            echo 'inactivo';
+                                        if ($row['status']=='1'){
+                                            echo 'Acitvo';
+                                        }elseif($row['status']=='0') {
+                                            echo 'Inactivo';
                                         }    
                                 ?>
                             </td>
@@ -176,7 +176,7 @@
                             
                             <td >
                             <center>
-                                <a class="btn btn-lg btn-success" href="update_register.php?u=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
+                                <a class="btn btn-lg btn-success" href="update_event.php?u=<?php echo $row['id_event'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
                             </center>
                             </td> 
                             <td>
@@ -197,7 +197,7 @@
                                         <h3>¿Estas seguro de eliminar la galeria?</h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
+                                        <button type="button" class="btn btn-default " data-dismiss="modal">Cerrrar</button>
                                         <a href="Delete.php?d=<?php echo $row['id_party_room'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
                                     </div>
                                 </div>

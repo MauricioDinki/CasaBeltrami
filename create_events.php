@@ -131,7 +131,7 @@
 					<a href="index.html">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Editar Evento</a></li>
+				<li><a href="#">Crear un Evento</a></li>
 			</ul>
                                 
                             
@@ -207,10 +207,12 @@ if (isset($_POST['bts'])):
                 <label for="section">Seccion a la que pertenece</label>
                 <input type="text" class="form-control" name="section" id="">
             </div>-->
+        <div class="mar-top60" >
             <center>
-                <a href="salon.php" class="btn btn-primary btn-md center-block"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
+                <a href="events.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
                 <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
             </center> 
+        </div>
         </form>
           
     </div>

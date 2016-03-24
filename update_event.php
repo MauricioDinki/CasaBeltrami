@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Agregar Nuevo Salón</title>
+	<title>Editar Salon</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -37,8 +37,7 @@
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
-	<script src="js/bootbox.js"></script>
-<script src="js/bootbox.min.js"></script>
+	
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -110,130 +109,130 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            <li class="active"><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+						
+                                           	
+                                            <li ><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
+                                            <li class="active"><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
-                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
+                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
+					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
 						
 					</ul>
 				</div>
 			</div>
 			<!-- end: Main Menu -->
 			
-			
+			<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">Warning!</h4>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+				</div>
+			</noscript>
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
-                            <ul class="breadcrumb">
+                                 <ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
 					<a href="index.html">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Salones</a></li>
+				<li><a href="#">Editar Evento</a></li>
 			</ul>
-                       <?php
-    include "config.php";
+                            <?php
+include "config.php";
+
+error_reporting(E_ALL);
+
   
-if (isset($_POST['bts'])):
-    if ($_POST['party_room_name'] != null && $_POST['short_description'] != null && $_POST['status'] != null ) {
-        $stmt = $mysqli->prepare("INSERT INTO party_room(party_room_name,short_description,long_description,status,creation_date) VALUES (?,?,?,?,?)");
-        $stmt->bind_param('sssss', $party_room_name, $short_desc, $long_desc, $status, $creation_date);
-        $party_room_name = $_POST['party_room_name'];
-        $short_desc = $_POST['short_description'];
-        $long_desc = $_POST['long_description'];
-        $status = $_POST['status'];
-        $creation_date = $_POST['creation_date'];
-        
+if (isset($_GET['u'])):
+    if (isset($_POST['bts'])):
+        $stmt = $mysqli2->prepare("UPDATE events SET name_event=?, status=? WHERE id_event=?");
+        $stmt->bind_param('sss', $title,$status_galery, $id_event_name);
+        $title = $_POST['name_event'];
+        $status_galery = $_POST['status'];
+        $id_event_name = $_POST['id_event'];
         if ($stmt->execute()):
-         header('Location: form.php');
-?>             
-              
-<?php
-    else:
-?>
-    <p></p>
-    <div class="alert alert-danger alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <strong>Error!</strong> <?php echo $stmt->error; ?>
-    </div>
-<?php
+            echo "<script>location.href='events.php'</script>";
+        else:
+            echo "<script>alert('" . $stmt->error . "')</script>";
+        endif;
     endif;
-    } else {
+    $res = $mysqli2->query("SELECT * FROM events WHERE id_event=" . $_GET['u']);
+    $row = $res->fetch_assoc();
+    $mysqli2->close();
+endif;
 ?>
-    <p></p>
-        <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <strong>Error!</strong>Llena los campos
-        </div>
-<?php
-    }
-    endif;
-?>
-    <br>
-   <h1 style="text-align: center">LLENA LOS SIGUIENTES CAMPOS</h1>  
-    <p><br/></p>
-    
+<p><br/></p>
     <div class="panel panel-default">
-        
-    <div class="panel-body">
-        <form role="form" method="post" class="form-horizontal">
+        <div class="panel-body">
+            <form role="form" method="post" class="form-horizontal">
+                <input type="hidden" value="<?php echo $row['id_event'] ?>" name="id_event"/>
+                <div class="control-group col-sm-6 mar-top40">
+                    <label class="control-label" for="title_galery">Nombre del evento:</label>
+		    <div class="controls">
+		        <input class="input-xlarge focused" id="name_event" type="text" value="<?php echo $row['name_event'] ?>"
+                        name="name_event">
+		    </div>
+                </div>
             
-            <div class="control-group col-sm-5 mar-top40">
-		<label class="control-label" for="focusedInput">Nombre:</label>
-		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" 
-                               name="party_room_name" id="nm">
-		    </div>
-	    </div>
-            
-            <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripción Corta:</label>
-		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" 
-                               name="short_description" id="nm">
-		    </div>
-	    </div>
-            <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripción Larga:</label>
-		    <div class="controls">
-                        <textarea  rows="6" class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
-                                  name="long_description" id="nm"></textarea>
-		    </div>
-	    </div>
-            <div class="control-group col-sm-5 mar-top50">
+                <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
-                    <select id="selectError" data-rel="chosen" name="status">
-                        <option value="true">Activa</option>
-                        <option value="false">Inactivo</option>
-                    </select>
+                     <?php if ($row['status'] == '1') { ?>
+                            <select id="selectError" data-rel="chosen" name="status">
+                                <option value="1"><?php echo 'activo' ?></option>
+                                <option value="0">Inactivo</option>
+                            </select>
+                        <?php } else {?>
+                        <select id="selectError" data-rel="chosen" name="status">
+                            <option value="0"><?php echo 'inactivo' ?></option>
+                            <option value="1">activo</option>
+                        </select>
+                         <?php } ?>
 		</div>
             </div>
-            
-            <div class="form-group">
-                <input type="hidden" type="text" class="form-control" name="creation_date" id="" value="<?php echo date("Y/m/d") ?>">
-            </div>  
-<!--            <div class="form-group">
-                <label for="section">Seccion a la que pertenece</label>
-                <input type="text" class="form-control" name="section" id="">
-            </div>-->
-            <center>
-                <a href="salon.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
-                <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
-            </center> 
-        </form>
-          
-    </div>
-</div>
+                
+                
+                    <center>
+                        <a href="events.php" class="btn btn-primary btn-md mar-top60 mar-right " ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a> 
+                        <button type="submit" name="bts" class="btn btn-success mar-top60">Guardar Cambios</button>
+                    </center>
+               
+                
+            </form>
+        </div>
+
+		
+			
 
                         </div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
 		</div><!--/fluid-row-->
-
+		
+	<div class="modal hide fade" id="myModal">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Settings</h3>
+		</div>
+		<div class="modal-body">
+			<p>Here settings can be configured...</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal">Close</a>
+			<a href="#" class="btn btn-primary">Save changes</a>
+		</div>
+	</div>
+	<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-content">
+			<ul class="list-inline item-details">
+				<li><a href="http://themifycloud.com">Admin templates</a></li>
+				<li><a href="http://themescloud.org">Bootstrap themes</a></li>
+			</ul>
+		</div>
+	</div>
 	
 	<div class="clearfix"></div>
 	

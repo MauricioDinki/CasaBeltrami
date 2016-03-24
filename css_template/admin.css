@@ -3082,3 +3082,53 @@ ul.messagesList li span.date {
 }
   
 }
+
+.mar-top60{
+    margin-top: 60px;
+}
+@media only screen and (max-width:768px) { 
+   .mar-top60{
+    margin-top: auto;
+}
+}
+@media only screen and (max-width:480px) { 
+  .mar-top60{
+    margin-top: auto;
+}  
+}
+@media only screen and (max-width:360px) { 
+  .mar-top60{
+   margin-top: auto;
+}  
+}
+@media only screen and (max-width:320px) { 
+  .mar-top60{
+    margin-top: auto;
+}
+  
+}
+
+.mar-right {
+    margin-right: 20px;
+}
+@media only screen and (max-width:768px) { 
+ .mar-right {
+   margin-right: 20px;
+}
+}
+@media only screen and (max-width:480px) { 
+.mar-right {
+    margin-right: 20px;
+}  
+}
+@media only screen and (max-width:360px) { 
+ .mar-right {
+    margin-right: 20px;
+}  
+}
+@media only screen and (max-width:320px) { 
+ .mar-right {
+   margin-right: 20px;
+}
+  
+}
