@@ -113,7 +113,7 @@
                                            	
                                             <li ><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
                                             <li class="active"><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+				            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
 					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
 						
@@ -137,7 +137,7 @@
 					<a href="index.html">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Editar Evento</a></li>
+				<li><i class="icon-globe"></i><a href="events.php">&nbsp; Editar Evento</a></li>
 			</ul>
                             <?php
 include "config.php";
@@ -239,7 +239,7 @@ endif;
 	<footer>
 
 		<p>
-			<span style="text-align:left;float:left">&copy; 2013 <a href="http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template/" alt="Bootstrap_Metro_Dashboard">JANUX Responsive Dashboard</a></span>
+			<span style="text-align:left;float:left">&copy; 2016 <a >Blick</a></span>
 			
 		</p>
 

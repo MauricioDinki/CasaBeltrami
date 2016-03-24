@@ -7,8 +7,8 @@
     }       
     $mail = $_SESSION['user_name'];
     $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
-    $res = mysqli_query($mysqli, $query2);
-    $mysqli->close(); //cerramos la conexió
+    $res = mysqli_query($mysqli2, $query2);
+    $mysqli2->close(); //cerramos la conexió
     $num_row = mysqli_num_rows($res);
     $row = mysqli_fetch_array($res);
 ?>
@@ -112,7 +112,7 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                             <li ><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
                                             <li class="active"  ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
 						
@@ -128,10 +128,10 @@
                        <ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="index.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Crear un Evento</a></li>
+                                <li><i class="icon-globe"></i><a href="events.php">&nbsp; Crear Evento</a></li>
 			</ul>
                                 
                             
@@ -139,23 +139,26 @@
     include "config.php";
   
 if (isset($_POST['bts'])):
-    if ($_POST['name_event'] != null && $_POST['status'] != null ) {
+    if ($_POST['name_event'] != null && $_POST['status'] != null) {
         $stmt = $mysqli->prepare("INSERT INTO events(name_event,status) VALUES (?,?)");
         $stmt->bind_param('ss', $name_event,$status);
         $name_event = $_POST['name_event'];
-       
         $status = $_POST['status'];
         
-        
         if ($stmt->execute()):
-         header('Location: events.php');
-?>             
-              
+            $mysqli->close();
+              echo "<script>location.href='events.php'</script>";
+?>
+           <!-- <p></p>
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Galeria Ingresada correctamente,Felicadades!</strong><a href="Galery.php">Principal</a>.
+            </div>-->
 <?php
     else:
 ?>
     <p></p>
-    <div class="alert alert-danger alert-dismissible" role="alert">
+    <div class="alert alert-error alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <strong>Error!</strong> <?php echo $stmt->error; ?>
     </div>
@@ -164,9 +167,9 @@ if (isset($_POST['bts'])):
     } else {
 ?>
     <p></p>
-        <div class="alert alert-warning alert-dismissible" role="alert">
+        <div class="alert alert-error " role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <strong>Error!</strong>Llena los campos
+            <strong>Error!</strong> Por favor Llena todos los campos
         </div>
 <?php
     }
@@ -230,7 +233,7 @@ if (isset($_POST['bts'])):
 	<footer>
 
 		<p>
-			<span style="text-align:left;float:left">&copy; 2013 <a href="http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template/" alt="Bootstrap_Metro_Dashboard">JANUX Responsive Dashboard</a></span>
+			<span style="text-align:left;float:left">&copy; 2016 <a >Blick</a></span>
 			
 		</p>
 
