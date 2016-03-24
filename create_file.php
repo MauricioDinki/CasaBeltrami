@@ -227,12 +227,26 @@
 		</div>
             </div>
             <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="selectError">Decoration:</label>
-		<div class="controls">
-                    <select id="decoration" data-rel="chosen" name="decoration">
-                        <option value="1">Propia</option>
-                    <option value="0">terceros</option>
-                    </select>
+		<label class="control-label" for="selectError">Tipo De Servicio:</label>
+		<div class="controls ">
+                    <select  data-rel="chosen" name="service[]" id="service" multiple="multiple">
+                 <?php
+                        
+                    
+                        $sql = "SELECT id_service,name_service from services ";
+                        $result = $mysqli4->query($sql);
+                        if ($result->num_rows > 0) { 
+                            $combobit3 = "";
+                            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                            $combobit3 .=" <option value='" . $row['id_service'] . "'>" . $row['name_service'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                           }
+                        } else {
+                                echo "No hubo resultados";
+                                }
+                        $mysqli4->close(); //cerramos la conexión
+                        echo $combobit3;
+                    ?>
+                </select>
 		</div>
             </div>
             

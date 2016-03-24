@@ -3,6 +3,7 @@
     error_reporting(E_ALL);
     //query para insertar imagen obtenemos valores por get los cuales los recibimos de query por post
     $title = $_GET['title'];
+    
     $sd = $_GET['desc_short'];
     $ld = $_GET['desc_long'];
     $st = $_GET['status'];
@@ -21,11 +22,19 @@
     
     //query para relacionar imagen con galeria(s) 
     
-   
-            $relacion = mysqli_query($mysqli2, "INSERT INTO content_party_room (id_content,id_party_room,id_event,decoration)"
-                             . "VALUES('$id_img','$id_party','$event','$decoration')");
-          
+     $service = $_GET['service'];
+     if ($service){
+        foreach ($service as $s){
+            mysqli_query($mysqli2,"INSERT INTO content_party_room (id_content,id_party_room,id_event,id_service) 
+                VALUES ('".$id_img."','".$id_party."','".$event."',".mysqli_real_escape_string($mysqli2,$s).")");
+            }
             $mysqli2->close(); 
-       
+     
+        }
+//            $relacion = mysqli_query($mysqli2, "INSERT INTO content_party_room (id_content,id_party_room,id_event,service)"
+//                             . "VALUES('$id_img','$id_party','$event','$service')");
+//          
+//            $mysqli2->close(); 
+//       
        
 ?>

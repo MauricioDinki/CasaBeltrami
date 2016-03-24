@@ -188,12 +188,12 @@
                             </td> 
                             <td>
                             <center>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                                <a class="btn btn-lg btn-warning" href="delete_salon.php?d=<?php echo $row['id_party_room'] ?>"><span class="glyphicon glyphicon-trash" ></span> Borrar</a>
                                 
                             </center>
                             </td>
                         </tr>
-                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<!--                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -209,7 +209,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <?php
                             endwhile;
                         ?>
