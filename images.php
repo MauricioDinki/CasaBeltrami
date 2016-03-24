@@ -183,7 +183,7 @@
                                 <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal"   >
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
                             </td>
-                             <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                             <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

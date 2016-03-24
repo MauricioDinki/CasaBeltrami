@@ -158,6 +158,7 @@
                         $res = $mysqli->query("SELECT * FROM services");
                         $mysqli->close();
                         while ($row = $res->fetch_assoc()):
+                            $idser= $row['id_service'];
                     ?>
                         <tr>
                             <td style="text-align: center"><?php echo $row['id_service'] ?></td>
@@ -180,31 +181,33 @@
                             <center>
                                 <a class="btn btn-lg btn-success" href="update_service.php?u=<?php echo $row['id_service'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
                             </center>
+                         
                             </td> 
                             <td>
                             <center>
-                                <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
-                                
-                            </center>
-                            </td>
-                        </tr>
-                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                            <div class="modal-dialog">
+                                <a class="btn btn-lg btn-warning" href="delete_service.php?d=<?php echo $row['id_service'] ?>"><span class="glyphicon glyphicon-trash" ></span> Borrar</a>
+                                             
+<!--                                <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
+                            <div class="modal-dialog" >
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Atención </h4>
                                     </div>
                                     <div class="modal-body">
-                                        <h3>¿Estas seguro de eliminar la galeria?</h3>
+                                        <h3>¿Estas seguro de eliminar la galeria? <?php echo $idser?></h3>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default " data-dismiss="modal">Cerrrar</button>
-                                        <a href="Delete.php?d=<?php echo $row['id_party_room'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                        <a href="Delete.php?d=<?php echo $row['id_service'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
+                            </center>
+                            </td>
+                        </tr>
+                        
                         <?php
                             endwhile;
                         ?>
@@ -300,6 +303,7 @@
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
+
 	<!-- end: JavaScript-->
 	
 </body>
