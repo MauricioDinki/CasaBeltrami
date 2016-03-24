@@ -161,7 +161,7 @@
                         <tr>
                             <td style="text-align: center"><?php echo $row['id_content'] ?></td>
                             <td style="text-align: center"><?php echo $row['tittle'] ?></td>
-                            <td ><img class="grayscale" src="<?php echo 'php/album/' . $row['route'];?>" style="width: 250px"></td>
+                            <td ><a href=""  data-toggle="modal" data-target="#basicModal2"><img class="grayscale" src="<?php echo 'php/album/' . $row['route'];?>" style="width: 250px"></a></td>
                             <td style="text-align: center">
                                 <?php 
                                         if ($row['status']=='true'){
@@ -196,6 +196,16 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
                                             <a href="Delete_Photo.php?d=<?php echo $row['id_content'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal2" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class=" modal-content modal-content-img">
+                                            <button type="button" class="close btn-close-img" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <div class="modal-body modal-body-img">
+                                           <img class="grayscale modal-img" src="<?php echo 'php/album/' . $row['route'];?>">
                                         </div>
                                     </div>
                                 </div>
