@@ -167,13 +167,23 @@
                                                         
 							<div id="image-1" class="masonry-thumb">
 							
-                                                            <img  src="<?php echo $path= 'php/album/' . $row2['route'];?>">
+                                                            <a href=""  data-toggle="modal" data-target="#basicModal2"><img  src="<?php echo $path= 'php/album/' . $row2['route'];?>"></a>
 							</div>
                                                         <div id="image-2" class="masonry-thumb">
 								
 							</div>
                                                         <div id="image-3" class="masonry-thumb">
 								
+							</div>
+							 <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal2" aria-hidden="true">
+							    <div class="modal-dialog">
+							        <div class=" modal-content modal-content-img">
+							                <button type="button" class="close btn-close-img" data-dismiss="modal" aria-hidden="true">&times;</button>
+							            <div class="modal-body modal-body-img">
+							               <img class="grayscale modal-img" src="<?php echo 'php/album/' . $row['route'];?>">
+							            </div>
+							        </div>
+							    </div>
 							</div>
 						<?php	}	?>
 					        </div>
