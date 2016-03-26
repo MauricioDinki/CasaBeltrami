@@ -33,6 +33,8 @@
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css_template/admin.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css_template/style_common.css" />
+        <link rel="stylesheet" type="text/css" href="css_template/style1.css" />
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
@@ -159,28 +161,27 @@
                                                     <?php
                                                         include "config.php";
                                                         error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.name_event,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id_pr . "'");
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.short_description,c.long_description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_party_room ='" . $id_pr . "'");
                                                          $mysqli2->close();
                                                          while ($row2 = $res2->fetch_assoc()){
                                                              $path= 'php/album/' . $row2['route'];
                                                     ?>
                                                         
-							<div id="image-1" class="masonry-thumb">
-							
-                                                            <a href=""  data-toggle="modal" data-target="#basicModal2"><img  src="<?php echo $path= 'php/album/' . $row2['route'];?>"></a>
-							</div>
-                                                        <div id="image-2" class="masonry-thumb">
-								
-							</div>
-                                                        <div id="image-3" class="masonry-thumb">
-								
-							</div>
-							 <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal2" aria-hidden="true">
+							 <div class="masonry-thumb view view-first">
+                                                         <img src="<?php echo $path= 'php/album/' . $row2['route'];?>" />
+                                                             <div class="mask">
+                                                                 <h2><?php echo $row2['tittle']?></h2>
+                                                                       <p><?php $row2['id_content']?></p>
+                                                                       <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>" class="info"><i class="icon-trash"></i> Eliminar</a>
+                                                                       <a href=""  data-toggle="modal" data-target="#basicModal2" class="info"><i class="icon-zoom-in"></i> Zoom</a>
+                                                            </div>
+                                                    </div>  
+                                                   <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal2" aria-hidden="true">
 							    <div class="modal-dialog">
 							        <div class=" modal-content modal-content-img">
 							                <button type="button" class="close btn-close-img" data-dismiss="modal" aria-hidden="true">&times;</button>
 							            <div class="modal-body modal-body-img">
-							               <img class="grayscale modal-img" src="<?php echo 'php/album/' . $row['route'];?>">
+							               <img class="grayscale modal-img" src="<?php echo 'php/album/' . $row2['route'];?>">
 							            </div>
 							        </div>
 							    </div>
