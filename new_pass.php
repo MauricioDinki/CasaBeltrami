@@ -64,16 +64,16 @@ if (isset($_POST['btn-login'])) {
                     </div>
                         <h2>Ingresa tu Nueva Contraseña</h2>
                             <form class="form-horizontal"  method="post" onSubmit="return validarPasswd()" >
-                                <div class="input-prepend col-xs-10 col-xs-offset-1" title="Username">
+                                <div class="input-prepend" title="Username">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
                                     <input class="input-large span10" name="pass1" id="pass1"type="password" placeholder="Nueva Constraseña"/>
                                 </div>
-                                <div class="input-prepend col-xs-10 col-xs-offset-1" title="Username">
+                                <div class="input-prepend" title="Username">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
                                     <input class="input-large span10" name="pass2" id="pass2"type="password" placeholder="Repetir Contraseña"/>
                                 </div>
                                 
-                                <div class="button-login col-xs-10 col-xs-offset-1">	
+                                <div class="button-login">	
                                     <button type="submit" class="btn btn-primary" name="btn-login">Guardar</button>
                                 </div>
                                 <div class="clearfix"></div>

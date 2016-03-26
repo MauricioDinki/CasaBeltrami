@@ -171,7 +171,7 @@ endif;
                 <input type="hidden" value="<?php echo $row['id_service'] ?>" name="id_service"/>
                 <div class="control-group col-sm-5 mar-top40">
 		<label class="control-label" for="focusedInput">Nombre Del Servicio:</label>
-		    <div class="controls col-xs-10 col-xs-offset-1">
+		    <div class="controls">
                         <input class="input-xlarge focused" id="focusedInput" type="text"  value="<?php echo $row['name_service'] ?>"
                                name="name_service" id="nm">
 		    </div>
@@ -179,14 +179,14 @@ endif;
      
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripción Larga:</label>
-		    <div class="controls col-xs-10 col-xs-offset-1">
+		    <div class="controls">
                         <textarea  rows="4" class="input-xlarge focused" id="focusedInput" type="text" 
                                    name="service_description" id="nm"><?php echo $row['service_description'];?></textarea>
 		    </div>
 	    </div>
                <div class="control-group  mar-top41">
 		<label class="control-label" for="selectError">Estatus:</label>
-		<div class="controls col-xs-10 col-xs-offset-1">
+		<div class="controls">
                      <?php if ($row['status'] == '1') { ?>
                             <select id="selectError" data-rel="chosen" name="status">
                                 <option value="1"><?php echo 'activo' ?></option>

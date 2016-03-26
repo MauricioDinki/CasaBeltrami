@@ -186,7 +186,7 @@ if (isset($_POST['bts'])):
             
             <div class="control-group col-sm-5 mar-top40">
 		<label class="control-label" for="focusedInput">Nombre del evento:</label>
-		    <div class="controls col-xs-10 col-xs-offset-1">
+		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="name_event" id="nm">
 		    </div>
@@ -195,7 +195,7 @@ if (isset($_POST['bts'])):
             
             <div class="control-group col-sm-5 mar-top50">
 		<label class="control-label" for="selectError">Estatus:</label>
-		<div class="controls col-xs-10 col-xs-offset-1">
+		<div class="controls">
                     <select id="selectError" data-rel="chosen" name="status">
                         <option value="1">Activa</option>
                         <option value="0">Inactivo</option>
@@ -203,7 +203,7 @@ if (isset($_POST['bts'])):
 		</div>
             </div>
             
-            <div class="form-group col-xs-10 col-xs-offset-1">
+            <div class="form-group">
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="" value="<?php echo date("Y/m/d") ?>">
             </div>  
 <!--            <div class="form-group">
