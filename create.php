@@ -182,7 +182,7 @@ if (isset($_POST['bts'])):
             
             <div class="control-group col-sm-5 mar-top40">
 		<label class="control-label" for="focusedInput">Nombre:</label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="party_room_name" id="nm">
 		    </div>
@@ -190,21 +190,21 @@ if (isset($_POST['bts'])):
             
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripción Corta:</label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="short_description" id="nm">
 		    </div>
 	    </div>
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripción Larga:</label>
-		    <div class="controls">
+		    <div class="controlscol-xs-10 col-xs-offset-1">
                         <textarea  rows="6" class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
                                   name="long_description" id="nm"></textarea>
 		    </div>
 	    </div>
             <div class="control-group col-sm-5 mar-top50">
 		<label class="control-label" for="selectError">Estatus:</label>
-		<div class="controls">
+		<div class="controls col-xs-10 col-xs-offset-1">
                     <select id="selectError" data-rel="chosen" name="status">
                         <option value="true">Activa</option>
                         <option value="false">Inactivo</option>
@@ -212,7 +212,7 @@ if (isset($_POST['bts'])):
 		</div>
             </div>
             
-            <div class="form-group">
+            <div class="form-group col-xs-10 col-xs-offset-1">
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="" value="<?php echo date("Y/m/d") ?>">
             </div>  
 <!--            <div class="form-group">

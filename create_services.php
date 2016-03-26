@@ -181,7 +181,7 @@
             
             <div class="control-group col-sm-5 mar-top40">
 		<label class="control-label" for="focusedInput">Nombre Del Servicio:</label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="name_service" id="nm">
 		    </div>
@@ -189,14 +189,14 @@
      
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripción Larga:</label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
                         <textarea  rows="4" class="input-xlarge focused" id="focusedInput" type="text" 
                                   name="service_description" id="nm"></textarea>
 		    </div>
 	    </div>
             <div class="control-group col-sm-5  ">
 		<label class="control-label" for="selectError">Estatus:</label>
-		<div class="controls">
+		<div class="controls col-xs-10 col-xs-offset-1">
                     <select id="selectError" data-rel="chosen" name="status">
                         <option value="1">Activa</option>
                         <option value="0">Inactivo</option>

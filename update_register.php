@@ -174,28 +174,28 @@ endif;
                 <input type="hidden" value="<?php echo $row['id_party_room'] ?>" name="id_party_room"/>
                 <div class="control-group col-sm-5 mar-top40">
                     <label class="control-label" for="title_galery">Nombre del salón: </label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="title_galery" type="text" value="<?php echo $row['party_room_name'] ?>"
                         name="title_galery">
 		    </div>
                 </div>
                 <div class="control-group col-sm-5 mar-top41">
                     <label class="control-label" for="short_desc">Descripcion Corta </label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description'] ?>"
                                id="short_desc" name="short_desc">
 		    </div>
                 </div>
                 <div class="control-group col-sm-5 mar-top41">
                     <label class="control-label" for="long_desct">Descripcion Larga </label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
                         <textarea class="input-xlarge focused" id="focusedInput" rows="5" type="text" 
                                   id="long_desc" name="long_desc"><?php echo $row['long_description'] ?></textarea>
 		    </div>
                 </div>
                 <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus</label>
-		<div class="controls">
+		<div class="controls col-xs-10 col-xs-offset-1">
                      <?php if ($row['status'] == 'true') { ?>
                             <select id="selectError" data-rel="chosen" name="status">
                                 <option value="true"><?php echo 'activo' ?></option>

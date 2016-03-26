@@ -166,28 +166,28 @@
                 <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
                 <div class="control-group col-sm-5 mar-top40">
                     <label class="control-label" for="focusedInput">Titulo De la Imagen: </label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['tittle'] ?>"
                                id="title" name="title">
 		    </div>
                 </div>
                   <div class="control-group col-sm-5 mar-top41">
                     <label class="control-label" for="focusedInput">Descripción Corta: </label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description']?>"
                                id="sd" name="sd">
 		    </div>
                 </div>
                   <div class="control-group col-sm-5 mar-top41">
                     <label class="control-label" for="focusedInput">Descripcion Larga:</label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
                         <textarea class="input-xlarge focused" rows="5" id="focusedInput" type="text" 
                                   id="ld" name="ld"><?php echo $row['long_description']?></textarea>
 		    </div>
                 </div>
                      <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus:</label>
-		<div class="controls">
+		<div class="controls col-xs-10 col-xs-offset-1">
                      <?php if ($row['status'] == 'true') { ?>
                             <select id="status" data-rel="chosen" name="status">
                                 <option value="true"><?php echo 'activo' ?></option>
@@ -203,7 +203,7 @@
             </div>
                 <div class="control-group col-sm-5">
                     <label class="control-label" for="focusedInput">Fecha de Creación: </label>
-		    <div class="controls">
+		    <div class="controls col-xs-10 col-xs-offset-1">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo date("Y/m/d") ?>"
                                id="title" name="ld" disabled="">
 		    </div>
