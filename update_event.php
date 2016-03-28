@@ -195,8 +195,8 @@ endif;
                 
                 
                     <center>
-                        <a href="events.php" class="btn btn-primary btn-md mar-top60 mar-right " ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a> 
-                        <button type="submit" name="bts" class="btn btn-success mar-top60">Guardar Cambios</button>
+                        <a href="events.php" class="btn btn-primary btn-md mar-top60 mar-right " ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp;Regresar</a> 
+                        <button type="submit" name="bts" class="btn btn-success mar-top60"><i class="icon-refresh"></i>&nbsp; Guardar Cambios</button>
                     </center>
                
                 
