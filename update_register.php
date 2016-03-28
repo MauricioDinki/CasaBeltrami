@@ -147,11 +147,10 @@ error_reporting(E_ALL);
   
 if (isset($_GET['u'])):
     if (isset($_POST['bts'])):
-        $stmt = $mysqli2->prepare("UPDATE party_room SET party_room_name=?, short_description=?, long_description=?, status=?,modification_date=? WHERE id_party_room=?");
-        $stmt->bind_param('ssssss', $title, $short_decription, $long_description, $status_galery, $modification_date,$id_galery);
+        $stmt = $mysqli2->prepare("UPDATE party_room SET party_room_name=?, description=?, status=?,modification_date=? WHERE id_party_room=?");
+        $stmt->bind_param('sssss', $title,$description_salon, $status_galery, $modification_date,$id_galery);
         $title = $_POST['title_galery'];
-        $short_decription = $_POST['short_desc'];
-        $long_description = $_POST['long_desc'];
+        $description_salon = $_POST['desc'];
         $status_galery = $_POST['status'];
         $modification_date = $_POST['modification_date'];
        
@@ -182,17 +181,11 @@ endif;
                 <div class="control-group col-sm-5 mar-top41">
                     <label class="control-label" for="short_desc">Descripcion Corta </label>
 		    <div class="controls">
-		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['short_description'] ?>"
-                               id="short_desc" name="short_desc">
+		        <input class="input-xlarge focused" id="focusedInput" type="text" value="<?php echo $row['description'] ?>"
+                               id="desc" name="desc">
 		    </div>
                 </div>
-                <div class="control-group col-sm-5 mar-top41">
-                    <label class="control-label" for="long_desct">Descripcion Larga </label>
-		    <div class="controls">
-                        <textarea class="input-xlarge focused" id="focusedInput" rows="5" type="text" 
-                                  id="long_desc" name="long_desc"><?php echo $row['long_description'] ?></textarea>
-		    </div>
-                </div>
+               
                 <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus</label>
 		<div class="controls">
@@ -213,8 +206,8 @@ endif;
                     <input type="hidden" class="form-control" name="modification_date" id="tl" value="<?php echo date("Y/m/d") ?>">
                 </div>
                 <center>
-                     <a href="salon.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
-                    <button type="submit" name="bts" class="btn btn-success">Guardar Cambios</button>
+                     <a href="salon.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>
+                     <button type="submit" name="bts" class="btn btn-success"><i class="icon-save"></i>&nbsp; Guardar Cambios</button>
                 </center>
             </form>
         </div>

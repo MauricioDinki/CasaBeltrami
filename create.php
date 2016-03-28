@@ -69,7 +69,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="#"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -137,12 +137,11 @@
     include "config.php";
   
 if (isset($_POST['bts'])):
-    if ($_POST['party_room_name'] != null && $_POST['short_description'] != null && $_POST['status'] != null ) {
-        $stmt = $mysqli->prepare("INSERT INTO party_room(party_room_name,short_description,long_description,status,creation_date) VALUES (?,?,?,?,?)");
-        $stmt->bind_param('sssss', $party_room_name, $short_desc, $long_desc, $status, $creation_date);
+    if ($_POST['party_room_name'] != null && $_POST['description'] != null && $_POST['status'] != null ) {
+        $stmt = $mysqli->prepare("INSERT INTO party_room(party_room_name,description,status,creation_date) VALUES (?,?,?,?)");
+        $stmt->bind_param('ssss', $party_room_name, $long_desc, $status, $creation_date);
         $party_room_name = $_POST['party_room_name'];
-        $short_desc = $_POST['short_description'];
-        $long_desc = $_POST['long_description'];
+        $long_desc = $_POST['description'];
         $status = $_POST['status'];
         $creation_date = $_POST['creation_date'];
         
@@ -181,7 +180,7 @@ if (isset($_POST['bts'])):
         <form role="form" method="post" class="form-horizontal">
             
             <div class="control-group col-sm-5 mar-top40">
-		<label class="control-label" for="focusedInput">Nombre:</label>
+		<label class="control-label" for="focusedInput">Nombre del Salón:</label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" 
                                name="party_room_name" id="nm">
@@ -189,19 +188,13 @@ if (isset($_POST['bts'])):
 	    </div>
             
             <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripción Corta:</label>
+		<label class="control-label" for="focusedInput">Descripción:</label>
 		    <div class="controls">
 		        <input class="input-xlarge focused" id="focusedInput" type="text" 
-                               name="short_description" id="nm">
+                               name="description" id="nm">
 		    </div>
 	    </div>
-            <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripción Larga:</label>
-		    <div class="control">
-                        <textarea  rows="6" class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…"
-                                  name="long_description" id="nm"></textarea>
-		    </div>
-	    </div>
+            
             <div class="control-group col-sm-5 mar-top50">
 		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
@@ -220,8 +213,8 @@ if (isset($_POST['bts'])):
                 <input type="text" class="form-control" name="section" id="">
             </div>-->
             <center>
-                <a href="salon.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
-                <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
+                <a href="salon.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>
+                <button type="submit" name="bts" class="btn btn-success center-block"><i class="icon-save"></i>Guardar</button>
             </center> 
         </form>
           

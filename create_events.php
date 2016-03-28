@@ -69,7 +69,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="#"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -176,7 +176,7 @@ if (isset($_POST['bts'])):
     endif;
 ?>
     <br>
-    <div style="text-align: center"><h1 >Llena los siguientes Campos </h1></div>
+    <div style="text-align: center"><h1>LLENA LOS SIGUIENTES CAMPOS </h1></div>
     <p><br/></p>
     
     <div class="panel panel-default">
@@ -212,8 +212,8 @@ if (isset($_POST['bts'])):
             </div>-->
         <div class="mar-top60" >
             <center>
-                <a href="events.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
-                <button type="submit" name="bts" class="btn btn-success center-block">Guardar</button>
+                <a href="events.php" class="btn btn-primary btn-md center-block mar-right"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>
+                <button type="submit" name="bts" class="btn btn-success center-block"><i class="icon-save"></i>&nbsp;Guardar</button>
             </center> 
         </div>
         </form>
