@@ -3,15 +3,14 @@
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
-        header("Location: index.php");
+        header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
-    $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
-    $res3 = mysqli_query($mysqli3, $query3);
-    $mysqli3->close(); //cerramos la conexió
-    $num_row3 = mysqli_num_rows($res3);
-    $row3 = mysqli_fetch_array($res3);
-    $myuser=$row3['nombre'];
+    $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
+    $res = mysqli_query($mysqli, $query2);
+    $mysqli->close(); //cerramos la conexió
+    $num_row = mysqli_num_rows($res);
+    $row = mysqli_fetch_array($res);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Servicios Disponibles</title>
+	<title>Eventos Registrados</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -33,7 +32,11 @@
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        
+        
 	<link id="base-style" href="css_template/admin.css" rel="stylesheet">
+          <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
@@ -68,26 +71,28 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="#"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-				
-						
+			
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
-                                                                <?php echo $myuser ?>
+                                                                <?php echo $row['nombre']; ?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-menu-title">
- 									<span>Account Settings</span>
+                                                                    <span>Opciones</span>   
 								</li>
-								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+								
+                                                                <li><a href="logout.php?logout">
+                                                                        <i class="halflings-icon off">
+                                                                            </i> Cerrar Sesión
+                                                                    </a>  </li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -107,11 +112,11 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            <li ><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li class="active"><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                             <li ><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
+                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+				            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
-                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>   
 					</ul>
 				</div>
 			</div>
@@ -131,92 +136,74 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.php">Home</a> 
+                                        <a href="Home.php">Inicio</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><i class="icon-tags"></i><a href="salon.php">&nbsp;Servicios Disponibles</a></li>
+                                <li><a href="#"><i class="icon-upload-alt"></i>&nbsp;Imagenes</a></li>
 			</ul>
 
 			<div class="row-fluid">
-				
-		
-            <p>
-                <a href="create_services.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Servicio</a><br/>
+			 <p>
+                            <center>
+                                <a href="create_services.php" class="btn btn-primary btn-md mar-topbtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Servicio</a><br/>
+                            </center>
             </p>
-            <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
+            <table id="example" class="display table table-bordered table-stripe" cellspacing="4"  style="margin-top: 50px">
+                <thead >
+                    <tr >
                         <th style="text-align: center">ID</th>
-                        <th style="text-align: center">Nombre del Evento</th>
-                        <th style="text-align: center">Descripción</th>
-                        <th style="text-align: center">Estatus</th>
-                        
+                        <th style="text-align: center">Nombre del Servicio</th>
+                        <th style="text-align: center"> Estatus</th>
+                        <th style="text-align: center"> Opciones</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                        $res = $mysqli->query("SELECT * FROM services");
-                        $mysqli->close();
+                        $res = $mysqli2->query("SELECT * FROM services order by id_service desc");
+                        $mysqli2->close();
                         while ($row = $res->fetch_assoc()):
-                            $idser= $row['id_service'];
                     ?>
                         <tr>
-                            <td style="text-align: center"><?php echo $row['id_service'] ?></td>
-                            <td style="text-align: center"><?php echo $row['name_service'] ?></td>
-                            <td style="text-align: center"><?php echo $row['service_description'] ?></td>
+                            <td style="text-align: center;" width="2%" class="mar-toptable"><?php echo $row['id_service'] ?></td>
+                            <td style="text-align: center;"width="8%"><?php echo $row['name_service'];  ?></td>
                             
-                            
-                            <td style="text-align: center">
+                            <td style="text-align: center;" width="5%">
                                 <?php 
                                         if ($row['status']=='1'){
-                                            echo 'Acitvo';
+                                            echo 'Activo';
                                         }elseif($row['status']=='0') {
                                             echo 'Inactivo';
                                         }    
-                                ?>
+                                 ?>
                             </td>
                            
-                            
-                            <td >
-                            <center>
-                                <a class="btn btn-lg btn-success" href="update_service.php?u=<?php echo $row['id_service'] ?>"><span class="glyphicon glyphicon-pencil" ></span> Editar</a>
-                            </center>
-                         
-                            </td> 
-                            <td>
-                            <center>
-                                <a class="btn btn-lg btn-warning" href="delete_service.php?d=<?php echo $row['id_service'] ?>"><span class="glyphicon glyphicon-trash" ></span> Borrar</a>
-                                             
-<!--                                <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
-                            <div class="modal-dialog" >
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
-                                        <h4 class="modal-title" id="myModalLabel">Atención </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>¿Estas seguro de eliminar la galeria? <?php echo $idser?></h3>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default " data-dismiss="modal">Cerrrar</button>
-                                        <a href="Delete.php?d=<?php echo $row['id_service'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                            </center>
+                            <td width="10%">
+                                <center>
+                                    <a class="btn btn-lg btn-success mar-toptable" href="update_service.php?u=<?php echo $row['id_service'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
+                                </center>
                             </td>
+                            
+                            
+                            
                         </tr>
-                        
+             
                         <?php
                             endwhile;
                         ?>
+                    
                 </tbody>
-            </table>	
-			
-       
+            </table>
 
-                        </div><!--/.fluid-container-->
+			</div><!--/row-->
+			
+			
+		
+			<hr>
+		
+			
+
+	</div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
@@ -235,6 +222,14 @@
 			<a href="#" class="btn btn-primary">Save changes</a>
 		</div>
 	</div>
+	<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-content">
+			<ul class="list-inline item-details">
+				<li><a href="http://themifycloud.com">Admin templates</a></li>
+				<li><a href="http://themescloud.org">Bootstrap themes</a></li>
+			</ul>
+		</div>
+	</div>
 	
 	<div class="clearfix"></div>
 	
@@ -248,7 +243,7 @@
 	</footer>
 	
 	<!-- start: JavaScript-->
-
+       
 		<script src="js_template/jquery-1.9.1.min.js"></script>
 	<script src="js_template/jquery-migrate-1.0.0.min.js"></script>
 	
@@ -264,7 +259,7 @@
 	
 		<script src='js_template/fullcalendar.min.js'></script>
 	
-		<script src='js_template/jquery.dataTables.min.js'></script>
+		
 
 		<script src="js_template/excanvas.js"></script>
 	<script src="js_template/jquery.flot.js"></script>
@@ -303,7 +298,17 @@
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
+                <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+             
+        <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+        <script language="JavaScript" type="text/javascript">
+            $(document).ready(function() {
+                 $('#example').DataTable();
+            } );
 
+        </script>
 	<!-- end: JavaScript-->
 	
 </body>

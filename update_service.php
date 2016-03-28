@@ -178,7 +178,7 @@ endif;
 	    </div>
      
             <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripción Larga:</label>
+		<label class="control-label" for="focusedInput">Descripción:</label>
 		    <div class="controls">
                         <textarea  rows="4" class="input-xlarge focused" id="focusedInput" type="text" 
                                    name="service_description" id="nm"><?php echo $row['service_description'];?></textarea>
@@ -205,10 +205,8 @@ endif;
                 
                     <center>
                        
-                         <a href="services.php" class="btn btn-primary btn-md mar-top60 mar-right" ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>    
-                        
-                        
-                        <button type="submit" name="bts" class="btn btn-success mar-top60">Guardar Cambios</button>
+                        <a href="services.php" class="btn btn-primary btn-md mar-top60 mar-right" ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>    
+                        <button type="submit" name="bts" class="btn btn-success mar-top60"><i class="icon-refresh"></i>&nbsp;Guardar Cambios</button>
                     </center>
                
                 
