@@ -9,6 +9,6 @@ if (!isset($_SESSION['user'])) {
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['user']);
-    header("Location: index.php");
+    header("Location: admin.php");
 }
 ?>

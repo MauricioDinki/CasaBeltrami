@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
-        header("Location: index.php");
+        header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
     $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
@@ -70,7 +70,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="index.html"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -111,9 +111,11 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                             <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
                                             <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
-                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
+                                            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salónes</span></a></li>
+                                            <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
+                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -187,8 +189,8 @@
                                                                             <h3>¿Estas seguro de eliminar el contenido?</h3>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon"></i>Cerrrar</button>
-                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>"><button type="button" class="btn btn-success"><i class="icon"></i>Aceptar</button></a>
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrrar</button>
+                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
