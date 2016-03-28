@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Imagenes Registradas</title>
+	<title>Salones Registrados</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -168,8 +168,8 @@
                         <tr>
                             <td style="text-align: center;" width="2%" class="mar-toptable"><?php echo $row['id_party_room'] ?></td>
                             <td style="text-align: center;"width="8%"><?php echo $row['party_room_name'];  ?></td>
-                            <td width="10%"><?php echo  $row['description'];?></td>
-                            <td style="text-align: center;padding-top: 70px" width="5%">
+                            <td width="10%" style="text-align: center;"><?php echo  $row['description'];?></td>
+                            <td style="text-align: center;" width="5%">
                                 <?php 
                                         if ($row['status']=='true'){
                                             echo 'Activo';
