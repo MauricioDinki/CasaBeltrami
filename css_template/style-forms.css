@@ -228,6 +228,26 @@ textarea::-webkit-input-placeholder {
 .input-xlarge {
   width: 270px;
 }
+@media only screen and (max-width:768px) { 
+    .input-xlarge {
+  width: 270px;
+}
+}
+@media only screen and (max-width:480px) { 
+   .input-xlarge {
+  width: 200px;
+}
+}
+@media only screen and (max-width:360px) { 
+    .input-xlarge {
+  width: 200px;
+}
+}
+@media only screen and (max-width:320px) { 
+  .input-xlarge {
+  width: 200px;
+}
+}
 
 .input-xxlarge {
   width: 530px;
@@ -893,12 +913,77 @@ legend + .control-group {
   padding-top: 5px;
   text-align: right;
 }
+@media only screen and (max-width:768px) { 
+  .form-horizontal .control-label {
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+}
+@media only screen and (max-width:480px) { 
+  .form-horizontal .control-label {
+ float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+  
+}
+}
+@media only screen and (max-width:360px) { 
+  .form-horizontal .control-label {
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+}
+@media only screen and (max-width:320px) { 
+  .form-horizontal .control-label {
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+}
 
 .form-horizontal .controls {
   *display: inline-block;
   *padding-left: 20px;
-  margin-left: 180px;
   *margin-left: 0;
+}
+@media only screen and (max-width:768px) { 
+   .form-horizontal .controls {
+  display: inline-block;
+  padding-left: 35px;
+  padding-top: 5px;
+  margin-left: 0;
+  
+}
+}
+@media only screen and (max-width:480px) { 
+   .form-horizontal .controls {
+  display: inline-block;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-left: 0;
+}
+}
+@media only screen and (max-width:360px) { 
+   .form-horizontal .controls {
+  display: inline-block;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-left: 0;
+}
+}
+@media only screen and (max-width:320px) { 
+   .form-horizontal .controls {
+ display: inline-block;
+ padding-left: 15px;
+  padding-top: 5px;
+  margin-left: 0;
+}
 }
 
 .form-horizontal .controls:first-child {

@@ -12,7 +12,7 @@
    cursor: default;
    background: #fff url(../images/bgimg.jpg) no-repeat center center;
 }
-.view .mask,.view .content {
+.view .mask,.view  {
    width: 265px;
    height: 180px;
    position: absolute;
