@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
-        header("Location: index.php");
+        header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
     $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
@@ -114,9 +114,10 @@
                                             <li ><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
                                             <li class="active"><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
-                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
-					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
-						
+                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet">Subir Imagenes</span></a></li>
+					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Salones</span></a></li>
+                                            <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Evento</span></a></li>
+                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -195,8 +196,8 @@ endif;
                 
                 
                     <center>
-                        <a href="events.php" class="btn btn-primary btn-md mar-top60 mar-right " ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a> 
-                        <button type="submit" name="bts" class="btn btn-success mar-top60">Guardar Cambios</button>
+                        <a href="events.php" class="btn btn-primary btn-md mar-top60 mar-right " ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp;Regresar</a> 
+                        <button type="submit" name="bts" class="btn btn-success mar-top60"><i class="icon-refresh"></i>&nbsp; Guardar Cambios</button>
                     </center>
                
                 

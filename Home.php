@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
-        header("Location: index.php");
+        header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
     $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
@@ -33,6 +33,7 @@
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css_template/admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="css_lightbox/lightbox.min.css"> 
         <link rel="stylesheet" type="text/css" href="css_template/style_common.css" />
         <link rel="stylesheet" type="text/css" href="css_template/style1.css" />
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
@@ -69,7 +70,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="index.html"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -110,9 +111,11 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                             <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
                                             <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li><a href="ui.html"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Imagenes</span></a></li>
-                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería</span></a></li>
+                                            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salónes</span></a></li>
+                                            <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
+                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -168,24 +171,32 @@
                                                     ?>
                                                         
 							 <div class="masonry-thumb view view-first">
-                                                         <img src="<?php echo $path= 'php/album/' . $row2['route'];?>" />
+                                                             <img class="example-image" src="<?php echo $path= 'php/album/' . $row2['route'];?>" />
                                                              <div class="mask">
                                                                  <h2><?php echo $row2['tittle']?></h2>
                                                                        <p><?php $row2['id_content']?></p>
-                                                                       <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>" class="info"><i class="icon-trash"></i> Eliminar</a>
-                                                                       <a href=""  data-toggle="modal" data-target="#basicModal2" class="info"><i class="icon-zoom-in"></i> Zoom</a>
+                                                                       <a button type="button" href="#<?php echo $row2['id_content'] ?>" data-toggle="modal" class="btn btn-danger"  > <i class="icon-trash"></i> Eliminar</a>
+                                                                       <a button type="button" href="<?php echo $path= 'php/album/' . $row2['route'];?>" class="example-image-link btn btn-primary"  data-lightbox="example-set" ><i class="icon-zoom-in"></i> Zoom</a>
+                                                            </div>
+                                                         <div class="modal fade" id="<?php echo $row2['id_content'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <h3>¿Estas seguro de eliminar el contenido?</h3>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrrar</button>
+                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                     </div>  
-                                                   <div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal2" aria-hidden="true">
-							    <div class="modal-dialog">
-							        <div class=" modal-content modal-content-img">
-							                <button type="button" class="close btn-close-img" data-dismiss="modal" aria-hidden="true">&times;</button>
-							            <div class="modal-body modal-body-img">
-							               <img class="grayscale modal-img" src="<?php echo 'php/album/' . $row2['route'];?>">
-							            </div>
-							        </div>
-							    </div>
-							</div>
+                                                   
 						<?php	}	?>
 					        </div>
 					
@@ -285,6 +296,7 @@
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
+                  <script src="js_lighbox/lightbox.js"></script>
 	<!-- end: JavaScript-->
 	
 </body>

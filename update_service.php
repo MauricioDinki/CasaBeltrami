@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
-        header("Location: index.php");
+        header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
     $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
@@ -109,14 +109,13 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						
-                                           	
                                             <li ><a href="salon.php"><i class="icon-edit"></i><span class="hidden-tablet">Salones</span></a></li>
                                             <li ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
 				            <li class="active"><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
-                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet"> Imagenes</span></a></li>
-					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería</span></a></li>
-						
+                                            <li><a href="images.php"><i class="icon-list-alt"></i><span class="hidden-tablet">Subir Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Salónes</span></a></li>
+                                            <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
+                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -178,7 +177,7 @@ endif;
 	    </div>
      
             <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripción Larga:</label>
+		<label class="control-label" for="focusedInput">Descripción:</label>
 		    <div class="controls">
                         <textarea  rows="4" class="input-xlarge focused" id="focusedInput" type="text" 
                                    name="service_description" id="nm"><?php echo $row['service_description'];?></textarea>
@@ -205,10 +204,8 @@ endif;
                 
                     <center>
                        
-                         <a href="services.php" class="btn btn-primary btn-md mar-top60 mar-right" ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>    
-                        
-                        
-                        <button type="submit" name="bts" class="btn btn-success mar-top60">Guardar Cambios</button>
+                        <a href="services.php" class="btn btn-primary btn-md mar-top60 mar-right" ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp; Regresar</a>    
+                        <button type="submit" name="bts" class="btn btn-success mar-top60"><i class="icon-refresh"></i>&nbsp;Guardar Cambios</button>
                     </center>
                
                 
