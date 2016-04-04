@@ -147,7 +147,7 @@
 			<div class="row-fluid">
 			 <p>
                             <center>
-                                <a href="create.php" class="btn btn-primary btn-md mar-topbtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Decoración</a><br/>
+                                <a href="create_decorations.php" class="btn btn-primary btn-md mar-topbtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Decoración</a><br/>
                             </center>
             </p>
             <table id="example" class="display table table-bordered table-stripe" cellspacing="4"  style="margin-top: 50px">
