@@ -15,6 +15,10 @@
     if ($mysqli4->connect_errno) {
         echo "Failed to connect to MySQL: " . $mysqli4->connect_error;   
     }
+     $mysqli5 = new mysqli("localhost", "root", "", "CasaBeltrami");
+    if ($mysqli5->connect_errno) {
+        echo "Failed to connect to MySQL: " . $mysqli5->connect_error;   
+    }
 
 //    $mysqli = new mysqli("mysql.hostinger.mx", "u597385701_root", "2011301308", "u597385701_cbgal");
 //    if ($mysqli->connect_errno) {
