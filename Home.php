@@ -116,9 +116,17 @@
 								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet">Decoraciones</span></a></li>
 								
 							</ul>	
-						</li>
+                                            </li>
+                                            <li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span >Servicios</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="services.php"><i class="icon-file-alt"></i><span class="hidden-tablet">Servicios</span></a></li>
+								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet">Sub-servicio</span></a></li>
+								
+							</ul>	
+                                            </li>
                                             <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-                                            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salónes</span></a></li>
                                             <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
