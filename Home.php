@@ -110,18 +110,18 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
                                             <li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span >Salones</span></a>
+							<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="salon.php"><i class="icon-file-alt"></i><span class="hidden-tablet">Salones</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet">Decoraciones</span></a></li>
+                                                            <li><a class="submenu" href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">Salones</span></a></li>
+                                                            <li><a class="submenu" href="decorations.php"><i class="icon-calendar"></i><span class="hidden-tablet">Decoraciones</span></a></li>
 								
 							</ul>	
                                             </li>
                                             <li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span >Servicios</span></a>
+							<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Servicios</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="services.php"><i class="icon-file-alt"></i><span class="hidden-tablet">Servicios</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet">Sub-servicio</span></a></li>
+                                                            <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
+                                                            <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
 								
 							</ul>	
                                             </li>
@@ -205,7 +205,7 @@
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrrar</button>
-                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
+                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>&f=<?php echo $row2['route'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
