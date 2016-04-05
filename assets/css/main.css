@@ -486,6 +486,9 @@ button:active{
 .links-title{
 	padding-top: 80px;
 }
+.links-title-second{
+	padding-top: 50px;
+}
 .img-events-three{
 	background: linear-gradient(
       rgba(0, 0, 0, 0.0), 
@@ -587,6 +590,9 @@ button:active{
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
+}
+.modal.and.carousel {
+  position: fixed; // Needed because the carousel overrides the position property
 }
 .info-header{
 	padding-top: 100px;
@@ -1006,4 +1012,24 @@ ul{
 }
 .padding-carousel{
 	padding-bottom: 140px;
+}
+.vertical-center{
+	display: flex;
+	align-items: center;
+
+}
+.modal-dialog{
+	width: 80%;
+	height: 300px;
+}
+.modal-body{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.modal-image{
+	width: 100%;
+	max-height: 500px;
+
 }
