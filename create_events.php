@@ -110,9 +110,21 @@ $row = mysqli_fetch_array($res);
                 <div id="sidebar-left" class="span2">
                     <div class="nav-collapse sidebar-nav">
                         <ul class="nav nav-tabs nav-stacked main-menu">
-                            <li ><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                            <li class="active"  ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-                            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                            <li >
+				<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="salon.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
+                                    <li><a class="submenu" href="decorations.php"><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
+			        </ul>	
+                            </li>
+                            <li>
+				<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Servicios</span></a>
+                                    <ul>    
+                                        <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
+                                        <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
+			            </ul>	
+                            </li>
+                            <li class="active"><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Evento</span></a></li>
                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Subir Imagenes</span></a></li>
                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salónes</span></a></li>
                             <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>

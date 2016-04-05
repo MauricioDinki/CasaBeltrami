@@ -112,8 +112,8 @@
                                             <li>
 							<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">Salones</span></a></li>
-                                                            <li><a class="submenu" href="decorations.php"><i class="icon-calendar"></i><span class="hidden-tablet">Decoraciones</span></a></li>
+                                                            <li><a class="submenu" href="salon.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
+                                                            <li><a class="submenu" href="decorations.php"><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
 								
 							</ul>	
                                             </li>
@@ -126,11 +126,26 @@
 							</ul>	
                                             </li>
                                             <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-                                            
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
-                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salónes</span></a></li>
+                                            <li>
+							<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Galeria por salones y decoraciones</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="Home.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
+                                                            <li><a class="submenu" href=""><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
+								
+							</ul>	
+                                            </li>
+                                            <li>
+							<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Galería por Servicios y sub Servicios</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
+                                                            <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
+                                                             <li><a class="submenu" href=""><i class="icon-tags"></i><span class="hidden-tablet">linca pols</span></a></li>
+								
+							</ul>	
+                                            </li>
                                             <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
-                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
+                                            
 					</ul>
 				</div>
 			</div>
@@ -179,7 +194,7 @@
                                                     <?php
                                                         include "config.php";
                                                         error_reporting(E_ALL);
-                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.short_description,c.long_description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_party_room ='" . $id_pr . "'");
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_party_room ='" . $id_pr . "'");
                                                          $mysqli2->close();
                                                          while ($row2 = $res2->fetch_assoc()){
                                                              $path= 'php/album/' . $row2['route'];

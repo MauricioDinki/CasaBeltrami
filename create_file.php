@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    include('conexion.php');
+    
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
@@ -12,25 +12,31 @@
     $mysqli->close(); //cerramos la conexió
     $num_row = mysqli_num_rows($res);
     $row = mysqli_fetch_array($res);
-
-                $sql = mysql_query("SELECT * FROM party_room");
-    while($sql_p = mysql_fetch_row($sql))
-    {
-     $combo_paises= "<option value='".$sql_p[0]."'>".$sql_p[1]."</option>";
-    } 
-     
-    
-        $sql = "SELECT id_service,name_service from services ";
-        $result = $mysqli4->query($sql);
-        if ($result->num_rows > 0) { 
-        $combobit3 = "";
-            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                    $combobit3 .=" <option value='" . $row['id_service'] . "'>" . $row['name_service'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+    //query_party_room
+    $sql1 = "SELECT id_party_room,party_room_name from party_room ";
+        $result1 = $mysqli2->query($sql1);
+        if ($result1->num_rows > 0) { 
+        $combo_party_room = "";
+            while ($row1 = $result1->fetch_array(MYSQLI_ASSOC)) {
+                    $combo_party_room .=" <option value='" . $row1['id_party_room'] . "'>" . $row1['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                 }
             } else {
-                    echo "No hubo resultados";
+                    //echo "No hubo resultados";
                     }
-            $mysqli4->close(); //cerramos la conexión
+            $mysqli2->close(); 
+    //close query party_room
+    //query_services        
+        $sql = "SELECT id_service,name_service from services ";
+        $result2 = $mysqli3->query($sql);
+        if ($result2->num_rows > 0) { 
+        $combo_services = "";
+            while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+                    $combo_services .=" <option value='" . $row['id_service'] . "'>" . $row['name_service'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                }
+            } else {
+                    //echo "No hubo resultados";
+                    }
+            $mysqli3->close(); //cerramos la conexión
     
     
     
@@ -68,11 +74,11 @@
         <script type="text/javascript" charset="utf-8">
 	  $(document).ready(function() {
 	  // Parametros para el combo
-	   $("#pais").change(function () {
-	      $("#pais option:selected").each(function () {
+	   $("#salon").change(function () {
+	      $("#salon option:selected").each(function () {
 	        elegido=$(this).val();
-	        $.post("combo_ciudad.php", { elegido: elegido }, function(data){
-	        $("#ciudad").html(data);
+	        $.post("combo_decoration.php", { elegido: elegido }, function(data){
+	        $("#decoration").html(data);
 	      });     
 	     });
 	   });    
@@ -150,9 +156,21 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                           <li><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                           <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
+                                            <li >
+				<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="salon.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
+                                    <li><a class="submenu" href="decorations.php"><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
+			        </ul>	
+                            </li>
+                            <li>
+				<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Servicios</span></a>
+                                    <ul>    
+                                        <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
+                                        <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
+			            </ul>	
+                            </li>
+                                            <li ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Evento</span></a></li>
                                             <li class="active"><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Subir Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salones</span></a></li>
                                             <li><a href="galeri_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Evento</span></a></li>
@@ -205,39 +223,38 @@
                     <input type="file" id="foto" name="foto">
                 </div>
             </div>
-            
-         <div class="control-group col-sm-5 mar-top41">
-    <label class="control-label" for="pais">Salón</label>
-    <div class="controls">
-        <select data-rel="chosen"  name="pais" id="pais" required>
-          <option value="0">Seleccione...</option>
-          	<?php  echo $combo_paises;?>
-          </select>
-   </div>
-  </div>  
-  <div class="control-group col-sm-5 mar-top41">
-    <label class="control-label" for="ciudad">Decoración</label>
-    <div class="controls">
-        <select   name="ciudad" id="ciudad" required>
-        </select>
-   </div>
-  </div> 
-         <div class="control-group col-sm-5 mar-top41">
-    <label class="control-label" for="pais">Salón</label>
-    <div class="controls">
-        <select data-rel="chosen"  name="service" id="service" required>
-          <option value="0">Seleccione...</option>
-          	<?php  echo $combobit3;?>
-          </select>
-   </div>
-  </div>  
-  <div class="control-group col-sm-5 mar-top41">
-    <label class="control-label" for="ciudad">Decoración</label>
-    <div class="controls">
-        <select   name="sub_service" id="sub_service" required>
-        </select>
-   </div>
-  </div> 
+            <div class="control-group col-sm-5 mar-top41">
+                <label class="control-label" for="pais">Salón</label>
+                <div class="controls">
+                    <select data-rel="chosen"  name="salon" id="salon" required>
+                        <option value="0">Seleccione...</option>
+                        <?php  echo $combo_party_room;?>
+                    </select>
+                </div>
+            </div>  
+            <div class="control-group col-sm-5 mar-top41">
+                <label class="control-label" for="ciudad">Decoración</label>
+                    <div class="controls">
+                        <select   name="decoration" id="decoration" required>
+                        </select>
+                    </div>
+            </div> 
+            <div class="control-group col-sm-5 mar-top41">
+                <label class="control-label" for="pais">Servicio</label>
+                    <div class="controls">
+                        <select data-rel="chosen"  name="service" id="service" required>
+                            <option value="0">Seleccione...</option>
+                                <?php  echo $combo_services;?>
+                        </select>
+                    </div>
+            </div>  
+            <div class="control-group col-sm-5 mar-top41">
+                <label class="control-label" for="ciudad">Sub Servicio(s):</label>
+                    <div class="controls">
+                        <select   name="sub_service" id="sub_service" required>
+                        </select>
+                    </div>
+            </div> 
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Tipo de evento:</label>
 		<div class="controls">
@@ -245,18 +262,18 @@
                  <?php
                         
                     
-                        $sql = "SELECT id_event,name_event from events ";
-                        $result = $mysqli3->query($sql);
-                        if ($result->num_rows > 0) { 
-                            $combobit2 = "";
-                            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit2 .=" <option value='" . $row['id_event'] . "'>" . $row['name_event'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                        $sql4 = "SELECT id_event,name_event from events ";
+                        $result4 = $mysqli4->query($sql4);
+                        if ($result4->num_rows > 0) { 
+                            $combo_events;
+                            while ($row4 = $result4->fetch_array(MYSQLI_ASSOC)) {
+                            $combo_events .=" <option value='" . $row['id_event'] . "'>" . $row['name_event'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                            }
                         } else {
                                 echo "No hubo resultados";
                                 }
-                        $mysqli3->close(); //cerramos la conexión
-                        echo $combobit2;
+                        $mysqli4->close(); //cerramos la conexión
+                        echo $combo_events;
                     ?>
                 </select>
 		</div>
