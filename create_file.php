@@ -1,5 +1,6 @@
 <?php
     include "config.php";
+    include('conexion.php');
     error_reporting(E_ALL);
     session_start();
     if (!isset($_SESSION['user_name'])) {
@@ -11,7 +12,29 @@
     $mysqli->close(); //cerramos la conexió
     $num_row = mysqli_num_rows($res);
     $row = mysqli_fetch_array($res);
-?>
+
+                $sql = mysql_query("SELECT * FROM party_room");
+    while($sql_p = mysql_fetch_row($sql))
+    {
+     $combo_paises= "<option value='".$sql_p[0]."'>".$sql_p[1]."</option>";
+    } 
+     
+    
+        $sql = "SELECT id_service,name_service from services ";
+        $result = $mysqli4->query($sql);
+        if ($result->num_rows > 0) { 
+        $combobit3 = "";
+            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    $combobit3 .=" <option value='" . $row['id_service'] . "'>" . $row['name_service'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                }
+            } else {
+                    echo "No hubo resultados";
+                    }
+            $mysqli4->close(); //cerramos la conexión
+    
+    
+    
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,14 +60,38 @@
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<script src="js/jquery.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/upload.js"></script>
-<script src="js/bootbox.js"></script>
-<script src="js/bootbox.min.js"></script>
         
-        	<link rel="shortcut icon" href="img/favicon.ico">
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/upload.js"></script>
+        <script src="js/bootbox.js"></script>
+        <script src="js/bootbox.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+	  $(document).ready(function() {
+	  // Parametros para el combo
+	   $("#pais").change(function () {
+	      $("#pais option:selected").each(function () {
+	        elegido=$(this).val();
+	        $.post("combo_ciudad.php", { elegido: elegido }, function(data){
+	        $("#ciudad").html(data);
+	      });     
+	     });
+	   });    
+	});
+        </script>	
+        <script type="text/javascript" charset="utf-8">
+	  $(document).ready(function() {
+	  // Parametros para el combo
+	   $("#service").change(function () {
+	      $("#service option:selected").each(function () {
+	        elegido=$(this).val();
+	        $.post("combo_sub_services.php", { elegido: elegido }, function(data){
+	        $("#sub_service").html(data);
+	      });     
+	     });
+	   });    
+	});
+        </script>	
+        <link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
 	
 		
@@ -137,7 +184,7 @@
     
 ?>
 <h1 style="text-align: center">LLENA LOS SIGUIENTES CAMPOS</h1>
-<p><br/></p>
+<p><br/></p>	
 
 <div class="panel panel-default">
     
@@ -159,28 +206,38 @@
                 </div>
             </div>
             
-            <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="selectError">Asignar salón:</label>
-		<div class="controls">
-                    <select  data-rel="chosen" name="party" id="party">
-                        <?php
-                $condition='true';
-                $sql1 = "SELECT id_party_room,party_room_name from party_room WHERE status='".$condition."'";
-                $result1 = $mysqli2->query($sql1);
-                 if ($result1->num_rows > 0) { 
-                            $combobit1 = "";
-                            while ($row1 = $result1->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit1 .=" <option value='" . $row1['id_party_room'] . "'>" . $row1['party_room_name'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
-                           }
-                        } else {
-                                echo "No hubo resultados";
-                                }
-                        $mysqli2->close(); //cerramos la conexión
-                        echo $combobit1;
-                    ?>
-                </select>
-		</div>
-            </div>
+         <div class="control-group col-sm-5 mar-top41">
+    <label class="control-label" for="pais">Salón</label>
+    <div class="controls">
+        <select data-rel="chosen"  name="pais" id="pais" required>
+          <option value="0">Seleccione...</option>
+          	<?php  echo $combo_paises;?>
+          </select>
+   </div>
+  </div>  
+  <div class="control-group col-sm-5 mar-top41">
+    <label class="control-label" for="ciudad">Decoración</label>
+    <div class="controls">
+        <select   name="ciudad" id="ciudad" required>
+        </select>
+   </div>
+  </div> 
+         <div class="control-group col-sm-5 mar-top41">
+    <label class="control-label" for="pais">Salón</label>
+    <div class="controls">
+        <select data-rel="chosen"  name="service" id="service" required>
+          <option value="0">Seleccione...</option>
+          	<?php  echo $combobit3;?>
+          </select>
+   </div>
+  </div>  
+  <div class="control-group col-sm-5 mar-top41">
+    <label class="control-label" for="ciudad">Decoración</label>
+    <div class="controls">
+        <select   name="sub_service" id="sub_service" required>
+        </select>
+   </div>
+  </div> 
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Tipo de evento:</label>
 		<div class="controls">
@@ -206,19 +263,14 @@
             </div>
             
             <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripcion Corta: </label>
-		    <div class="controls">
-                        <input class="input-xlarge focused"  type="text" name="desc_short"
-                               id="desc_short" >
-		    </div>
-	    </div>
-            <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="focusedInput">Descripcion Larga:</label>
+		<label class="control-label" for="focusedInput">Descripción:</label>
 		    <div class="controls">
                         <textarea class="input-xlarge focused" type="text" name="desc_long"
                                   id="desc_long"> </textarea>
 		    </div>
 	    </div>
+            
+            
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Estatus:</label>
 		<div class="controls">
@@ -226,29 +278,6 @@
                         <option value=true>Activa</option>
                         <option value="false">Inactivo</option>
                     </select>
-		</div>
-            </div>
-            <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="selectError">Tipo De Servicio:</label>
-		<div class="controls">
-                    <select  data-rel="chosen" name="service[]" id="service" multiple="multiple">
-                 <?php
-                        
-                    
-                        $sql = "SELECT id_service,name_service from services ";
-                        $result = $mysqli4->query($sql);
-                        if ($result->num_rows > 0) { 
-                            $combobit3 = "";
-                            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                            $combobit3 .=" <option value='" . $row['id_service'] . "'>" . $row['name_service'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
-                           }
-                        } else {
-                                echo "No hubo resultados";
-                                }
-                        $mysqli4->close(); //cerramos la conexión
-                        echo $combobit3;
-                    ?>
-                </select>
 		</div>
             </div>
             
@@ -287,7 +316,7 @@
 
 		<script src="js_template/jquery-1.9.1.min.js"></script>
 	<script src="js_template/jquery-migrate-1.0.0.min.js"></script>
-	
+            
 		<script src="js_template/jquery-ui-1.10.0.custom.min.js"></script>
 	
 		<script src="js_template/jquery.ui.touch-punch.js"></script>
