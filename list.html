@@ -1,0 +1,270 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Casa Beltrami</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/iconmoon/style.css">
+    <link rel="stylesheet" href="css_calendar/calendar.css">
+    <link rel="stylesheet" href="css_calendar/calendar.min.css">
+   
+    
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-sections">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbarMobile" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-centered" id="myNavbarMobile">
+          <ul class="nav navbar-nav grey-text center">
+                             <li class="dropdown">
+                                 <a href="index.html" class="dropdown-toggle MontserratL sixteen grey nav-links-sections small-caps">
+                                    casa beltrami
+                                 </a>
+                             </li>
+                              <li class="dropdown" onclick="about-us.html">
+                                  <a href="about-us.html" class="dropdown-toggle MontserratL sixteen grey nav-links-sections small-caps">
+                                      quiénes somos
+                                  </a>
+                              </li>    
+                      
+                              <li class="dropdown">
+                                  <a href="#services" class="dropdown-toggle MontserratL sixteen grey nav-links-sections small-caps">
+                                      servicios
+                                  </a>
+                              </li>
+                      
+                              <li class="dropdown">
+                                  <a href="#benefits" class="dropdown-toggle MontserratL sixteen grey nav-links-sections small-caps">
+                                      salones
+                                  </a>
+                              </li>
+                      
+                              <li class="dropdown">
+                                  <a href="#works" class="dropdown-toggle MontserratL sixteen grey nav-links-sections small-caps">
+                                      eventos
+                                  </a>
+                              </li>
+                              <li class="dropdown">
+                                  <a href="#contact" class="dropdown-toggle sixteen grey nav-links-sections MontserratL small-caps">
+                                      cotiza
+                                  </a>
+                          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <section class="filler-f1 container-fluid filler-about-us">
+      <div class="row no-padd-right">
+      <div class="border-left headline-brd col-md-10 col-md-offset-1">
+          <h3 class="Couture dark-grey nineteen titles-margin" >Cotiza</h3>
+          <h4 class="Times-italic grey nineteen titles-margin">Llena los siguientes campos para solicitar información</h4>
+      </div>
+      </div>
+    </section>
+    <section class="description">
+        <form  id="formid" method="post" >
+            <div id="ok"></div>
+                <div class="row">
+                       <div class="form-group  col-md-2">
+                            <input type="text" name="name"  id="name" class="form-control"  placeholder="Nombre">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electrónico">
+                        </div>
+                </div>
+                <div class="row"> 
+                        <div class="form-group  col-md-2">
+                            <input type="text" name="phone"  id="phone" class="form-control"  placeholder="Teléfono">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <input type="email" name="type_event" id="type_event" class="form-control" placeholder="Tipo de evento">
+                        </div>
+                </div>
+                <div class="row">
+                    <div style="overflow:hidden;">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div id="datetimepicker12"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker12').datetimepicker({
+                                    inline: true,
+                                    sideBySide: true
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>    
+                <div>
+                    
+                    <div class="form-group col-md-2">
+                        <select id="services" name="services">
+                            <option>Servicio que solicitas</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input type="text" name="persons" id="persons" class="form-control" placeholder="Número de personas">
+                    </div>
+                </div>   
+                <button class="btn btn-default btn-theme-bg center-block Avenir-Roman" style="background-color: #dfd0c9;opacity: 61%;border-radius: 10px;margin-top: 30px;">Enviar</button>
+                                                                        
+        </form>
+    </section>
+    
+   
+    <footer class="lu-footer">
+        <div class="row" style="margin-right: 0px;">
+          <div class="col-md-4 col-md-offset-1 padding-footer">
+            <div class="border-left-white headline-brd">
+              <h4 class="white nineteen Montserrat footer-mobile">CONTÁCTANOS</h3>
+            </div>
+            <h3 class="white nineteen Times-italic footer-mobile-info">2291 307780 / 2291 306456 y 57 <br>
+                Boulevard Miguel Alemán #875 esq. <br>
+                Nicaragua, Boca del Río, Veracruz. <br>
+                info@casabeltrami.com
+            </h3>
+          </div>
+          <div class="col-md-2">
+            <img src="assets/img/icons/iconos-17.png" alt="" class="logo-footer center-block">
+            <div class="center-social navbar-centered">
+            <h3 class="white nineteen Times-italic center-block no-margin">Síguenos en:</h3>
+            <ul class="list-inline">
+                 <li class="dropdown social-list">
+                     <a href="#init" class="dropdown-toggle MontserratL sixteen grey">
+                        <img src="assets/img/icons/iconos-18.png" alt="" class="social-icon">
+                     </a>
+                 </li>
+                 <li class="dropdown social-list">
+                     <a href="#init" class="dropdown-toggle MontserratL sixteen grey">
+                        <img src="assets/img/icons/iconos-19.png" alt="" class="social-icon">
+                     </a>
+                 </li>
+                 <li class="dropdown social-list">
+                     <a href="#init" class="dropdown-toggle MontserratL sixteen grey">
+                        <img src="assets/img/icons/iconos-20.png" alt="" class="social-icon"> 
+                     </a>
+                 </li>
+            </ul>       
+            </div>
+          </div>  
+        </div>
+    </footer>
+  
+
+
+    <script src="assets/js/jquery-1.11.2.min.js"></script>
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>   
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="assets/js/mail.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/itemslide.min.js"></script>
+    <script src="assets/js/affix.js"></script>
+    <script src="js_calendar/calendar.js"></script>
+    <script src="js_calendar/calendar.min.js"></script>
+    
+    
+    <script type="text/javascript">
+        /*  Stellar for background scrolling  */
+        (function () {
+
+          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+           
+          } else {
+            $(window).stellar({
+              horizontalScrolling: false,
+              verticalScrolling: false,
+              responsive: true
+            });
+          }
+        }());
+        /* End Stellar for background scrolling  */
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+              $(document).on('click', function(){      
+               $('.navbar-collapse').removeClass('in');
+              });
+              //Setting sticky navbar
+              $('#nav').affix({
+                  offset: {
+                    top: 85
+                  }
+              });
+              var carousel;
+                carousel = $(".slide-img");
+                carousel.itemslide();
+              window.setInterval(function() {
+                carousel.next();
+                
+              }, 4000);
+              //Setting random for events information blocks
+              // var x = Math.floor((Math.random() * 5) + 1);
+              // var y = Math.floor((Math.random() * 6) + 1);
+
+              // $('.out-border').not('#events-two-' + y + ', event-one-' + x).css('display', 'none');
+              // $('#events-two-' + y).css('display', 'block');
+              // $('#event-one-' + x).css('display', 'block');
+              // window.setInterval(function() {
+              //  var x = Math.floor((Math.random() * 5) + 1);
+              //  var y = Math.floor((Math.random() * 6) + 1);
+
+              //  $('.out-border').not('#events-two-' + y + ', event-one-' + x).css('display', 'none');
+              //  $('#events-two-' + y).css('display', 'block');
+              //  $('#event-one-' + x).css('display', 'block');
+              // }, 8000);
+            });
+            $('body').scrollspy({target: ".navbar-nav", offset: -20});
+
+            $("#myNavbarWeb a,#myNavbarMobile a ").on('click', function (event) {
+                event.preventDefault();
+                var pageRef = $(this).attr("href");
+                var offset = 80;
+                if(pageRef[0] != '#') {
+                    window.location.href = pageRef;
+                  }
+                  else{
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top -20
+                    }, 800, function () {
+                        window.location.hash = hash;
+
+                    });
+                  }
+            });
+
+        </script>
+        
+  </body>
+</html>
+  
