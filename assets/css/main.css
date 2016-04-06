@@ -1023,6 +1023,8 @@ ul{
 .arrow-icon-modal{
 	width: 30px;
 	height: auto;
+	padding-top: 300px;
+
 }
 .padding-carousel{
 	padding-bottom: 140px;
@@ -1060,8 +1062,54 @@ ul{
     background-repeat: repeat-x;
 }
 .carousel-control{
-	width: 2.5%;
+	width: 3%;
 }
 .carousel-caption{
 	bottom: -100px;
+}
+.selectpicker{
+	background: transparent;
+	padding-bottom: 13px;
+	padding-top: 13px;
+}
+.form-control{
+	border-radius: 0px;
+	padding-bottom: 22px;
+	padding-top: 22px;
+}
+.select-no-padding-left{
+	padding-left: 8px;
+	padding-right: 22px;
+}
+.select-no-padding-left2{
+	padding-left: 5px;
+	padding-right: 22px;
+}
+.margin-select{
+	margin-bottom: 15px;
+}
+.send-btn{
+	background-color: #dfd0c9;
+	opacity: 61%;
+	border-radius: 3px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	padding-right: 50px !important;
+	padding-left: 50px !important;
+	padding-bottom: 7px;
+	padding-top: 7px;
+	border: transparent;
+}
+.send-btn:hover{
+	background-color: #dfd0c9;
+}
+.date-outer-border{
+	padding: 15px;
+	background-color: #dfd0c9;
+	margin-top: 0px;
+}
+.event-title-date{
+	display: inline-block;
+	margin-bottom: 20px;
+	font-weight: 500;
 }
