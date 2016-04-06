@@ -66,7 +66,7 @@
                                   </a>
                               </li>
                               <li class="dropdown">
-                                  <a href="#contact" class="dropdown-toggle sixteen grey nav-links MontserratL small-caps">
+                                  <a href="cotiza.html" class="dropdown-toggle sixteen grey nav-links MontserratL small-caps">
                                       cotiza
                                   </a>
                           </ul>
@@ -111,7 +111,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#contact" class="dropdown-toggle center-block sixteen grey nav-links MontserratL small-caps">
+                        <a href="cotiza.html" class="dropdown-toggle center-block sixteen grey nav-links MontserratL small-caps">
                             cotiza
                         </a>
                 </ul>
@@ -124,28 +124,34 @@
           </div>
           <div class="row no-padd-right">
             <div class="col-md-2 col-md-offset-3 col-xs-8 header-blocks">
+              <a href="#services" class="click-scrolling">
               <div class="outer-border-white">
                 <div class="inner-block-white">
                   <img src="assets/img/icons/iconos-25.png" alt="" class="header-icon">
                   <h3 class="header-icon-title nineteen Montserrat small-caps grey">SERVICIOS</h3>
                 </div>
               </div>
+              </a>
             </div>
             <div class="col-md-2 col-xs-8 header-blocks">
+              <a href="#halls" class="click-scrolling">
               <div class="outer-border-white">
                 <div class="inner-block-white">
                   <img src="assets/img/icons/iconos-25.png" alt="" class="header-icon">
                   <h3 class="header-icon-title nineteen Montserrat small-caps grey">SALONES</h3>
                 </div>
               </div>
+              </a>
             </div>
             <div class="col-md-2 col-xs-8 header-blocks">
+              <a href="#events" class="click-scrolling">
               <div class="outer-border-white">
                 <div class="inner-block-white">
                   <img src="assets/img/icons/iconos-25.png" alt="" class="header-icon">
                   <h3 class="header-icon-title nineteen Montserrat small-caps grey">EVENTOS</h3>
                 </div>
               </div>
+              </a>
             </div>
           </div>
         </div>
@@ -169,22 +175,28 @@
     </section>
     <section class="party-halls">
       <div class="row" style="min-height: 100%; margin-right: 0px;">
+        <a href="halls.html#lincanto">
         <div class="col-md-7 left-img col-xs-6" style="position: relative;">
           <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
             <h4 class="Montserrat white sixteen no-margin">Salón L'incanto</h4>
           </div>
         </div>
+        </a>
         <div class="col-md-5 col-xs-6 padding-left-imgs" style="padding-right: 0px;">
+          <a href="halls.html#bambinos">
           <div class="right-img" style="position: relative;">
             <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
             <h4 class="Montserrat white sixteen no-margin">Salón Bambinos</h4>
             </div>
           </div>
+          </a>
+        <a href="halls.html#farfalla">
           <div class="right-img2" style="position: relative;">
             <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
             <h4 class="Montserrat white sixteen no-margin">Salón Farfalla</h4>
             </div>
           </div>
+        </a>
         </div>
       </div>
     </section>
@@ -709,7 +721,7 @@
             });
             $('body').scrollspy({target: ".navbar-nav", offset: -20});
 
-            $("#myNavbarWeb a,#myNavbarMobile a ").on('click', function (event) {
+            $("#myNavbarWeb a,#myNavbarMobile a, .click-scrolling ").on('click', function (event) {
                 event.preventDefault();
                 var pageRef = $(this).attr("href");
                 var offset = 80;
