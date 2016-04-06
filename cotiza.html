@@ -15,9 +15,16 @@
     <link rel="stylesheet" href="assets/fonts/fonts.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/iconmoon/style.css">
-    <link rel="stylesheet" href="css_calendar/calendar.css">
-    <link rel="stylesheet" href="css_calendar/calendar.min.css">
-    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>    
+    <!--combo-->
+    
+
+
+
   </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!--[if lt IE 8]>
@@ -96,33 +103,43 @@
                 </div>
                 <div class="row"> 
                         <div class="form-group  col-md-3 col-md-offset-3">
-                            <input type="text" name="phone"  id="phone" class="form-control"  placeholder="Teléfono">
+                            <input type="text" name="phone_number"  id="phone_number" class="form-control"  placeholder="Teléfono">
                         </div>
-                        <div class="form-group col-md-3">
-                            <input type="email" name="type_event" id="type_event" class="form-control" placeholder="Tipo de evento">
-                        </div>
-                </div>
-                <div class="row">
-                    <div style="overflow:hidden;">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div id="datetimepicker12"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>   
-                    <div class="form-group col-md-3">
-                        <select id="services" name="services">
-                            <option>Servicio que solicitas</option>
+                    <select class="selectpicker col-md-2" id="type_event" name="type_event">
+                            <option>Tipo de Evento</option>
+                            <option value="Bautizo">Bautizo</option>
+                            <option value="Baby Shower">Baby Shower</option>
+                            <option value="Boda">Boda</option>
+                            <option value="Comunión">Comunión</option>
+                            <option value="Iglesias">Iglesias</option>
+                            <option value="Despedida de soltera">Despedida de soltera</option>
+                            <option value="Evento empresarial">Evento empresarial</option>
+                            <option value="Fiesta infantil">Fiesta infantil</option>
+                            <option value="Fiesta privada">Fiesta privada</option>
+                            <option value="Graduación">Graduación</option>
+                            <option value="XV años">XV años</option>
+                            <option value="Otro">Otro</option>
                         </select>
+                </div>
+                
+                <div id="datepicker" data-date="4/06/2016" class="col-md-3 col-md-offset-3 row"></div>
+                <input type="hidden" id="date_event" name="date_event">
+                <div class="row">    
+                    <div class="form-group col-md-3">
+                        <select class="selectpicker" id="service" name="service">
+                                <option >Servicio que Solicitas</option>
+                                <option value="Renta de mobiliario">Renta de mobiliario</option>
+                                <option value="Mesas de dulces y quesos">Mesas de dulces y quesos</option>
+                                <option value="Diseño floral">Diseño floral</option>
+                            </select>
                         <div class="form-group">
                             <input type="text" name="persons" id="persons" class="form-control" placeholder="Número de personas">
                         </div>
                     </div>
-                </div>   
+                </div>  
+                <div class="row">
                 <button class="btn btn-default btn-theme-bg center-block Avenir-Roman" style="background-color: #dfd0c9;opacity: 61%;border-radius: 10px;margin-top: 30px;">Enviar</button>
-                                                                        
+                </div>                                                        
         </form>
     </section>
     
@@ -165,10 +182,11 @@
           </div>  
         </div>
     </footer>
-  
+       
 
 
-    <script src="assets/js/jquery-1.11.2.min.js"></script>
+
+    
     <script src="assets/js/jquery.stellar.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/smoothscroll.js"></script>
@@ -179,16 +197,9 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/itemslide.min.js"></script>
     <script src="assets/js/affix.js"></script>
-    <script src="js_calendar/calendar.js"></script>
-    <script src="js_calendar/calendar.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker12').datetimepicker({
-                inline: true,
-                sideBySide: true
-            });
-        });
-    </script>
+    
+    
+   
     <script type="text/javascript">
         /*  Stellar for background scrolling  */
         (function () {
@@ -205,61 +216,33 @@
         }());
         /* End Stellar for background scrolling  */
         </script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-              $(document).on('click', function(){      
-               $('.navbar-collapse').removeClass('in');
-              });
-              //Setting sticky navbar
-              $('#nav').affix({
-                  offset: {
-                    top: 85
-                  }
-              });
-              var carousel;
-                carousel = $(".slide-img");
-                carousel.itemslide();
-              window.setInterval(function() {
-                carousel.next();
-                
-              }, 4000);
-              //Setting random for events information blocks
-              // var x = Math.floor((Math.random() * 5) + 1);
-              // var y = Math.floor((Math.random() * 6) + 1);
+       
+       <!-- <script>
+            
+$(document).ready(function() {
+    $('#embeddingDatePicker')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            // Set the value for the date input
+            $("#selectedDate").val($("#embeddingDatePicker").datepicker('getFormattedDate'));
 
-              // $('.out-border').not('#events-two-' + y + ', event-one-' + x).css('display', 'none');
-              // $('#events-two-' + y).css('display', 'block');
-              // $('#event-one-' + x).css('display', 'block');
-              // window.setInterval(function() {
-              //  var x = Math.floor((Math.random() * 5) + 1);
-              //  var y = Math.floor((Math.random() * 6) + 1);
+            // Revalidate it
+            $('#eventForm').formValidation('revalidateField', 'selectedDate');
+        });
 
-              //  $('.out-border').not('#events-two-' + y + ', event-one-' + x).css('display', 'none');
-              //  $('#events-two-' + y).css('display', 'block');
-              //  $('#event-one-' + x).css('display', 'block');
-              // }, 8000);
-            });
-            $('body').scrollspy({target: ".navbar-nav", offset: -20});
-
-            $("#myNavbarWeb a,#myNavbarMobile a ").on('click', function (event) {
-                event.preventDefault();
-                var pageRef = $(this).attr("href");
-                var offset = 80;
-                if(pageRef[0] != '#') {
-                    window.location.href = pageRef;
-                  }
-                  else{
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top -20
-                    }, 800, function () {
-                        window.location.hash = hash;
-
-                    });
-                  }
-            });
-
-        </script>
+});
+</script>  -->
+       <script>
+           $('#datepicker').datepicker();
+$('#datepicker').on("changeDate", function() {
+    $('#my_hidden_input').val(
+        $('#datepicker').datepicker('getFormattedDate')
+    );
+});
+       </script>
+      
   </body>
 </html>
   

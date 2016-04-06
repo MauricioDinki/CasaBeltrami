@@ -1,14 +1,14 @@
 <?php error_reporting(E_ALL);
-include("../model/conexion.php");
+
 use Mailgun\Mailgun;
 
 require '../vendor/autoload.php';
 $name=$_POST['name'];
 $email = $_POST['email'];
-$phone= $_POST['phone'];
+$phone= $_POST['phone_number'];
 $type_event=$_POST['type_event'];
-$date=$_POST['date'];
-$services=$_POST['services'];
+$date=$_POST['date_event'];
+$services=$_POST['service'];
 $persons=$_POST['persons'];
 
 $asunto = 'Una persona necesita una cotización ';
