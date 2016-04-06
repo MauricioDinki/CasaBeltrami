@@ -6,20 +6,20 @@
         header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
-    $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
-    $res = mysqli_query($mysqli, $query2);
-    $mysqli->close(); //cerramos la conexió
-    $num_row = mysqli_num_rows($res);
-    $row = mysqli_fetch_array($res);
+    $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
+    $res3 = mysqli_query($mysqli3, $query3);
+    $mysqli3->close(); //cerramos la conexió
+    $num_row3 = mysqli_num_rows($res3);
+    $row3 = mysqli_fetch_array($res3);
+    $myuser=$row3['nombre'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Editar Salon</title>
+	<title>Página Principal</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -28,12 +28,14 @@
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
-	   
-        
+	
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="css_template/admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="css_lightbox/lightbox.min.css"> 
+        <link rel="stylesheet" type="text/css" href="css_template/style_common.css" />
+        <link rel="stylesheet" type="text/css" href="css_template/style1.css" />
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
@@ -68,20 +70,18 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="index.html"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-
-
-						
+				
 						
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
-                                                                <?php echo $row['nombre']; ?>
+                                                                <?php echo $myuser ?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -109,8 +109,6 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						
-                                           	
                                             <li >
                                                 <a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
                                                 <ul>
@@ -125,11 +123,11 @@
                                                         <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
                                                     </ul>	
                                             </li> 
-                                            <li class="active" ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Evento</span></a></li>
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">Subir Imagenes</span></a></li>
-					    <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Salones</span></a></li>
+                                             <li ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Evento</span></a></li>
+                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
+                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salón</span></a></li>
                                             <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Evento</span></a></li>
-                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
+                                            <li class="active"><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -144,82 +142,86 @@
 			
 			<!-- start: Content -->
 			<div id="content" class="span10">
-                                 <ul class="breadcrumb">
+			
+						
+			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+                                        <a href="Home.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><i class="icon-globe"></i><a href="events.php">&nbsp; Editar Evento</a></li>
+				<li><a href="#">Galería Por Servicios</a></li>
 			</ul>
-                            <?php
-include "config.php";
-
-error_reporting(E_ALL);
-
-  
-if (isset($_GET['u'])):
-    if (isset($_POST['bts'])):
-        $stmt = $mysqli2->prepare("UPDATE events SET name_event=?, status=? WHERE id_event=?");
-        $stmt->bind_param('sss', $title,$status_galery, $id_event_name);
-        $title = $_POST['name_event'];
-        $status_galery = $_POST['status'];
-        $id_event_name = $_POST['id_event'];
-        if ($stmt->execute()):
-            echo "<script>location.href='events.php'</script>";
-        else:
-            echo "<script>alert('" . $stmt->error . "')</script>";
-        endif;
-    endif;
-    $res = $mysqli2->query("SELECT * FROM events WHERE id_event=" . $_GET['u']);
-    $row = $res->fetch_assoc();
-    $mysqli2->close();
-endif;
-?>
-<p><br/></p>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <form role="form" method="post" class="form-horizontal">
-                <input type="hidden" value="<?php echo $row['id_event'] ?>" name="id_event"/>
-                <div class="control-group col-sm-6 mar-top40">
-                    <label class="control-label" for="title_galery">Nombre del evento:</label>
-		    <div class="controls">
-		        <input class="input-xlarge focused" id="name_event" type="text" value="<?php echo $row['name_event'] ?>"
-                        name="name_event">
-		    </div>
-                </div>
-            
-                <div class="control-group col-sm-5 mar-top41">
-		<label class="control-label" for="selectError">Estatus:</label>
-		<div class="controls">
-                     <?php if ($row['status'] == '1') { ?>
-                            <select id="selectError" data-rel="chosen" name="status">
-                                <option value="1"><?php echo 'activo' ?></option>
-                                <option value="0">Inactivo</option>
-                            </select>
-                        <?php } else {?>
-                        <select id="selectError" data-rel="chosen" name="status">
-                            <option value="0"><?php echo 'inactivo' ?></option>
-                            <option value="1">activo</option>
-                        </select>
-                         <?php } ?>
-		</div>
-            </div>
-                
-                
-                    <center>
-                        <a href="events.php" class="btn btn-primary btn-md mar-top60 mar-right " ><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span><i class="icon-arrow-left"></i>&nbsp;Regresar</a> 
-                        <button type="submit" name="bts" class="btn btn-success mar-top60"><i class="icon-refresh"></i>&nbsp; Guardar Cambios</button>
-                    </center>
-               
-                
-            </form>
-        </div>
-
-		
+                        <?php
+                            include "config.php";
+                            error_reporting(E_ALL);
+                            $res = $mysqli->query("SELECT id_service,name_service FROM services");
+                            $mysqli->close();
+                            while ($row = $res->fetch_assoc()){
+                                $id_pr=$row['id_service'];
+                                
+                        ?>
+                        <div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_service'];?></span></h2>
+						<div class="box-icon">
+						
+							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+							
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="masonry-gallery">
+                                                    <?php
+                                                        include "config.php";
+                                                        error_reporting(E_ALL);
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_service ='" . $id_pr . "'");
+                                                         $mysqli2->close();
+                                                         while ($row2 = $res2->fetch_assoc()){
+                                                             $path= 'php/album/' . $row2['route'];
+                                                    ?>
+                                                        
+							 <div class="masonry-thumb view view-first">
+                                                             <img class="example-image" src="<?php echo $path= 'php/album/' . $row2['route'];?>" />
+                                                             <div class="mask">
+                                                                 <h2><?php echo $row2['tittle']?></h2>
+                                                                       <p><?php $row2['id_content']?></p>
+                                                                       <a button type="button" href="#<?php echo $row2['id_content'] ?>" data-toggle="modal" class="btn btn-danger"  > <i class="icon-trash"></i> Eliminar</a>
+                                                                       <a button type="button" href="<?php echo $path= 'php/album/' . $row2['route'];?>" class="example-image-link btn btn-primary"  data-lightbox="example-set" ><i class="icon-zoom-in"></i> Zoom</a>
+                                                            </div>
+                                                         <div class="modal fade" id="<?php echo $row2['id_content'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <h3>¿Estas seguro de eliminar el contenido?</h3>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrrar</button>
+                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>  
+                                                   
+						<?php	}	?>
+					        </div>
+					
+				</div><!--/span-->
 			
+			</div><!--/row-->
+                    </div><!--/.fluid-container-->
+                                       <?php }
+                           
+                               
+                                
+                        ?>    
 
-                        </div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
@@ -236,14 +238,6 @@ endif;
 		<div class="modal-footer">
 			<a href="#" class="btn" data-dismiss="modal">Close</a>
 			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
-	<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<ul class="list-inline item-details">
-				<li><a href="http://themifycloud.com">Admin templates</a></li>
-				<li><a href="http://themescloud.org">Bootstrap themes</a></li>
-			</ul>
 		</div>
 	</div>
 	
@@ -314,6 +308,7 @@ endif;
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
+                  <script src="js_lighbox/lightbox.js"></script>
 	<!-- end: JavaScript-->
 	
 </body>

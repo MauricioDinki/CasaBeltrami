@@ -109,38 +109,23 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            <li>
-							<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
-							<ul>
-                                                            <li><a class="submenu" href="salon.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
-                                                            <li><a class="submenu" href="decorations.php"><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
-								
-							</ul>	
-                                            </li>
-                                            <li>
-							<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Servicios</span></a>
-							<ul>
-                                                            <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
-                                                            <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
-								
-							</ul>	
-                                            </li>
-                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
+                                            
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
                                             <li>
-							<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Galeria por salones y decoraciones</span></a>
+                                                        <a class="dropmenu" href="Home.php"><i class="icon-calendar"></i><span >Galeria por salones</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="Home.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
-                                                            <li><a class="submenu" href=""><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
+                                                            <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-glass"></i><span class="hidden-tablet"> L’incanto</span></a></li>
+                                                            <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-gift"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                                            <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-gift"></i><span class="hidden-tablet">Bambino</span></a></li>
 								
 							</ul>	
                                             </li>
                                             <li>
-							<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Galería por Servicios y sub Servicios</span></a>
+							<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
-                                                            <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
-                                                             <li><a class="submenu" href=""><i class="icon-tags"></i><span class="hidden-tablet">linca pols</span></a></li>
+                                                            <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
+                                                            <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                                            <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
 								
 							</ul>	
                                             </li>
