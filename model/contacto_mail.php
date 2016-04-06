@@ -1,4 +1,5 @@
-<?php error_reporting(E_ALL);
+<?php
+error_reporting(E_ALL);
 
 use Mailgun\Mailgun;
 
@@ -10,7 +11,6 @@ $type_event=$_POST['type_event'];
 $date=$_POST['date_event'];
 $services=$_POST['service'];
 $persons=$_POST['persons'];
-
 $asunto = 'Una persona necesita una cotización ';
 
 /* Desarrollo */

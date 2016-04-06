@@ -193,17 +193,14 @@
           </div>  
         </div>
     </footer>
-       
-
-
-
-    
     <script src="assets/js/jquery.stellar.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/smoothscroll.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>   
     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-    <script src="assets/js/mail.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>    
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/itemslide.min.js"></script>
@@ -227,28 +224,52 @@
         }());
         /* End Stellar for background scrolling  */
         </script>
-       
-       <!-- <script>
-            
+       <script type="text/javascript">
 $(document).ready(function() {
-    $('#embeddingDatePicker')
-        .datepicker({
-            format: 'mm/dd/yyyy'
-        })
-        .on('changeDate', function(e) {
-            // Set the value for the date input
-            $("#selectedDate").val($("#embeddingDatePicker").datepicker('getFormattedDate'));
+    $("#ok").hide();
 
-            // Revalidate it
-            $('#eventForm').formValidation('revalidateField', 'selectedDate');
-        });
-
+    $("#formid").validate({
+        rules: {
+            name: { required: true, minlength: 2},
+            email: { required:true, email: true},
+            phone_number: { required:true},
+            date_event:{required:true},
+            type_event:{required:true},
+            service:{required:true},
+            persons: { required:true, minlength: 1}
+        },
+        messages: {
+            name: "Debe introducir su nombre.",
+            email : "Debe introducir un email válido.",
+            phone_number : "El número de teléfono introducido no es correcto.",
+            date_event : "Debes seleccionar una opcion",
+            type_event : "Debes seleccionar una opcion",
+            service : "Debes seleccionar una opcion",
+            persons : "El campo Mensaje es obligatorio.",
+        },
+        submitHandler: function(form){
+            var dataString = 'name='+$('#name').val()+'&email='+$('#email').val()+'&phone_number='+$('#phone_number').val()+
+                    '&date_event='+$('#date_event').val()+ '&type_event='+$('#type_event').val()+ '&service='+$('#service').val()+
+                     '&persons='+$('#persons').val();
+            $.ajax({
+                type: "POST",
+                url:"model/contacto_mail.php",
+                data: dataString,
+                success: function(data){
+                    $("#ok").html(data);
+                    $("#ok").show();
+                    document.getElementById('formid').reset();
+                }
+            });
+        }
+    });
 });
-</script>  -->
+</script>
+       
        <script>
            $('#datepicker').datepicker();
 $('#datepicker').on("changeDate", function() {
-    $('#my_hidden_input').val(
+    $('#date_event').val(
         $('#datepicker').datepicker('getFormattedDate')
     );
 });
