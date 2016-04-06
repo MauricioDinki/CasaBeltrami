@@ -1,4 +1,5 @@
-<?php error_reporting(E_ALL);
+<?php
+error_reporting(E_ALL);
 
 use Mailgun\Mailgun;
 
@@ -10,7 +11,6 @@ $type_event=$_POST['type_event'];
 $date=$_POST['date_event'];
 $services=$_POST['service'];
 $persons=$_POST['persons'];
-
 $asunto = 'Una persona necesita una cotización ';
 
 /* Desarrollo */
@@ -50,8 +50,9 @@ $send_to = 'desarrolloblick@gmail.com';
         
         '
     ));
-    
-    
+$message = '<div class="alert alert-success" role="alert">Tu mensaje ha sido enviado!. Pronto nos pondremos en contacto contigo</div>';
+echo $message;    
+  
     
 
 ?>
