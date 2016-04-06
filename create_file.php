@@ -66,7 +66,11 @@
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<script src="js/jquery.js"></script>
-        
+        <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>-->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/upload.js"></script>
         <script src="js/bootbox.js"></script>
@@ -115,7 +119,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Casa Beltrami</span></a>
+                            <a class="brand" href="index.html"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -156,21 +160,6 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            <li >
-				<a class="dropmenu" href="#"><i class="icon-calendar"></i><span >Salones</span></a>
-                                <ul>
-                                    <li><a class="submenu" href="salon.php"><i class="icon-glass"></i><span class="hidden-tablet">Salones</span></a></li>
-                                    <li><a class="submenu" href="decorations.php"><i class="icon-gift"></i><span class="hidden-tablet">Decoraciones</span></a></li>
-			        </ul>	
-                            </li>
-                            <li>
-				<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Servicios</span></a>
-                                    <ul>    
-                                        <li><a class="submenu" href="services.php"><i class="icon-tags"></i><span class="hidden-tablet">Servicios</span></a></li>
-                                        <li><a class="submenu" href="sub_services.php"><i class="icon-tags"></i><span class="hidden-tablet">Sub-servicios</span></a></li>
-			            </ul>	
-                            </li>
-                                            <li ><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Evento</span></a></li>
                                             <li class="active"><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp; Subir Imagenes</span></a></li>
                                             <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salones</span></a></li>
                                             <li><a href="galeri_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Evento</span></a></li>
@@ -224,7 +213,7 @@
                 </div>
             </div>
             <div class="control-group col-sm-5 mar-top41">
-                <label class="control-label" for="pais">Salón</label>
+                <label class="control-label" for="salon">Salón</label>
                 <div class="controls">
                     <select data-rel="chosen"  name="salon" id="salon" required>
                         <option value="0">Seleccione...</option>
@@ -239,7 +228,31 @@
                         </select>
                     </div>
             </div> 
-            <div class="control-group col-sm-5 mar-top41">
+            <div class=" col-sm-5 mar-top41">
+                <label class="control-label" for="pais">Servicio</label>
+                    <div class="controls">
+                        <select class="selectpicker"  multiple id="sub_service" name="sub_service[]">
+                            <optgroup label="Renta de mobiliario">
+                                <option>Mesas</option>
+                                <option>Sillas</option>
+                                <option>Mantelería</option>
+                            </optgroup>
+                            <optgroup label="Mesas de dulces y quesos">
+                                <option>Mesa de postres</option>
+                                <option>Mesa de quesos</option>
+                                <option>Carrito de dulces</option>
+                                <option>Carrito de hospital</option>
+                            </optgroup>
+                             <optgroup label="Diseño floral">
+                                <option>Decoración floral</option>
+                                <option>Centros de mesa</option>
+                                <option>Arreglos florales</option>
+                                <option>Ramos de novia</option>
+                            </optgroup>
+                        </select>
+                    </div>
+            </div>  
+<!--            <div class="control-group col-sm-5 mar-top41">
                 <label class="control-label" for="pais">Servicio</label>
                     <div class="controls">
                         <select data-rel="chosen"  name="service" id="service" required>
@@ -254,7 +267,7 @@
                         <select   name="sub_service" id="sub_service" required>
                         </select>
                     </div>
-            </div> 
+            </div> -->
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="selectError">Tipo de evento:</label>
 		<div class="controls">
@@ -267,7 +280,7 @@
                         if ($result4->num_rows > 0) { 
                             $combo_events;
                             while ($row4 = $result4->fetch_array(MYSQLI_ASSOC)) {
-                            $combo_events .=" <option value='" . $row['id_event'] . "'>" . $row['name_event'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
+                            $combo_events .=" <option value='" . $row4['id_event'] . "'>" . $row4['name_event'] . "</option>"; //concatenamos el los options para luego ser insertado en el HTML
                            }
                         } else {
                                 echo "No hubo resultados";
@@ -282,8 +295,8 @@
             <div class="control-group col-sm-5 mar-top41">
 		<label class="control-label" for="focusedInput">Descripción:</label>
 		    <div class="controls">
-                        <textarea class="input-xlarge focused" type="text" name="desc_long"
-                                  id="desc_long"> </textarea>
+                        <textarea class="input-xlarge focused" type="text" name="desc"
+                                  id="desc"> </textarea>
 		    </div>
 	    </div>
             
@@ -385,6 +398,11 @@
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
+                <script>
+                    $(document).ready(function(e) {
+                    $('.selectpicker').selectpicker();
+                    });
+                </script>
 	<!-- end: JavaScript-->
 	
 </body>
