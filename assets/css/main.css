@@ -1113,3 +1113,20 @@ ul{
 	margin-bottom: 20px;
 	font-weight: 500;
 }
+.block-shipping{
+	display: inline-block;
+	background-color: #dfd0c9;
+	width: 30px;
+	height: 30px;
+	margin-bottom: -5px;
+}
+.shipping-title{
+	display: inline-block;
+	padding-left: 20px;
+}
+.shipping-section{
+	padding-bottom: 50px;
+}
+.shipping-size{
+	font-size: 24px;
+}
