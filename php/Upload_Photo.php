@@ -23,8 +23,39 @@
      $sub_service = $_GET['sub_service'];
      if ($sub_service){
         foreach ($sub_service as $s){
-            mysqli_query($mysqli2,"INSERT INTO content_party_room (id_content,id_party_room,id_decoration,id_sub_service,id_event) 
-                VALUES ('".$id_img."','".$id_party."','".$decoration."',".mysqli_real_escape_string($mysqli2,$s).",'".$event."')");
+            if($s ==1  ){
+                $service=1;
+            }elseif($s == 2){
+                $service = 1;
+            }elseif($s== 3){
+                $service =1;
+            }
+            elseif($s== 4){
+                $service =2;
+            }
+            elseif($s== 5){
+                $service =2;
+            }
+            elseif($s== 6){
+                $service =2;
+            }
+            elseif($s== 7){
+                $service =2;
+            }
+            elseif($s== 8){
+                $service =3;
+            }
+            elseif($s== 9){
+                $service =3;
+            }
+            elseif($s== 10){
+                $service =3;
+            }
+            elseif($s== 11){
+                $service =3;
+            }
+            mysqli_query($mysqli2,"INSERT INTO content_party_room (id_content,id_party_room,id_decoration,id_service,id_sub_service,id_event) 
+                VALUES ('".$id_img."','".$id_party."','".$decoration."','".$service."',".mysqli_real_escape_string($mysqli2,$s).",'".$event."')");
             }
             $mysqli2->close(); 
      
