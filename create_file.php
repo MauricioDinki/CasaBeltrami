@@ -233,21 +233,21 @@
                     <div class="controls">
                         <select class="selectpicker"  multiple id="sub_service" name="sub_service[]">
                             <optgroup label="Renta de mobiliario">
-                                <option>Mesas</option>
-                                <option>Sillas</option>
-                                <option>Mantelería</option>
+                                <option value="1">Mesas</option>
+                                <option value="2">Sillas</option>
+                                <option value="3">Mantelería</option>
                             </optgroup>
                             <optgroup label="Mesas de dulces y quesos">
-                                <option>Mesa de postres</option>
-                                <option>Mesa de quesos</option>
-                                <option>Carrito de dulces</option>
-                                <option>Carrito de hospital</option>
+                                <option value="4">Mesa de postres</option>
+                                <option value="5">Mesa de quesos</option>
+                                <option value="6">Carrito de dulces</option>
+                                <option value="7">Carrito de hospital</option>
                             </optgroup>
                              <optgroup label="Diseño floral">
-                                <option>Decoración floral</option>
-                                <option>Centros de mesa</option>
-                                <option>Arreglos florales</option>
-                                <option>Ramos de novia</option>
+                                <option value="8">Decoración floral</option>
+                                <option value="9">Centros de mesa</option>
+                                <option value="10">Arreglos florales</option>
+                                <option value="11">Ramos de novia</option>
                             </optgroup>
                         </select>
                     </div>
