@@ -580,7 +580,7 @@ button:active{
 	padding-top: 10px;
 }
 .datepicker-inline {
-	background-color: #FFF;
+	background-color: rgba(255,255,255,0.6);
 	border-radius: none !important;
 	width: inherit !important; 
 }
@@ -769,6 +769,9 @@ ul{
 }
 .padding-block{
 	margin-bottom: 0px;
+}
+.twentytwo{
+	font-size: 22px;
 }
 .navbar-sections{
 	display: block !important;
@@ -1162,7 +1165,7 @@ ul{
 	background-color: #dfd0c9;
 }
 .date-outer-border{
-	padding: 15px;
+	padding: 25px;
 	background-color: #dfd0c9;
 	margin-top: 0px;
 }
