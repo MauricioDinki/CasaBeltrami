@@ -112,7 +112,7 @@
                                             
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
                                             <li>
-                                                        <a class="dropmenu" href="Home.php"><i class="icon-calendar"></i><span >Galeria por salones</span></a>
+                                                        <a class="dropmenu" href="Home.php"><i class="icon-picture"></i><span >Galeria por salones</span></a>
 							<ul>
                                                             <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-glass"></i><span class="hidden-tablet"> L’incanto</span></a></li>
                                                             <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-gift"></i><span class="hidden-tablet">Farfala</span></a></li>
@@ -121,11 +121,11 @@
 							</ul>	
                                             </li>
                                             <li>
-                                                <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
+                                                <a class="dropmenu" href="gallery_by_service.php"><i class="icon-picture"></i><span >Galería por Servicios</span></a>
 							<ul>
-                                                            <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
-                                                            <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
-                                                            <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+                                                            <li><a class="submenu" href="rent_furniture_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Renta de mobiliario</span></a></li>
+                                                            <li><a class="submenu" href="tables_sweets_cheeses_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Mesas de dulces y quesos</span></a></li>
+                                                            <li><a class="submenu" href="floral_design_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Diseño floral</span></a></li>
 								
 							</ul>	
                                             </li>
@@ -149,7 +149,7 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-                                        <a href="Home.php">Home</a> 
+                                        <a href="principal.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
 				<li><a href="#">Galería Por Eventos</a></li>
