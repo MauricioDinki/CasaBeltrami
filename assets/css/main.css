@@ -487,7 +487,7 @@ button:active{
 	padding-top: 50px;
 }
 .links-title-second{
-	padding-top: 50px;
+	padding-top: 0px;
 }
 .img-events-three{
 	background: linear-gradient(
@@ -762,6 +762,10 @@ ul{
 }
 .filler-about-us{
 	padding-top: 150px;
+}
+.filler-services{
+	padding-top: 150px;
+	padding-bottom: 40px;
 }
 .padding-block{
 	margin-bottom: 0px;
