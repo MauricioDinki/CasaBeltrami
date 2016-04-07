@@ -121,7 +121,7 @@
 							</ul>	
                                             </li>
                                             <li>
-							<a class="dropmenu" href="#"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
+                                                <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
 							<ul>
                                                             <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
                                                             <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>

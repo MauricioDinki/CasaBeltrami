@@ -112,13 +112,27 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                             <li ><a href="salon.php"><i class="icon-calendar"></i><span class="hidden-tablet">&nbsp;Salones</span></a></li>
-                                            <li><a href="events.php"><i class="icon-globe"></i><span class="hidden-tablet"> Eventos</span></a></li>
-				            <li><a href="services.php"><i class="icon-tags"></i><span class="hidden-tablet"> Servicios</span></a></li>
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
-                                            <li><a href="Home.php"><i class="icon-picture"></i><span class="hidden-tablet">&nbsp; Galería Por Salones</span></a></li>   
+                                            <li>
+                                                        <a class="dropmenu" href="Home.php"><i class="icon-calendar"></i><span >Galeria por salones</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-glass"></i><span class="hidden-tablet"> L’incanto</span></a></li>
+                                                            <li><a class="submenu" href="Farfalas_gallery.php"><i class="icon-gift"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                                            <li><a class="submenu" href="Bambinos_gallery.php"><i class="icon-gift"></i><span class="hidden-tablet">Bambino</span></a></li>
+								
+							</ul>	
+                                            </li>
+                                            <li>
+                                                <a class="dropmenu" href="gallery_by_service.php"><i class="icon-tags"></i><span >Galería por Servicios</span></a>
+							<ul>
+                                                            <li><a class="submenu" href="Lincantos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">L’incanto</span></a></li>
+                                                            <li><a class="submenu" href="Farfalas_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Farfala</span></a></li>
+                                                            <li><a class="submenu" href="Bambinos_services_gallery.php"><i class="icon-tags"></i><span class="hidden-tablet">Bambino</span></a></li>
+								
+							</ul>	
+                                            </li>
                                             <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
-                                            <li><a href="gallery_by_service.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Servicios</span></a></li>
+                                            
                                         </ul>
 				</div>
 			</div>
