@@ -1108,11 +1108,13 @@ ul{
 	background: transparent;
 	padding-bottom: 13px;
 	padding-top: 13px;
+	font-size: 16px;
 }
 .form-control{
 	border-radius: 0px;
-	padding-bottom: 22px;
-	padding-top: 22px;
+	padding-bottom: 22.5px;
+	padding-top: 22.5px;
+	font-size: 16px;
 }
 .select-no-padding-left{
 	padding-left: 8px;
@@ -1129,13 +1131,16 @@ ul{
 	background-color: #dfd0c9;
 	opacity: 61%;
 	border-radius: 3px;
-	margin-top: 30px;
+	margin-top: 60px;
 	margin-bottom: 50px;
 	padding-right: 50px !important;
 	padding-left: 50px !important;
 	padding-bottom: 7px;
 	padding-top: 7px;
 	border: transparent;
+}
+.btn-color{
+	color:#666;
 }
 .send-btn:hover{
 	background-color: #dfd0c9;
@@ -1147,7 +1152,8 @@ ul{
 }
 .event-title-date{
 	display: inline-block;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
+	padding-top: 5px;
 	font-weight: 500;
 }
 .block-shipping{
