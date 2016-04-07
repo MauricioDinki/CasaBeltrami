@@ -1030,6 +1030,18 @@ ul{
 .header-blocks{
 	padding: 35px;
 }
+.header-blocks-left{
+	padding-left: 70px;
+	padding-right: 0px;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+.header-blocks-right{
+	padding-left: 0px;
+	padding-right: 70px;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
 .left-block{
 		padding-right: 0px !important;
 	}
