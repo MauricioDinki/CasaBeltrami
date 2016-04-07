@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Galería Por Eventos</title>
+	<title>Galería Salón Bambinos</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -141,16 +141,16 @@
                         <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_event,name_event FROM events");
+                            $res = $mysqli->query("SELECT id_decoration,name_decoration FROM decorations where id_party='2'");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
-                                $id_pr=$row['id_event'];
+                                $id_pr=$row['id_decoration'];
                                 
                         ?>
                         <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_event'];?></span></h2>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_decoration'];?></span></h2>
 						<div class="box-icon">
 						
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>

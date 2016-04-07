@@ -157,16 +157,17 @@
                         <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_event,name_event FROM events");
+                            $id_salon=1;
+                            $res = $mysqli->query("SELECT id_decoration,name_decoration FROM decorations where id_party=$id_salon");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
-                                $id_pr=$row['id_event'];
+                                $id_pr=$row['id_decoration'];
                                 
                         ?>
                         <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_event'];?></span></h2>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_decoration'];?></span></h2>
 						<div class="box-icon">
 						
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
