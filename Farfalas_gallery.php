@@ -159,7 +159,7 @@
                         <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_decoration,name_decoration FROM decorations where id_party=3");
+                            $res = $mysqli->query("SELECT id_decoration,name_decoration FROM decorations where id_party=2");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
                                 $id_pr=$row['id_decoration'];

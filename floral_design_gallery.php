@@ -6,20 +6,20 @@
         header("Location: admin.php");
     }       
     $mail = $_SESSION['user_name'];
-    $query2 = "SELECT nombre FROM Users WHERE user='$mail'";
-    $res = mysqli_query($mysqli, $query2);
-    $mysqli->close(); //cerramos la conexió
-    $num_row = mysqli_num_rows($res);
-    $row = mysqli_fetch_array($res);
+    $query3 = "SELECT nombre FROM Users WHERE user='$mail'";
+    $res3 = mysqli_query($mysqli3, $query3);
+    $mysqli3->close(); //cerramos la conexió
+    $num_row3 = mysqli_num_rows($res3);
+    $row3 = mysqli_fetch_array($res3);
+    $myuser=$row3['nombre'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Imagenes Registradas</title>
+	<title>Galería Servicios Salón L’incanto</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -32,11 +32,10 @@
 	<!-- start: CSS -->
 	<link id="bootstrap-style" href="css_template/bootstrap.min.css" rel="stylesheet">
 	<link href="css_template/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
-        
-        
 	<link id="base-style" href="css_template/admin.css" rel="stylesheet">
-          <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+        <link rel="stylesheet" href="css_lightbox/lightbox.min.css"> 
+        <link rel="stylesheet" type="text/css" href="css_template/style_common.css" />
+        <link rel="stylesheet" type="text/css" href="css_template/style1.css" />
 	<link id="base-style-responsive" href="css_template/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
@@ -71,28 +70,26 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-                            <a class="brand" href="#"><span><h2>Casa Beltrami</h2></span></a>
+                            <a class="brand" href="index.html"><span><h2>Casa Beltrami</h2></span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
-			
+				
+						
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
-                                                                <?php echo $row['nombre']; ?>
+                                                                <?php echo $myuser ?>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-menu-title">
-                                                                    <span>Opciones</span>   
+ 									<span>Opciones</span>
 								</li>
 								
-                                                                <li><a href="logout.php?logout">
-                                                                        <i class="halflings-icon off">
-                                                                            </i> Cerrar Sesión
-                                                                    </a>  </li>
+								<li><a href="logout.php?logout"><i class="halflings-icon off"></i> Cerrar Sesión</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -112,8 +109,9 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
+                                            
                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
-                                            <li>
+                                             <li>
                                                         <a class="dropmenu" href="Home.php"><i class="icon-calendar"></i><span >Galeria por salones</span></a>
 							<ul>
                                                             <li><a class="submenu" href="Lincantos_gallery.php"><i class="icon-glass"></i><span class="hidden-tablet"> L’incanto</span></a></li>
@@ -132,8 +130,7 @@
 							</ul>	
                                             </li>
                                             <li><a href="gallery_by_event.php"><i class="icon-picture"></i><span class="hidden-tablet"> Galería Por Eventos</span></a></li>
-                                            
-                                        </ul>
+					</ul>
 				</div>
 			</div>
 			<!-- end: Main Menu -->
@@ -152,75 +149,81 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-                                        <a href="Home.php">Inicio</a> 
+                                        <a href="Home.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-                                <li><a href="#"><i class="icon-upload-alt"></i>&nbsp;Imagenes</a></li>
+				<li><a href="#">Galería Servicios Salón L'incanto</a></li>
 			</ul>
-
-			<div class="row-fluid">
-			 <p>
-                            <center>
-                                <a href="create_file.php" class="btn btn-primary btn-md mar-topbtn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Imagen</a><br/>
-                            </center>
-            </p>
-            <table id="example" class="display table table-bordered table-stripe" cellspacing="4"  style="margin-top: 50px">
-                <thead >
-                    <tr >
-<!--                        <th style="text-align: center">ID</th>-->
-                        <th style="text-align: center">Titulo</th>
-                        <th style="text-align: center">Imagen</th>
-                        <th style="text-align: center"> Estatus</th>
-                        <th style="text-align: center"> Opciones</th>
-                       
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $res = $mysqli2->query("SELECT * FROM content order by id_content desc");
-                        $mysqli2->close();
-                        while ($row = $res->fetch_assoc()):
-                    ?>
-                        <tr>
-<!--                            <td style="text-align: center;" width="2%" class="mar-toptable"><?php echo $row['id_content'] ?></td>-->
-                            <td style="text-align: center;"width="8%"><?php echo $row['tittle'];  ?></td>
-                            <td width="10%"><img class="grayscale center-block" src="<?php echo 'php/album/' . $row['route'];?>" style="width: 250px;"></td>
-                            <td style="text-align: center;padding-top: 70px" width="5%">
-                                <?php 
-                                        if ($row['status']=='true'){
-                                            echo 'Activo';
-                                        }elseif($row['status']=='false') {
-                                            echo 'Inactivo';
-                                        }    
-                                 ?>
-                            </td>
-                           
-                            <td width="10%">
-                                <center>
-                                
-                                </center>
-                            </td>
-                            
-                            
-                            
-                        </tr>
-             
                         <?php
-                            endwhile;
+                            include "config.php";
+                            error_reporting(E_ALL);
+                            $res = $mysqli->query("SELECT id_sub_service,name_sub_service FROM sub_services where id_service=3");
+                            $mysqli->close();
+                            while ($row = $res->fetch_assoc()){
+                                $id_pr=$row['id_sub_service'];
+                                
                         ?>
-                    
-                </tbody>
-            </table>
-
+                        <div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_sub_service'];?></span></h2>
+						<div class="box-icon">
+						
+							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+							
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="masonry-gallery">
+                                                    <?php
+                                                        include "config.php";
+                                                        error_reporting(E_ALL);
+                                                        $res2 = $mysqli2->query("SELECT DISTINCT c.id_content,c.tittle,c.route,c.description FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content  WHERE cpr.id_service ='" . $id_pr . "'");
+                                                         $mysqli2->close();
+                                                         while ($row2 = $res2->fetch_assoc()){
+                                                             $path= 'php/album/' . $row2['route'];
+                                                    ?>
+                                                        
+							 <div class="masonry-thumb view view-first">
+                                                             <img class="example-image" src="<?php echo $path= 'php/album/' . $row2['route'];?>" />
+                                                             <div class="mask">
+                                                                 <h2><?php echo $row2['tittle']?></h2>
+                                                                       <p><?php $row2['id_content']?></p>
+                                                                       <a button type="button" href="#<?php echo $row2['id_content'] ?>" data-toggle="modal" class="btn btn-danger"  > <i class="icon-trash"></i> Eliminar</a>
+                                                                       <a button type="button" href="<?php echo $path= 'php/album/' . $row2['route'];?>" class="example-image-link btn btn-primary"  data-lightbox="example-set" ><i class="icon-zoom-in"></i> Zoom</a>
+                                                            </div>
+                                                         <div class="modal fade" id="<?php echo $row2['id_content'] ?>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" >
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                <h4 class="modal-title" id="myModalLabel">Atención</h4>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <h3>¿Estas seguro de eliminar el contenido?</h3>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle"></i>&nbsp;Cerrrar</button>
+                                                                            <a href="Delete_Photo.php?d=<?php echo $row2['id_content'] ?>"><button type="button" class="btn btn-success"><i class="icon-ok"></i>Aceptar</button></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>  
+                                                   
+						<?php	}	?>
+					        </div>
+					
+				</div><!--/span-->
+			
 			</div><!--/row-->
-			
-			
-		
-			<hr>
-		
-			
+                    </div><!--/.fluid-container-->
+                                       <?php }
+                           
+                               
+                                
+                        ?>    
 
-	</div><!--/.fluid-container-->
 	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
@@ -239,14 +242,6 @@
 			<a href="#" class="btn btn-primary">Save changes</a>
 		</div>
 	</div>
-	<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<ul class="list-inline item-details">
-				<li><a href="http://themifycloud.com">Admin templates</a></li>
-				<li><a href="http://themescloud.org">Bootstrap themes</a></li>
-			</ul>
-		</div>
-	</div>
 	
 	<div class="clearfix"></div>
 	
@@ -260,7 +255,7 @@
 	</footer>
 	
 	<!-- start: JavaScript-->
-       
+
 		<script src="js_template/jquery-1.9.1.min.js"></script>
 	<script src="js_template/jquery-migrate-1.0.0.min.js"></script>
 	
@@ -276,7 +271,7 @@
 	
 		<script src='js_template/fullcalendar.min.js'></script>
 	
-		
+		<script src='js_template/jquery.dataTables.min.js'></script>
 
 		<script src="js_template/excanvas.js"></script>
 	<script src="js_template/jquery.flot.js"></script>
@@ -315,17 +310,7 @@
 		<script src="js_template/retina.js"></script>
 
 		<script src="js_template/custom.js"></script>
-                <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-             
-        <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script language="JavaScript" type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-        <script language="JavaScript" type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-        <script language="JavaScript" type="text/javascript">
-            $(document).ready(function() {
-                 $('#example').DataTable();
-            } );
-
-        </script>
+                  <script src="js_lighbox/lightbox.js"></script>
 	<!-- end: JavaScript-->
 	
 </body>

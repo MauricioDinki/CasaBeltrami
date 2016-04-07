@@ -19,7 +19,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Galería Servicios Salón L’incanto</title>
+	<title>Página Principal</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -109,8 +109,7 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-                                            
-                                            <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
+                                             <li><a href="images.php"><i class="icon-upload-alt"></i><span class="hidden-tablet">&nbsp;Subir Imagenes</span></a></li>
                                              <li>
                                                         <a class="dropmenu" href="Home.php"><i class="icon-calendar"></i><span >Galeria por salones</span></a>
 							<ul>
@@ -152,21 +151,21 @@
                                         <a href="Home.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Galería Servicios Salón L'incanto</a></li>
+				<li><a href="#">Galería Por Servicios</a></li>
 			</ul>
                         <?php
                             include "config.php";
                             error_reporting(E_ALL);
-                            $res = $mysqli->query("SELECT id_service,name_service FROM services");
+                            $res = $mysqli->query("SELECT id_sub_service,name_sub_service FROM sub_services where id_service=1");
                             $mysqli->close();
                             while ($row = $res->fetch_assoc()){
-                                $id_pr=$row['id_service'];
+                                $id_pr=$row['id_sub_service'];
                                 
                         ?>
                         <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_service'];?></span></h2>
+						<h2><i class="halflings-icon white picture"></i><span class="break">&nbsp;<?php echo $row['name_sub_service'];?></span></h2>
 						<div class="box-icon">
 						
 							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
