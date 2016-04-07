@@ -372,7 +372,7 @@ button:active{
 	width: 40px;
 	height: 2px;
 	content: " ";
-	bottom: -5px;
+	bottom: -17px;
 	text-align: left;
 	position: absolute;
 	background: #b0006e;
@@ -484,7 +484,7 @@ button:active{
 	
 }
 .links-title{
-	padding-top: 80px;
+	padding-top: 50px;
 }
 .links-title-second{
 	padding-top: 50px;
@@ -502,8 +502,9 @@ button:active{
 	
 }
 .icon-event{
-	width: 80px;
+	width: 45px;
 	height: auto;
+	margin-bottom: 5px;
 }
 .services-links-blocks{
 	margin-bottom: 80px;
@@ -571,12 +572,42 @@ button:active{
 	height: auto;
 }
 .social-icon{
-	width: 18px;
+	width: 24px;
 	height: auto;
 }
 .center-social{
 	padding-left: 0px;
 	padding-top: 10px;
+}
+.datepicker-inline {
+	background-color: #FFF;
+	border-radius: none !important;
+	width: inherit !important; 
+}
+.datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:focus, .datepicker table tr td.active:hover:focus, .datepicker table tr td.active.disabled:focus, .datepicker table tr td.active.disabled:hover:focus, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr td.active, .open .dropdown-toggle.datepicker table tr td.active:hover, .open .dropdown-toggle.datepicker table tr td.active.disabled, .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+    color: #4d4d4d !important;
+    background-color: rgba(223,208,201, 0.61) !important;
+    border-color: rgba(223,208,201, 0.61) !important;
+}
+.datepicker {
+    padding: 4px;
+    border-radius: 0px!important;
+    direction: ltr;
+}
+thead{
+	padding-left: 14px;
+	padding-right: 14px;
+}
+tbody{
+	padding-left: 14px;
+	padding-right: 14px;
+}
+tfoot{
+	padding-left: 14px;
+	padding-right: 14px;
+}
+.table-condensed{
+	margin: auto !important;
 }
 .padding-footer{
 	padding-top: 30px;
@@ -595,7 +626,7 @@ button:active{
   position: fixed; // Needed because the carousel overrides the position property
 }
 .info-header{
-	padding-top: 100px;
+	padding-top: 90px;
 }
 @media (min-width: 992px) {
     .navbar-centered .navbar-nav {
@@ -642,10 +673,10 @@ ul{
 	margin-bottom: 0;
 }
 .nav-links{
-	padding-bottom: 0px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-top: 0px;
+	padding-bottom: 10px !important;
+	padding-left: 35px !important;
+	padding-right: 35px !important;
+	padding-top: 10px !important;
 }
 .aboutus-text{
 	padding-left: 10px;
@@ -699,7 +730,10 @@ ul{
 	padding-top: 3px !important;
 }
 .titles-margin{
-	margin-bottom: 5px;
+	margin-bottom: 0px;
+}
+.titles-margin-info{
+	margin-top: 5px;
 }
 .titles-margin-top{
 	margin-bottom: 5px;
@@ -929,6 +963,9 @@ ul{
 	width: 25px;
 	padding-left: 0px;
 }
+.services-web{
+	padding-left: 15px;
+}
 @media(min-width: 376px){
 	.in-box-icon{
 		height: 160px;
@@ -999,10 +1036,10 @@ ul{
 .right-block{
 		padding-left: 0px !important;
 	}
-.center-block{
+/* .center-block{
 	padding-left: 10px !important;
 	padding-right: 10px !important;
-}
+} */
 .no-padd-right{
 	margin-right: 0px;
 }
@@ -1126,6 +1163,7 @@ ul{
 }
 .shipping-section{
 	padding-bottom: 50px;
+	margin-top: -80px;
 }
 .shipping-size{
 	font-size: 24px;
