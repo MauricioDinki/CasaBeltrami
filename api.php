@@ -7,266 +7,115 @@ error_reporting(0);
 $id = mysqli_real_escape_string($mysqli,$_GET["id"]);
 $event =mysqli_real_escape_string($mysqli2,$_GET["event"]);
 $decoration = mysqli_real_escape_string($mysqli3,$_GET["decoration"]);
+$service = mysqli_real_escape_string($mysqli4,$_GET["service"]);
 
 
 //query only by Party Room (ID)
-if ($id!=null && empty($event) && empty($decoration)) {
+if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
     echo 'By party room';
-    $result = $mysqli->query("SELECT id_party_room,party_room_name,short_description,long_description,creation_date,modification_date, "
-            . "status FROM party_room WHERE id_party_room = '" . $id . "'");
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        
-        $response ['partyRoom'] = array(
-            'id_party_room' => $row['id_party_room'],
-            'room_name' => $row['party_room_name'],
-            'short_description' => $row['short_description'],
-            'long_description' => $row['long_description'],
-            'status' => $row['status'],
-            'creation_date' => $row['creation_date'],
-            'modification_date' => $row['modification_date'],
-            'images' => array(),
-        );
-    }
-    //var_dump($response);
-    $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "'");
-    while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-        $sh_des_im =mysqli_real_escape_string($mysqli2,$row['short_description']);
-        $path= 'php/album/' . $row['route'];
-        $partialImage = array(
-            'path' =>  $path,
-            'tittle' => $row ['tittle'],
-            'short_description' => $sh_des_im,
-            'long_description' => $row['long_description'],
-            'decoration' => $row['decoration'],
-            'event' => $row['nombre']
-        );
-        array_push($response['partyRoom']['images'], $partialImage);
-    }
-    
-    $json2 = json_encode($response['partyRoom']);
-    //echo $json2;
-}   
-//Query by Party Room and Event
-    elseif($id!=null && $event!=null && empty ($decoration)) {
-    echo 'By party room and event';
-    $result = $mysqli->query("SELECT id_party_room,party_room_name,short_description,long_description,creation_date,modification_date, "
-            . "status FROM party_room WHERE id_party_room = '" . $id . "'");
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        
-        $response ['partyRoom'] = array(
-            'id_party_room' => $row['id_party_room'],
-            'room_name' => $row['party_room_name'],
-            'short_description' => $row['short_description'],
-            'long_description' => $row['long_description'],
-            'status' => $row['status'],
-            'creation_date' => $row['creation_date'],
-            'modification_date' => $row['modification_date'],
-            'images' => array(),
-        );
-    }
-
-    $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "'");
-    while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-        $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
-        $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
-        $partialImage = array(
-            'path' =>  $path,
-            'tittle' => $row ['tittle'],
-            'short_description' => $sh_des_im,
-            'long_description' => $row['long_description'],
-            'decoration' => $row['decoration'],
-            'event' => $row['nombre']
-        );
-        array_push($response['partyRoom']['images'], $partialImage);
-    }
-   
-    $json2 = json_encode($response['partyRoom']);
-    //echo $json2;
-}   
-//Query by Party Room, Event and Decoration
-    elseif($id!=null && $event!=null && $decoration!=null){
-    echo 'By party room event and decoration';
-        $result = $mysqli->query("SELECT id_party_room,party_room_name,short_description,long_description,creation_date,modification_date, "
-                . "status FROM party_room WHERE id_party_room = '" . $id . "'");
-        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            
-            $response ['partyRoom'] = array(
-                'id_party_room' => $row['id_party_room'],
-                'room_name' => $row['party_room_name'],
-                'short_description' => $row['short_description'],
-                'long_description' => $row['long_description'],
-                'status' => $row['status'],
-                'creation_date' => $row['creation_date'],
-                'modification_date' => $row['modification_date'],
-                'images' => array(),
-            );
-        }
-
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
-        while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
-            $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
-            $partialImage = array(
-                'path' =>  $path,
-                'tittle' => $row ['tittle'],
-                'short_description' => $sh_des_im,
-                'long_description' => $row['long_description'],
-                'decoration' => $row['decoration'],
-                'event' => $row['nombre']
-            );
-            array_push($response['partyRoom']['images'], $partialImage);
-        }
-        
-        $json2 = json_encode($response['partyRoom']);
-       
-}   //query with id and section
-    elseif ($id!=null && empty ($st) && $sc!=null) {
-    echo 'By party room and decoration';
         echo $st;
-        $result = $mysqli->query("SELECT id_party_room,party_room_name,short_description,long_description,creation_date,modification_date, "
-                . "status FROM party_room WHERE id_party_room = '" . $id . "'");
+        $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room WHERE id_party_room = '" . $id . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             
             $response ['partyRoom'] = array(
                 'id_party_room' => $row['id_party_room'],
                 'room_name' => $row['party_room_name'],
-                'short_description' => $row['short_description'],
-                'long_description' => $row['long_description'],
-                'status' => $row['status'],
-                'creation_date' => $row['creation_date'],
-                'modification_date' => $row['modification_date'],
                 'images' => array(),
             );
         }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_party_room ='" . $id . "' AND cpr.decoration = '" . $decoration . "'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration,id.cpr FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN decorations AS d ON d.id_decoration = cpr.id_decoration WHERE cpr.id_party_room ='" . $id ."'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
+            $description = mysqli_real_escape_string($mysqli2,$row['description']);
             $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
             $partialImage = array(
                 'path' =>  $path,
                 'tittle' => $row ['tittle'],
-                'short_description' => $sh_des_im,
-                'long_description' => $row['long_description'],
-                'decoration' => $row['decoration'],
-                'event' => $row['nombre']
+                'description' => $description,
+                'decoration' => $row['name_decoration'],
+                'id' => $row['id']
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
         
         $json2 = json_encode($response['partyRoom']);
         
-} //query with status and section
-    elseif (empty ($id) && empty ($decoration) && $event!=null) {
-    echo 'By event';
-        $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
-                . "status FROM content_party_room AS cpr  LEFT JOIN party_room AS pr on pr.id_party_room = cpr.id_party_room WHERE cpr.id_event = '" . $event . "'");
+}   
+
+    elseif ($id!=null && empty ($st) && $decoration!=null && empty ($service)) {
+    echo 'By party room and decoration';
+        echo $st;
+        $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room WHERE id_party_room = '" . $id . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             
             $response ['partyRoom'] = array(
                 'id_party_room' => $row['id_party_room'],
                 'room_name' => $row['party_room_name'],
-                'short_description' => $row['short_description'],
-                'long_description' => $row['long_description'],
-                'status' => $row['status'],
-                'creation_date' => $row['creation_date'],
-                'modification_date' => $row['modification_date'],
                 'images' => array(),
             );
         }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.id_event ='" . $event . "'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration,id.cpr FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN decorations AS d ON d.id_decoration = cpr.id_decoration WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_decoration = '" . $decoration . "' AND d.id_party = '" . $id . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
-            $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
+            $description = mysqli_real_escape_string($mysqli2,$row['description']);
+            $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
             $partialImage = array(
                 'path' =>  $path,
                 'tittle' => $row ['tittle'],
-                'short_description' => $sh_des_im,
-                'long_description' => $row['long_description'],
-                'decoration' => $row['decoration'],
-                'event' => $row['nombre']
-            );
-            array_push($response['partyRoom']['images'], $partialImage);
-        }
-        
-        $json2 = json_encode($response['partyRoom']);
-        //echo $json2;
-}//query with section
-    elseif (empty ($id) && empty ($event) && $decoration!=null) {
-    echo 'By decoration';
-    $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
-            . "status FROM content_party_room AS cpr  LEFT JOIN party_room AS pr on pr.id_party_room = cpr.id_party_room WHERE cpr.decoration = '" . $decoration . "'");
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-        
-        $response ['partyRoom'] = array(
-            'id_party_room' => $row['id_party_room'],
-            'room_name' => $row['party_room_name'],
-            'short_description' => $row['short_description'],
-            'long_description' => $row['long_description'],
-            'status' => $row['status'],
-            'creation_date' => $row['creation_date'],
-            'modification_date' => $row['modification_date'],
-            'images' => array(),
-        );
-    }
-
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_party_room WHERE cpr.decoration ='" . $decoration . "'");
-        while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-            $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
-            $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
-            $partialImage = array(
-                'path' =>  $path,
-                'tittle' => $row ['tittle'],
-                'short_description' => $sh_des_im,
-                'long_description' => $row['long_description'],
-                'decoration' => $row['decoration'],
-                'event' => $row['nombre']
+                'description' => $description,
+                'decoration' => $row['name_decoration'],
+                'id' => $row['id']
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
         
         $json2 = json_encode($response['partyRoom']);
         
+} //query with Events
+    elseif (empty ($id) && empty ($decoration) && $event!=null && empty ($service)) {
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,e.name_event,id.cpr FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_event WHERE cpr.id_event ='" . $event . "'");
+            $response ['partyRoom'] = array(
+                'id_party_room' => $row['id'],
+                'images' => array(),
+            );
+        while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+            $description = mysqli_real_escape_string($mysqli2,$row['description']);
+            $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
+            $partialImage = array(
+                'path' =>  $path,
+                'tittle' => $row ['tittle'],
+                'description' => $description,
+                'event' => $row['name_event'],
+                'id' => $row['id']
+            );
+            array_push($response['partyRoom']['images'], $partialImage);
+        }
+        
+        $json2 = json_encode($response['partyRoom']);
+        
+}//query with Services
+    elseif (empty ($id) && empty ($event)&& empty ($decoration) && $service!=null) {
+                $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,s.name_sub_service,id.cpr FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN sub_services AS s ON s.id_sub_service = cpr.id_sub_service WHERE cpr.id_sub_service ='" . $service . "'");
+            $response ['partyRoom'] = array(
+                'id_party_room' => $row['id'],
+                'images' => array(),
+            );
+        while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
+            $description = mysqli_real_escape_string($mysqli2,$row['description']);
+            $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
+            $partialImage = array(
+                'path' =>  $path,
+                'tittle' => $row ['tittle'],
+                'description' => $description,
+                'subservice' => $row['name_sub_service'],
+                'id' => $row['id']
+            );
+            array_push($response['partyRoom']['images'], $partialImage);
+        }
+        
+        $json2 = json_encode($response['partyRoom']);
 }
-//query with status
-    elseif (empty ($id) && $decoration!==null && $event!==null) {
-    
-   echo 'By event and decoration';
-   $result = $mysqli->query("SELECT pr.id_party_room,pr.party_room_name,pr.short_description,pr.long_description,pr.creation_date,pr.modification_date, "
-           . "status FROM content_party_room AS cpr  LEFT JOIN party_room AS pr on pr.id_party_room = cpr.id_party_room WHERE cpr.id_event = '" . $event . "' AND cpr.decoration = '" . $decoration . "'");
-   while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-       
-       $response ['partyRoom'] = array(
-           'id_party_room' => $row['id_party_room'],
-           'room_name' => $row['party_room_name'],
-           'short_description' => $row['short_description'],
-           'long_description' => $row['long_description'],
-           'status' => $row['status'],
-           'creation_date' => $row['creation_date'],
-           'modification_date' => $row['modification_date'],
-           'images' => array(),
-       );
-   }
 
-       $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.short_description,c.long_description,e.nombre,cpr.decoration FROM content_party_room AS cpr RIGHT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN events AS e ON e.id_event = cpr.id_event WHERE cpr.id_event ='" . $event . "' AND cpr.decoration = '" . $decoration . "'");
-       while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-           $sh_des_im = mysqli_real_escape_string($mysqli2,$row['short_description']);
-           $path= mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
-           $partialImage = array(
-               'path' =>  $path,
-               'tittle' => $row ['tittle'],
-               'short_description' => $sh_des_im,
-               'long_description' => $row['long_description'],
-               'decoration' => $row['decoration'],
-               'event' => $row['nombre']
-           );
-           array_push($response['partyRoom']['images'], $partialImage);
-       }
-      
-       $json2 = json_encode($response['partyRoom']);
-      
-}
     else {
 
     echo  'no';
