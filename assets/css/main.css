@@ -391,11 +391,14 @@ button:active{
 .border-center {
 	position: relative;
 }
+.line-icons{
+	line-height: 16px;
+}
 .border-center h4:after {
 	left: 50%;
 	z-index: 1;
 	width: 60px;
-	height: 3px;
+	height: 2px;
 	content: " ";
 	bottom: -50px;
 	margin-left: -30px;
@@ -462,7 +465,7 @@ button:active{
 .img-events-one{
 	background: linear-gradient(
       rgba(0, 0, 0, 0.0), 
-      rgba(0, 0, 0, 0.35)
+      rgba(0, 0, 0, 0.55)
     ),url('../img/fija4.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
@@ -474,7 +477,7 @@ button:active{
 .img-events-two{
 	background: linear-gradient(
       rgba(0, 0, 0, 0.0), 
-      rgba(0, 0, 0, 0.35)
+      rgba(0, 0, 0, 0.55)
     ),url('../img/mesas.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
@@ -492,7 +495,7 @@ button:active{
 .img-events-three{
 	background: linear-gradient(
       rgba(0, 0, 0, 0.0), 
-      rgba(0, 0, 0, 0.35)
+      rgba(0, 0, 0, 0.55)
     ),url('../img/Fija2-2.jpg') no-repeat center center;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
@@ -681,7 +684,7 @@ ul{
 .aboutus-text{
 	padding-left: 10px;
 	line-height: 30px;
-	font-size: 24px;
+	font-size: 22px;
 	padding-top: 20px;
 	letter-spacing: 0px;
 }
@@ -695,7 +698,22 @@ ul{
     text-decoration: none;
     background: rgba(255, 255, 255, 0.60) !important;
 }
-
+.arrow-header{
+	width: 70px;
+	height: 60px;
+}
+.links-from {
+    display: block;
+    position: relative;
+    top: -25px;
+    visibility: hidden;
+}
+.links-from-2 {
+    display: block;
+    position: relative;
+    top: -55px;
+    visibility: hidden;
+}
 #nav.affix {
     position: fixed;
     top: 0;
@@ -1063,9 +1081,9 @@ ul{
 	margin-right: 0px;
 }
 .video-container{
-	padding-right: 70px;
+	padding-right: 8.33333333333%;
 	padding-top: 130px;
-	padding-left: 70px;
+	padding-left: 8.33333333333%;
 }
 .video-container-halls{
 	padding-right: 70px;
@@ -1079,7 +1097,7 @@ ul{
 .arrow-icon-modal{
 	width: 30px;
 	height: auto;
-	padding-top: 300px;
+	padding-top: 250px;
 
 }
 .padding-carousel{
@@ -1097,8 +1115,8 @@ ul{
 .modal-body{
 	padding-bottom: 20px;
 	padding-top: 20px;
-	padding-left: 40px;
-	padding-right: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 .modal-image{
 	width: 100%;
@@ -1178,8 +1196,8 @@ ul{
 .block-shipping{
 	display: inline-block;
 	background-color: #dfd0c9;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	margin-bottom: -5px;
 }
 .shipping-title{
@@ -1191,23 +1209,17 @@ ul{
 	margin-top: -80px;
 }
 .shipping-size{
-	font-size: 24px;
+	font-size: 16px;
 }
-.carousel-inner .active.left { left: -33.3333333333%; }
-.carousel-inner .next        { left: 33.3333333333%; }
-
-.col-md-4{width: 33.3333333333%;}
-
-.carousel-inner > .item.next,
-.carousel-inner > .item.active.right {
-  left: 0;
-  -webkit-transform: translate3d(33.3333333333%, 0, 0);
-          transform: translate3d(33.3333333333%, 0, 0);
+.succes-alert{
+	margin-top: 20px;
+	border-radius: 0px;
 }
-
-.carousel-inner > .item.prev,
-.carousel-inner > .item.active.left {
-  left: 0;
-  -webkit-transform: translate3d(-33.3333333333%, 0, 0);
-          transform: translate3d(-33.3333333333%, 0, 0);
+.datepicker table tr td.day:hover, .datepicker table tr td.day.focused {
+    background: rgba(223,208,201, 0.61) !important;;
+    cursor: pointer;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.60) !important;
 }

@@ -26,7 +26,7 @@
 
 
   </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <body data-spy="scroll" data-target=".navbar" data-offset="50" id="init">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -57,25 +57,25 @@
                               </li>    
                       
                               <li class="dropdown">
-                                  <a href="services.html" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
+                                  <a href="services.php" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
                                       servicios
                                   </a>
                               </li>
                       
                               <li class="dropdown">
 
-                                  <a href="halls.html" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
+                                  <a href="halls.php" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
                                       salones
                                   </a>
                               </li>
                       
                               <li class="dropdown">
-                                  <a href="events.html" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
+                                  <a href="events.php" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
                                       eventos
                                   </a>
                               </li>
                               <li class="dropdown">
-                                  <a href="#init" class="dropdown-toggle nineteen grey nav-links-sections MontserratL small-caps">
+                                  <a href="#init" class="active dropdown-toggle nineteen grey nav-links-sections MontserratL small-caps">
                                       cotiza
                                   </a>
                           </ul>
@@ -92,7 +92,6 @@
     </section>
     <section class="description">
         <form  id="formid" method="post" >
-            <div id="ok" class="col-md-6 col-md-offset-3"></div>
                 <div class="row no-padd-right">
                        <div class="form-group  col-md-3 col-md-offset-3">
                             <input type="text" name="name"  id="name" class="form-control MontserratL"  placeholder="Nombre">
@@ -148,7 +147,8 @@
                     </div>
                 </div>  
                 <div class="row no-padd-right">
-                <button class="btn btn-default btn-theme-bg center-block MontserratL send-btn nineteen btn-color">Enviar</button>
+                <button class="btn btn-default btn-theme-bg center-block MontserratL send-btn sixteen btn-color">Enviar</button>
+                            <div id="ok" class="col-md-6 col-md-offset-3 MontserratL succes-alert"></div>
                 </div>                                                        
         </form>
     </section>
@@ -257,6 +257,7 @@ $(document).ready(function() {
                 success: function(data){
                     $("#ok").html(data);
                     $("#ok").show();
+                    $('.send-btn').hide();
                     document.getElementById('formid').reset();
                 }
             });

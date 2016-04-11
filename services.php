@@ -18,7 +18,7 @@
 
     <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50" id="init">
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -49,13 +49,13 @@
                               </li>    
                       
                               <li class="dropdown">
-                                  <a href="services.php" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
+                                  <a href="#init" class="active dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
                                       servicios
                                   </a>
                               </li>
                       
                               <li class="dropdown">
-                                  <a href="#init" class="Active dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
+                                  <a href="halls.php" class="dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
                                       salones
                                   </a>
                               </li>
@@ -73,150 +73,56 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <section class="filler-f1 container-fluid filler-about-us">
+    <section class="filler-f1 container-fluid filler-stwentytwo filler-about-us" id="init">
       <div class="row no-padd-right">
       <div class="border-left headline-brd col-md-10 col-md-offset-1">
-        <h3 class="Couture dark-grey nineteen titles-margin">Salones</h3>
-        <h4 class="Times-italic grey nineteen titles-margin-info">Conoce nuestros salones</h4>
+        <h3 class="Couture dark-grey nineteen titles-margin">Servicios</h3>
+        <h4 class="Times-italic grey nineteen titles-margin-info">Conoce los servicios que ofrecemos</h4>
       </div>
       </div>
     </section>
     <section class="services-links">
+      <div class="links-title-second center-block padd-bottom-20" style="margin-bottom: 0px;">
+        <h3 class="Montserrat nineteen text-center">Conoce nuestros servicios:</h3>
+      </div>
         <div class="row padd-bottom-20 services-links-blocks" style="margin-right: 0px;">
-          <div class="col-md-2 col-xs-6 col-md-offset-3">
-              <a href="#lincanto" class="click-scrolling">
-              <div class="out-border-icon">
-                  <div class="in-box-icon vertical-center" style="opacity: 0.6">
-                  <br>
-                    <h3 class="nineteen Montserrat grey text-center small-caps center-block margin-mobile">L'INCANTO</h3>
-                    <br>
-                  </div>
-              </div>
-              </a>
-          </div>
-          <div class="col-md-2 col-xs-6">
-            <a href="#bambinos" class="click-scrolling">
-            <div class="out-border-icon">
-              <div class="in-box-icon vertical-center" style="opacity: 0.6">
-                <br>
-                <h3 class="nineteen Montserrat grey text-center small-caps center-block">BAMBINOS</h3>
-                <br>
-              </div>
-            </div>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-6">
-            <a href="#farfala" class="click-scrolling">
-            <div class="out-border-icon">
-              <div class="in-box-icon vertical-center" style="opacity: 0.6">
-                <br>
-                <h3 class="nineteen Montserrat grey text-center small-caps center-block">FARFALA</h3>
-                <br>
-              </div>
-            </div>
-            </a>
-          </div>
-        </div>
+                 <div class="col-md-2 col-xs-6 col-md-offset-3">
+                     <a href="#renta" class="click-scrolling">
+                     <div class="out-border-icon">
+                         <div class="in-box-icon center-block">
+                         <br>
+                           <img src="assets/img/icons/iconos-30.png" alt="" class="icon-service center-block" style="padding-bottom:10px;">
+                           <h3 class="nineteen Montserrat grey text-center small-caps no-margin">renta de <br>mobiliario</h3>
+                           <br>
+                         </div>
+                     </div>
+                     </a>
+                 </div>
+                 <div class="col-md-2 col-xs-6">
+                     <a href="#mesas" class="click-scrolling">
+                     <div class="in-box-icon-block center-block">
+                     <br>
+                       <img src="assets/img/icons/iconos-29.png" alt="" class="icon-service-middle center-block">
+                       <h3 class="nineteen Montserrat grey text-center small-caps no-margin">mesa de <br>dulces y quesos </h3>
+                       <br>
+                     </div>
+                     </a>
+                 </div>
+                 <div class="col-md-2 col-xs-6">
+                     <a href="#floral" class="click-scrolling">
+                     <div class="out-border-icon">
+                         <div class="in-box-icon center-block">
+                         <br>
+                           <img src="assets/img/icons/iconos-28.png" alt="" class="icon-service center-block" style="padding-bottom:10px;">
+                           <h3 class="nineteen Montserrat grey text-center small-caps">diseño floral</h3>
+                           <br>
+                         </div>
+                     </div>
+                     </a>
+                 </div>
+               </div>
     </section>
-    <div class="links-from-2" id="lincanto"></div>
-    <section class="info-services-one">
-      <div class="row" style="margin-right: 0px;">
-        <div class="col-md-3 col-md-offset-1">
-          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="facade-1">
-            <div class="img-events-left-one">
-              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
-                <h4 class="Montserrat white twentytwo no-margin">Fachada</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <h3 class="nineteen Couture dark-grey text-center padding-block hall-title">L'incanto</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="event-gallery-1">
-            <div class="img-events-right-one">
-              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
-                <h4 class="Montserrat white twentytwo no-margin">Galería de eventos</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="three-img">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <div class="row events-web" style="margin-right: 0px;" id="scrolling">
-              <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="in-1">
-                <div class="col-md-4 img-events-one" style="position: relative;">
-                  <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
-                    <h4 class="Montserrat white twentytwo no-margin">Interiores</h4>
-                  </div>
-                </div>
-              </a>
-              <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="out-1">
-                <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Exteriores</h4>
-                  </div>
-                </div>  
-              </a>    
-              <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="room-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Cuarto de la novia</h4>
-                  </div>
-                </div>
-              </a> 
-            </div>
-          </div>
-          <div class="item">
-            <div class="row events-web" style="margin-right: 0px;" id="scrolling">  
-              <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="bath-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Baños</h4>
-                  </div>
-                </div>
-              </a>
-              <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="kitchen-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Cocina</h4>
-                  </div>
-                </div>
-              </a>
-              <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="all-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Ver todas</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>  
-      </div>
-      <div class="container">
+    <div class="container">
         <div class="modal fade and carousel slide" id="lightbox">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -245,153 +151,20 @@
         </div><!-- /.modal -->
 
       </div><!-- /.container -->
-      <div id="scrolling" class="scrolling events-mobile">
-      <ul class="slide-img">
-          <li class="img-in">
-              <div class="img-events-one" style="position: relative;">
-                <div class="text-bottom text-img-1">
-                <h4 class="Montserrat white twentytwo no-margin">Renta de mobiliario</h4>
-                </div>
-              </div>
-          </li>
-          <li class="img-in">
-              <div class="img-events-two" style="position: relative;">
-                <div class="text-bottom text-img">
-                <h4 class="Montserrat white twentytwo no-margin">Mesa de dulces y quesos</h4>
-                </div>
-              </div>
-          </li>
-          <li class="img-in">
-              <div class="img-events-three" style="position: relative;">
-                <div class="text-bottom text-img">
-                <h4 class="Montserrat white twentytwo no-margin">Diseño floral</h4>
-                </div>
-              </div>
-          </li>
-      </ul>
-      </div>
-    </section>
-        <section class="video">
-          <div class="video-container-halls padding-carousel">
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-                <iframe src="https://player.vimeo.com/video/144181295?title=0&byline=0&portrait=0" width="500" height="20" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-    <div class="links-from-2" id="farfala"></div>
-    <section class="info-services-one">
-     <div class="row" style="margin-right: 0px;">
-        <div class="col-md-3 col-md-offset-1">
-          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="facade-2">
-            <div class="img-events-left-one">
-              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
-                <h4 class="Montserrat white twentytwo no-margin">Fachada</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <h3 class="nineteen Couture dark-grey text-center padding-block hall-title">farfala</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="event-gallery-2">
-            <div class="img-events-right-one">
-              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
-                <h4 class="Montserrat white twentytwo no-margin">Galería de eventos</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="three-img">
-      <div class="row events-web" style="margin-right: 0px;" id="scrolling">
-              <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="in-2">
-                <div class="col-md-4 img-events-one" style="position: relative;">
-                  <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
-                    <h4 class="Montserrat white twentytwo no-margin">Interiores</h4>
-                  </div>
-                </div>
-              </a>
-              <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="out-2">
-                <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Exteriores</h4>
-                  </div>
-                </div>  
-              </a>    
-              <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="room-2">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Baños y cocina</h4>
-                  </div>
-                </div>
-              </a> 
-            </div>
-      <div id="scrolling" class="scrolling events-mobile">
-      <ul class="slide-img">
-          <li class="img-in">
-              <div class="img-events-one" style="position: relative;">
-                <div class="text-bottom text-img-1">
-                <h4 class="Montserrat white twentytwo no-margin">Renta de mobiliario</h4>
-                </div>
-              </div>
-          </li>
-          <li class="img-in">
-              <div class="img-events-two" style="position: relative;">
-                <div class="text-bottom text-img">
-                <h4 class="Montserrat white twentytwo no-margin">Mesa de dulces y quesos</h4>
-                </div>
-              </div>
-          </li>
-          <li class="img-in">
-              <div class="img-events-three" style="position: relative;">
-                <div class="text-bottom text-img">
-                <h4 class="Montserrat white twentytwo no-margin">Diseño floral</h4>
-                </div>
-              </div>
-          </li>
-      </ul>
-      </div>
-    </section>
-        <section class="video">
-          <div class="video-container-halls padding-carousel">
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-    <!--           <video autoplay loop class="embed-responsive-item">
-                  <source src="assets/videos/VideoHomePage.mp4" type="video/mp4">
-              </video> -->
-                <iframe src="https://player.vimeo.com/video/144181295?title=0&byline=0&portrait=0" width="500" height="20" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-    <div class="links-from-2" id="bambinos"></div>
+    <div class="links-from-2" id="renta"></div>
     <section class="info-services-one">
       <div class="row" style="margin-right: 0px;">
         <div class="col-md-3 col-md-offset-1">
-          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="facade-3">
-            <div class="img-events-left-one">
-              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
-                <h4 class="Montserrat white twentytwo no-margin">Fachada</h4>
-              </div>
-            </div>
-          </a>
+          <div class="img-events-left-one">
+            
+          </div>
         </div>
         <div class="col-md-4">
           <div class="out-border" id="event-one-1">
             <div class="middle-border">
               <div class="in-box-event center-block">
-                <h3 class="nineteen Couture dark-grey text-center padding-block hall-title">Bambinos</h3>
+                <img src="assets/img/icons/iconos-27.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat dark-grey text-center padding-block">RENTA DE <br>MOBILIARIO</h3>
                 <br>
                 <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
                 <br>
@@ -400,40 +173,36 @@
           </div>
         </div>
         <div class="col-md-3">
-          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="event-gallery-3">
-            <div class="img-events-right-one">
-              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
-                <h4 class="Montserrat white twentytwo no-margin">Galería de eventos</h4>
-              </div>
-            </div>
-          </a>
+          <div class="img-events-right-one">
+            
+          </div>
         </div>
       </div>
     </section>
-    <section class="three-img">
+    <section class="three-img" style="margin-bottom: 120px;">
       <div class="row events-web" style="margin-right: 0px;" id="scrolling">
-              <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="in-3">
-                <div class="col-md-4 img-events-one" style="position: relative;">
-                  <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
-                    <h4 class="Montserrat white twentytwo no-margin">Exteriores</h4>
-                  </div>
-                </div>
-              </a>
-              <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="out-3">
-                <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Juegos interiores y exteriores</h4>
-                  </div>
-                </div>  
-              </a>    
-              <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="room-3">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
-                  <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
-                    <h4 class="Montserrat white twentytwo no-margin">Baños y cocina</h4>
-                  </div>
-                </div>
-              </a> 
+        <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="service-1">
+          <div class="col-md-4 img-events-one" style="position: relative;">
+            <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
+              <h4 class="Montserrat white twentytwo no-margin">Mesas</h4>
             </div>
+          </div>
+        </a>
+        <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="service-2">
+          <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
+            <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+              <h4 class="Montserrat white twentytwo no-margin">Sillas</h4>
+            </div>
+          </div>  
+        </a>    
+        <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="service-3">
+          <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+            <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+              <h4 class="Montserrat white twentytwo no-margin">Mantelería</h4>
+            </div>
+          </div>
+        </a> 
+      </div>
       <div id="scrolling" class="scrolling events-mobile">
       <ul class="slide-img">
           <li class="img-in">
@@ -460,17 +229,177 @@
       </ul>
       </div>
     </section>
-        <section class="video">
-          <div class="video-container-halls padding-carousel">
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-    <!--           <video autoplay loop class="embed-responsive-item">
-                  <source src="assets/videos/VideoHomePage.mp4" type="video/mp4">
-              </video> -->
-                <iframe src="https://player.vimeo.com/video/99749814?title=0&byline=0&portrait=0" width="500" height="20" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="links-from-2" id="mesas"></div>
+    <section class="info-services-one">
+      <div class="row" style="margin-right: 0px;">
+        <div class="col-md-3 col-md-offset-1">
+          <div class="img-events-left-one">
+            
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-27.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat dark-grey text-center padding-block">MESA DE <br> DULCES Y QUESOS</h3>
+                <br>
+                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                <br>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+        <div class="col-md-3">
+          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="service-4">
+            <div class="img-events-right-one">
+              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
+                <h4 class="Montserrat white twentytwo no-margin">Mesa de postres</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="three-img" style="margin-bottom: 120px;">
+      <div class="row events-web" style="margin-right: 0px;" id="scrolling">
+        <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="service-5">
+          <div class="col-md-4 img-events-one" style="position: relative;">
+            <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
+              <h4 class="Montserrat white twentytwo no-margin">Mesa de quesos</h4>
+            </div>
+          </div>
+        </a>
+        <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="service-6">
+          <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
+            <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+              <h4 class="Montserrat white twentytwo no-margin">Carrito de dulces</h4>
+            </div>
+          </div>  
+        </a>    
+        <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="service-7">
+          <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+            <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+              <h4 class="Montserrat white twentytwo no-margin">Carrito de hospital</h4>
+            </div>
+          </div>
+        </a> 
+      </div>
+      <div id="scrolling" class="scrolling events-mobile">
+      <ul class="slide-img">
+          <li class="img-in">
+              <div class="img-events-one" style="position: relative;">
+                <div class="text-bottom text-img-1">
+                <h4 class="Montserrat white sixteen no-margin">Renta de mobiliario</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-two" style="position: relative;">
+                <div class="text-bottom text-img">
+                <h4 class="Montserrat white sixteen no-margin">Mesa de dulces y quesos</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-three" style="position: relative;">
+                <div class="text-bottom text-img">
+                <h4 class="Montserrat white sixteen no-margin">Diseño floral</h4>
+                </div>
+              </div>
+          </li>
+      </ul>
+      </div>
+    </section>
+    <div class="links-from-2" id="floral"></div>
+    <section class="info-services-one">
+      <div class="row" style="margin-right: 0px;">
+        <div class="col-md-3 col-md-offset-1">
+          <div class="img-events-left-one">
+            
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-27.png" alt="" class="icon-event center-block">
+                <h3 class="nineteen Montserrat dark-grey text-center padding-block">DISEÑO FLORAL</h3>
+                <br>
+                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="service-8">
+            <div class="img-events-right-one">
+              <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
+                <h4 class="Montserrat white twentytwo no-margin">Decoración floral</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="three-img" style="margin-bottom: 120px;">
+      <div class="row events-web" style="margin-right: 0px;" id="scrolling">
+        <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="service-9">
+          <div class="col-md-4 img-events-one" style="position: relative;">
+            <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
+              <h4 class="Montserrat white twentytwo no-margin">Centro de mesa</h4>
+            </div>
+          </div>
+        </a>
+        <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="service-10">
+          <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
+            <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+              <h4 class="Montserrat white twentytwo no-margin">Arreglos florales</h4>
+            </div>
+          </div>  
+        </a>    
+        <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="service-11">
+          <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+            <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
+              <h4 class="Montserrat white twentytwo no-margin">Ramos de novia</h4>
+            </div>
+          </div>
+        </a> 
+      </div>
+      <div id="scrolling" class="scrolling events-mobile">
+      <ul class="slide-img">
+          <li class="img-in">
+              <div class="img-events-one" style="position: relative;">
+                <div class="text-bottom text-img-1">
+                <h4 class="Montserrat white sixteen no-margin">Renta de mobiliario</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-two" style="position: relative;">
+                <div class="text-bottom text-img">
+                <h4 class="Montserrat white sixteen no-margin">Mesa de dulces y quesos</h4>
+                </div>
+              </div>
+          </li>
+          <li class="img-in">
+              <div class="img-events-three" style="position: relative;">
+                <div class="text-bottom text-img">
+                <h4 class="Montserrat white sixteen no-margin">Diseño floral</h4>
+                </div>
+              </div>
+          </li>
+      </ul>
+      </div>
+    </section>
+    <section>
+      <div class="row no-padd-right">
+        <div class="col-md-7 col-md-offset-4 shipping-section">
+          <div class="block-shipping"></div><h3 class="Montserrat shipping-size grey shipping-title">Contamos con envio a domicilio</h3>
+        </div>
+      </div>  
+    </section>
     <footer class="lu-footer">
         <div class="row" style="margin-right: 0px;">
           <div class="col-md-4 col-md-offset-1 padding-footer">
@@ -520,7 +449,6 @@
     <script src="assets/js/mail.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/gallery.js"></script>
     <script src="assets/js/itemslide.min.js"></script>
     <script src="assets/js/affix.js"></script>
     <script type="text/javascript">
@@ -542,7 +470,7 @@
         <script type="text/javascript">
             $(document).ready(function() {
               $(document).on('click', function(){      
-               $('.navbar-collapse,').removeClass('in');
+               $('.navbar-collapse').removeClass('in');
               });
               //Setting sticky navbar
               $('#nav').affix({
@@ -573,7 +501,7 @@
               //  $('#event-one-' + x).css('display', 'block');
               // }, 8000);
             });
-            $('body').scrollspy({target: ".navbar-nav", offset: -50});
+            $('body').scrollspy({target: ".navbar-nav", offset: -20});
 
             $("#myNavbarWeb a,#myNavbarMobile a, .click-scrolling").on('click', function (event) {
                 event.preventDefault();
@@ -585,7 +513,7 @@
                   else{
                     var hash = this.hash;
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top -50
+                        scrollTop: $(hash).offset().top -20
                     }, 800, function () {
                         window.location.hash = hash;
 

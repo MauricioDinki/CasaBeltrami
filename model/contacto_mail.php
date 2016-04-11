@@ -50,7 +50,7 @@ $send_to = 'desarrolloblick@gmail.com';
         
         '
     ));
-$message = '<div class="alert alert-success" role="alert">Tu mensaje ha sido enviado!. Pronto nos pondremos en contacto contigo</div>';
+$message = '<div class="alert alert-success" role="alert">¡Tu mensaje ha sido enviado, pronto nos pondremos en contacto contigo!</div>';
 echo $message;    
   
     
