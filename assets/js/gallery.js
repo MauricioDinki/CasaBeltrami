@@ -11,9 +11,9 @@ $(document).ready(function() {
             console.log(data)
             var images = data.content;
             console.log('this' + images);
-            /*for each (value in images){
+            for each (value in images){
               $('.item.active').append("<img src='"+value.path+"' alt='Second slide' class='img-responsive modal-image'>");
-            }*/
+            }
             //this part to pass the var
         }
     });     

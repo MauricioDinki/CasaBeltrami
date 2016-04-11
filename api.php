@@ -2,9 +2,9 @@
 
 include "config.php";
 //header("Content-Type: application/json; charset=UTF-8");
-error_reporting(0);
+error_reporting(E_ALL);
 
-$id = mysqli_real_escape_string($mysqli,$_GET["id"]);
+$id =mysqli_real_escape_string($mysqli,$_GET["id"]);
 $event =mysqli_real_escape_string($mysqli2,$_GET["event"]);
 $decoration = mysqli_real_escape_string($mysqli3,$_GET["decoration"]);
 $service = mysqli_real_escape_string($mysqli4,$_GET["service"]);
@@ -13,7 +13,7 @@ $service = mysqli_real_escape_string($mysqli4,$_GET["service"]);
 //query only by Party Room (ID)
 if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
     echo 'By party room';
-        echo $st;
+        
         $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room WHERE id_party_room = '" . $id . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             
@@ -24,7 +24,7 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
             );
         }
 
-        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration,id.cpr FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN decorations AS d ON d.id_decoration = cpr.id_decoration WHERE cpr.id_party_room ='" . $id ."'");
+        $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN decorations AS d ON d.id_decoration = cpr.id_decoration WHERE cpr.id_party_room ='" . $id ."'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
             $description = mysqli_real_escape_string($mysqli2,$row['description']);
             $path=mysqli_real_escape_string($mysqli2,'php/album/' . $row['route']);
@@ -33,7 +33,7 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
                 'tittle' => $row ['tittle'],
                 'description' => $description,
                 'decoration' => $row['name_decoration'],
-                'id' => $row['id']
+               
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
