@@ -1,25 +1,22 @@
 $(document).ready(function() {
   $('#facade-1').on('click', function(){ 
-      console.log("si");
-      $.ajax({
-        cache: false,
-        type: 'GET',
-        url: 'api.php',
-        data: 'id=1&decoration=1',
-        success: function(data) {
-            var res = jQuery.parseJSON(data);
-            console.log(data)
-            var images = data.content;
-            console.log('this' + images);
-            for each (var value in images){
-              var item = "<img src='" + 
-                   images[value].path + 
-                   "' alt='Second slide' " + 
-                   "class='img-responsive modal-image'>";
-              $('.item.active').append(item);
-            }
-            //this part to pass the var
+    console.log("si");
+    $.ajax({
+      cache: false,
+      type: 'GET',
+      url: 'api.php',
+      data: 'id=1&decoration=1',
+      success: function(data) {
+        var res = jQuery.parseJSON(data);
+        console.log(data)
+        var images = data.content;
+        console.log('this' + images);
+        for each (var value in images){
+          var item = "<img src='" + images[value].path + "' alt='Second slide' class='img-responsive modal-image'>";
+          $('.item.active').append(item);
         }
+        //this part to pass the var
+      }
     });     
   });
 });
