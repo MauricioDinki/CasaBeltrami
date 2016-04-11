@@ -276,7 +276,7 @@
                <br>
              </div>
              </div>
-         </div>
+         </a>
      </div>
      <div class="col-md-2 col-xs-6">
          <a href="#empresarial" class="click-scrolling">
@@ -288,7 +288,7 @@
              <br>
            </div>
            </div>
-         </div>
+         </a>
      </div>
      <div class="col-md-2 col-xs-6">
          <a href="#infantil" class="click-scrolling">
@@ -300,7 +300,7 @@
                <br>
              </div>
              </div>
-         </div>
+         </a>
      </div>
      <div class="col-md-2 col-xs-6 col-md-offset-3">
            <a href="#privada" class="click-scrolling">
@@ -1108,6 +1108,7 @@
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/itemslide.min.js"></script>
+    <script src="assets/js/gallery.js"></script>
     <script src="assets/js/affix.js"></script>
     <script type="text/javascript">
         /*  Stellar for background scrolling  */
@@ -1159,11 +1160,10 @@
               //  $('#event-one-' + x).css('display', 'block');
               // }, 8000);
             });
-            $('body').scrollspy({target: ".navbar-nav", offset: -20});
+            $('body').scrollspy({target: ".navbar-nav", offset: -50});
 
             $("#myNavbarWeb a,#myNavbarMobile a, .click-scrolling").on('click', function (event) {
-                <a href="#lincanto" class="click-scrolling">event.preventDefault();
-
+                event.preventDefault();
                 var pageRef = $(this).attr("href");
                 var offset = 80;
                 if(pageRef[0] != '#') {
@@ -1172,7 +1172,7 @@
                   else{
                     var hash = this.hash;
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top -20
+                        scrollTop: $(hash).offset().top -50
                     }, 800, function () {
                         window.location.hash = hash;
 

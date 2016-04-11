@@ -449,6 +449,7 @@
     <script src="assets/js/mail.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
+        <script src="assets/js/gallery.js"></script>
     <script src="assets/js/itemslide.min.js"></script>
     <script src="assets/js/affix.js"></script>
     <script type="text/javascript">
@@ -501,19 +502,19 @@
               //  $('#event-one-' + x).css('display', 'block');
               // }, 8000);
             });
-            $('body').scrollspy({target: ".navbar-nav", offset: -20});
+            $('body').scrollspy({target: ".navbar-nav", offset: -50});
 
             $("#myNavbarWeb a,#myNavbarMobile a, .click-scrolling").on('click', function (event) {
                 event.preventDefault();
                 var pageRef = $(this).attr("href");
-                var offset = 80;
+                var offset = 50;
                 if(pageRef[0] != '#') {
                     window.location.href = pageRef;
                   }
                   else{
                     var hash = this.hash;
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top -20
+                        scrollTop: $(hash).offset().top -50
                     }, 800, function () {
                         window.location.hash = hash;
 
