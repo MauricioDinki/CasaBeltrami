@@ -12,7 +12,11 @@ $(document).ready(function() {
             var images = data.content;
             console.log('this' + images);
             for each (var value in images){
-              $('.item.active').append("<img src='" + images[value].path + "' alt='Second slide' class='img-responsive modal-image'>");
+              var item = "<img src='" + 
+                   images[value].path + 
+                   "' alt='Second slide' " + 
+                   "class='img-responsive modal-image'>";
+              $('.item.active').append(item);
             }
             //this part to pass the var
         }
