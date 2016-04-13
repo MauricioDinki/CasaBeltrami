@@ -7,13 +7,11 @@ $(document).ready(function() {
       url: 'api.php',
       data: 'id=1&decoration=1',
       success: function(data) {
-        //var res = jQuery.parseJSON(data);
-        //var res = JSON.parse(data);
-        console.log(data.join());
+        console.log(data);
 
-        var images = data[images];
+        var images = data.images;
         console.log('this ' + images);
-        for(var i=0;i<images.length;i++){
+        for(var i=0;i<data.images.length;i++){
           if(i>1){
             var item = "<div class='item active'><img src='" + images[i].path + "' alt='Second slide' class='img-responsive modal-image'></div>";
           }

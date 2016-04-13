@@ -199,7 +199,7 @@
          <a href="#xvfiesta" class="click-scrolling">
          <div class="in-box-icon-block center-block">
          <br>
-           <img src="assets/img/icons/iconos-24.png" alt="" class="icon-event center-block">
+           <img src="assets/img/icons/vestido-11.png" alt="" class="icon-event center-block">
            <h3 class="nineteen Montserrat grey text-center small-caps margin-mobile ">xv años</h3>
            <br>
          </div>
@@ -330,7 +330,7 @@
          <div class="out-border-icon">
            <div class="in-box-icon center-block">
              <br>
-             <img src="assets/img/icons/iconos-24.png" alt="" class="icon-event center-block">
+             <img src="assets/img/icons/vestido-11.png" alt="" class="icon-event center-block">
              <h3 class="nineteen Montserrat grey text-center small-caps margin-mobile">xv años</h3>
              <br>
            </div>

@@ -123,7 +123,7 @@
       <div class="row" style="margin-right: 0px;">
         <div class="col-md-3 col-md-offset-1">
           <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="facade-1">
-            <div class="img-events-left-one">
+            <div class="img-events-left-one-lincanto">
               <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
                 <h4 class="Montserrat white twentytwo no-margin">Fachada</h4>
               </div>
@@ -144,7 +144,7 @@
         </div>
         <div class="col-md-3">
           <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="event-gallery-1">
-            <div class="img-events-right-one">
+            <div class="img-events-right-one-lincanto-events">
               <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;">
                 <h4 class="Montserrat white twentytwo no-margin">Galería de eventos</h4>
               </div>
@@ -159,21 +159,22 @@
           <div class="item active">
             <div class="row events-web" style="margin-right: 0px;" id="scrolling">
               <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="in-1">
-                <div class="col-md-4 img-events-one" style="position: relative;">
+                <div class="col-md-4 img-events-one-in" style="position: relative; background: linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.55)),url(assets/img/lincanto/in.jpg) no-repeat; background-size: cover;">
                   <div class="text-bottom" style="position: absolute; left:35px; bottom: 20px;" >
                     <h4 class="Montserrat white twentytwo no-margin">Interiores</h4>
                   </div>
                 </div>
               </a>
               <a href="#lightbox" data-toggle="modal" data-slide-to="2" id="out-1">
-                <div class="col-md-4 img-events-two" style="position: relative;" data-slide-to="2">  
+                <div class="col-md-4 img-events-two" style="position: relative; background: linear-gradient(
+      rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.55)),url(assets/img/lincanto/out.jpg) no-repeat; background-size: cover;">  
                   <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
                     <h4 class="Montserrat white twentytwo no-margin">Exteriores</h4>
                   </div>
                 </div>  
               </a>    
               <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="room-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+                <div class="col-md-4 img-events-three" style="position: relative; background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.55)),url(assets/img/lincanto/1.jpg) no-repeat; background-size: cover;">
                   <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
                     <h4 class="Montserrat white twentytwo no-margin">Cuarto de la novia</h4>
                   </div>
@@ -184,21 +185,21 @@
           <div class="item">
             <div class="row events-web" style="margin-right: 0px;" id="scrolling">  
               <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="bath-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+                <div class="col-md-4 img-events-three" style="position: relative; background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.55)),url(assets/img/lincanto/bath.jpg) no-repeat; background-size: cover;">
                   <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
                     <h4 class="Montserrat white twentytwo no-margin">Baños</h4>
                   </div>
                 </div>
               </a>
               <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="kitchen-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+                <div class="col-md-4 img-events-three" style="position: relative; background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.55)),url(assets/img/lincanto/kitchen.jpg) no-repeat; background-size: cover;">
                   <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
                     <h4 class="Montserrat white twentytwo no-margin">Cocina</h4>
                   </div>
                 </div>
               </a>
               <a href="#lightbox" data-toggle="modal" data-slide-to="15" id="all-1">
-                <div class="col-md-4 img-events-three" style="position: relative;" data-slide-to="15">
+                <div class="col-md-4 img-events-three" style="position: relative; background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.55)),url(assets/img/lincanto/all.jpg) no-repeat; background-size: cover;">
                   <div class="text-bottom" style="position: absolute; left:25px; bottom: 20px;">
                     <h4 class="Montserrat white twentytwo no-margin">Ver todas</h4>
                   </div>

@@ -45,7 +45,6 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
     elseif ($id!=null && empty ($st) && $decoration!=null && empty ($service)) {
         $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room WHERE id_party_room = '" . $id . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            
             $response ['partyRoom'] = array(
                 'id_party_room' => $row['id_party_room'],
                 'room_name' => $row['party_room_name'],
@@ -64,9 +63,14 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);    
         }
-        //print_r($response);
-        $json2 = json_encode($response['partyRoom']);
-        return $json2;
+        try {
+            $json2 = json_encode($response['partyRoom']);
+            echo $json2;
+
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
+
         
 } //query with Events
     elseif (empty ($id) && empty ($decoration) && $event!=null && empty ($service)) {
