@@ -542,7 +542,7 @@
         <script type="text/javascript">
             $(document).ready(function() {
               $(document).on('click', function(){      
-               $('.navbar-collapse,').removeClass('in');
+               $('.navbar-collapse').removeClass('in');
               });
               //Setting sticky navbar
               $('#nav').affix({

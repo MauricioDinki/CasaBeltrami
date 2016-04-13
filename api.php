@@ -43,8 +43,6 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
 }   
 
     elseif ($id!=null && empty ($st) && $decoration!=null && empty ($service)) {
-    echo 'By party room and decoration';
-        echo $st;
         $result = $mysqli->query("SELECT id_party_room,party_room_name FROM party_room WHERE id_party_room = '" . $id . "'");
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             
@@ -54,7 +52,6 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
                 'images' => array(),
             );
         }
-
         $result2 = $mysqli2->query("SELECT c.tittle,c.route,c.description,d.name_decoration FROM content_party_room AS cpr LEFT JOIN content AS c ON c.id_content = cpr.id_content LEFT JOIN decorations AS d ON d.id_decoration = cpr.id_decoration WHERE cpr.id_party_room ='" . $id . "' AND cpr.id_decoration = '" . $decoration . "' AND d.id_party = '" . $id . "'");
         while ($row = $result2->fetch_array(MYSQLI_ASSOC)) {
             $description = mysqli_real_escape_string($mysqli2,$row['description']);
@@ -65,10 +62,11 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
                 'description' => $description,
                 'decoration' => $row['name_decoration']
             );
-            array_push($response['partyRoom']['images'], $partialImage);
+            array_push($response['partyRoom']['images'], $partialImage);    
         }
-        
+        //print_r($response);
         $json2 = json_encode($response['partyRoom']);
+        return $json2;
         
 } //query with Events
     elseif (empty ($id) && empty ($decoration) && $event!=null && empty ($service)) {

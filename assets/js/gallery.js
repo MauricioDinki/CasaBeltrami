@@ -3,14 +3,16 @@ $(document).ready(function() {
     console.log("si");
     $.ajax({
       cache: false,
-      type: 'POST',
+      type: 'GET',
       url: 'api.php',
       data: 'id=1&decoration=1',
       success: function(data) {
-        var res = jQuery.parseJSON(data);
-        console.log(data)
-        var images = data.content;
-        console.log('this' + images);
+        //var res = jQuery.parseJSON(data);
+        //var res = JSON.parse(data);
+        console.log(data.join());
+
+        var images = data[images];
+        console.log('this ' + images);
         for(var i=0;i<images.length;i++){
           if(i>1){
             var item = "<div class='item active'><img src='" + images[i].path + "' alt='Second slide' class='img-responsive modal-image'></div>";
@@ -31,10 +33,10 @@ $(document).ready(function() {
         url: 'api.php',
         data: 'party_room=1&decoration=2',
         success: function(data) {
-        var res = jQuery.parseJSON(data);
+        var res = data;
         console.log(data)
         var images = data.content;
-        console.log('this' + images);
+        console.log('this ' + images);
         for(var i=0;i<images.length;i++){
           if(i>1){
             var item = "<div class='item active'><img src='" + images[i].path + "' alt='Second slide' class='img-responsive modal-image'></div>";
@@ -55,10 +57,10 @@ $(document).ready(function() {
         url: 'api.php',
         data: 'party_room=1&decoration=3',
         success: function(data) {
-        var res = jQuery.parseJSON(data);
+        var res = data;
         console.log(data)
         var images = data.content;
-        console.log('this' + images);
+        console.log('this ' + images);
         for(var i=0;i<images.length;i++){
           if(i>1){
             var item = "<div class='item active'><img src='" + images[i].path + "' alt='Second slide' class='img-responsive modal-image'></div>";
@@ -79,10 +81,10 @@ $(document).ready(function() {
         url: 'api.php',
         data: 'party_room=1&decoration=4',
         success: function(data) {
-        var res = jQuery.parseJSON(data);
+        var res = data;
         console.log(data)
         var images = data.content;
-        console.log('this' + images);
+        console.log('this ' + images);
         for(var i=0;i<images.length;i++){
           if(i>1){
             var item = "<div class='item active'><img src='" + images[i].path + "' alt='Second slide' class='img-responsive modal-image'></div>";
@@ -103,7 +105,7 @@ $(document).ready(function() {
         url: 'api.php',
         data: 'party_room=1&decoration=5',
         success: function(data) {
-        var res = jQuery.parseJSON(data);
+        var res = data;
         console.log(data)
         var images = data.content;
         console.log('this' + images);
@@ -127,7 +129,7 @@ $(document).ready(function() {
         url: 'api.php',
         data: 'party_room=1&decoration=6',
         success: function(data) {
-        var res = jQuery.parseJSON(data);
+        var res = data;
         console.log(data)
         var images = data.content;
         console.log('this' + images);
@@ -151,7 +153,7 @@ $(document).ready(function() {
         url: 'api.php',
         data: 'party_room=1&decoration=7',
         success: function(data) {
-        var res = jQuery.parseJSON(data);
+        var res = data;
         console.log(data)
         var images = data.content;
         console.log('this' + images);
