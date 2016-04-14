@@ -54,7 +54,7 @@
                                   </a>
                               </li>
                       
-                              <li class="dropdown">
+                              <li class="dropdown active">
                                   <a href="#init" class="Active dropdown-toggle MontserratL nineteen grey nav-links-sections small-caps">
                                       salones
                                   </a>
@@ -86,7 +86,7 @@
           <div class="col-md-2 col-xs-6 col-md-offset-3">
               <a href="#lincanto" class="click-scrolling">
               <div class="out-border-icon">
-                  <div class="in-box-icon vertical-center" style="opacity: 0.6">
+                  <div class="in-box-icon-opacity vertical-center">
                   <br>
                     <h3 class="nineteen Montserrat grey text-center small-caps center-block margin-mobile">L'INCANTO</h3>
                     <br>
@@ -95,20 +95,9 @@
               </a>
           </div>
           <div class="col-md-2 col-xs-6">
-            <a href="#bambinos" class="click-scrolling">
-            <div class="out-border-icon">
-              <div class="in-box-icon vertical-center" style="opacity: 0.6">
-                <br>
-                <h3 class="nineteen Montserrat grey text-center small-caps center-block">BAMBINOS</h3>
-                <br>
-              </div>
-            </div>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-6">
             <a href="#farfala" class="click-scrolling">
             <div class="out-border-icon">
-              <div class="in-box-icon vertical-center" style="opacity: 0.6">
+              <div class="in-box-icon-opacity vertical-center">
                 <br>
                 <h3 class="nineteen Montserrat grey text-center small-caps center-block">FARFALA</h3>
                 <br>
@@ -116,8 +105,20 @@
             </div>
             </a>
           </div>
+          <div class="col-md-2 col-xs-6">
+            <a href="#bambinos" class="click-scrolling">
+            <div class="out-border-icon">
+              <div class="in-box-icon-opacity vertical-center">
+                <br>
+                <h3 class="nineteen Montserrat grey text-center small-caps center-block">BAMBINOS</h3>
+                <br>
+              </div>
+            </div>
+            </a>
+          </div>
         </div>
     </section>
+    <div class="links-from-home" id="lincanto-home"></div>
     <div class="links-from-2" id="lincanto"></div>
     <section class="info-services-one">
       <div class="row" style="margin-right: 0px;">
@@ -222,16 +223,8 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-body">
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="http://placehold.it/900x500/777/" alt="First slide" class="img-responsive modal-image">
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/666/" alt="Second slide" class="img-responsive modal-image">
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/555/" alt="Third slide" class="img-responsive modal-image">
-                  </div>
+                <div class="carousel-inner gallery">
+
                 </div><!-- /.carousel-inner -->
                 <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
                   <img src="img/arrows.png" alt="" class="arrow-icon-modal">
@@ -280,6 +273,7 @@
             </div>
           </div>
         </section>
+    <div class="links-from-home" id="farfala-home"></div>
     <div class="links-from-2" id="farfala"></div>
     <section class="info-services-one">
      <div class="row" style="margin-right: 0px;">
@@ -376,6 +370,7 @@
             </div>
           </div>
         </section>
+    <div class="links-from-home" id="bambinos-home"></div>
     <div class="links-from-2" id="bambinos"></div>
     <section class="info-services-one">
       <div class="row" style="margin-right: 0px;">
@@ -558,21 +553,6 @@
                 carousel.next();
                 
               }, 4000);
-              //Setting random for events information blocks
-              // var x = Math.floor((Math.random() * 5) + 1);
-              // var y = Math.floor((Math.random() * 6) + 1);
-
-              // $('.out-border').not('#events-two-' + y + ', event-one-' + x).css('display', 'none');
-              // $('#events-two-' + y).css('display', 'block');
-              // $('#event-one-' + x).css('display', 'block');
-              // window.setInterval(function() {
-              //  var x = Math.floor((Math.random() * 5) + 1);
-              //  var y = Math.floor((Math.random() * 6) + 1);
-
-              //  $('.out-border').not('#events-two-' + y + ', event-one-' + x).css('display', 'none');
-              //  $('#events-two-' + y).css('display', 'block');
-              //  $('#event-one-' + x).css('display', 'block');
-              // }, 8000);
             });
             $('body').scrollspy({target: ".navbar-nav", offset: -50});
 

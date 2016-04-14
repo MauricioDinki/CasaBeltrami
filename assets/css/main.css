@@ -580,6 +580,9 @@ button:active{
 .in-box-icon{
 	background: #FFF;
 }
+.in-box-icon-opacity{
+	background: rgba(255,255,255,0.6);
+}
 .in-box-icon-block{
 	padding: 15px;
 	background: rgba(223,208,201, 0.61);
@@ -736,6 +739,12 @@ ul{
     display: block;
     position: relative;
     top: -25px;
+    visibility: hidden;
+}
+.links-from-home {
+    display: block;
+    position: relative;
+    top: -105px;
     visibility: hidden;
 }
 .links-from-2 {
@@ -1025,6 +1034,9 @@ ul{
 	.in-box-icon{
 		height: 160px;
 	}
+	.in-box-icon-opacity{
+		height: 160px;
+	}
 	.in-box-icon-block{
 		height: 190px;
 	}
@@ -1257,4 +1269,10 @@ ul{
     margin-top: 50px;
     width: 100%;
     height: auto;
+}
+.list-inline{
+	padding-top: 5px;
+}
+.carousel-control{
+	opacity: 1;
 }

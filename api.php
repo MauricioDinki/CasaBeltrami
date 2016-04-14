@@ -37,8 +37,13 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        
-        $json2 = json_encode($response['partyRoom']);
+        try {
+            $json2 = json_encode($response['partyRoom']);
+            echo $json2;
+
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
         
 }   
 
@@ -90,8 +95,13 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        
-        $json2 = json_encode($response['partyRoom']);
+        try {
+            $json2 = json_encode($response['partyRoom']);
+            echo $json2;
+
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
         
 }//query with Services
     elseif (empty ($id) && empty ($event)&& empty ($decoration) && $service!=null) {
@@ -111,8 +121,13 @@ if ($id!=null && empty($event) && empty($decoration) && empty ($service)) {
             );
             array_push($response['partyRoom']['images'], $partialImage);
         }
-        
-        $json2 = json_encode($response['partyRoom']);
+        try {
+            $json2 = json_encode($response['partyRoom']);
+            echo $json2;
+
+        } catch (Exception $e) {
+            echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+        }
 }
 
     else {

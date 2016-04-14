@@ -90,7 +90,7 @@
       </div>
       </div>
     </section>
-    <section class="description">
+    <section class="description" style="padding-top: 20px;">
         <form  id="formid" method="post" >
                 <div class="row no-padd-right">
                        <div class="form-group  col-md-3 col-md-offset-3">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="row no-padd-right">
                   <div class="col-md-3 col-md-offset-3">
-                  <label class="event-title-date MontserratL nineteen grey">Fecha del evento:</label>
+                  <label class="event-title-date MontserratL nineteen grey" style="opacity: 0.6">Fecha del evento:</label>
                   </div>
                 </div>
                
@@ -267,11 +267,23 @@ $(document).ready(function() {
 </script>
        
        <script>
-           $('#datepicker').datepicker({language: 'ES'});
+           $('#datepicker').datepicker();
 $('#datepicker').on("changeDate", function() {
     $('#date_event').val(
         $('#datepicker').datepicker('getFormattedDate')
     );
+    $.fn.datepicker.dates['en'] = {
+      days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"],
+      daysShort: ["Dom", "Lun", "Mar", "Mier", "Jue", "Vie", "Sab"],
+      daysMin: ["D", "L", "M", "M", "J", "V", "S"],
+      months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+      monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      today: "Hoy",
+      clear: "Limpiar",
+      format: "mm/dd/yyyy",
+      titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+      weekStart: 1
+    };
 });
        </script>
       
