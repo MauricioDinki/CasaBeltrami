@@ -87,7 +87,7 @@
       </div>
         <div class="row padd-bottom-20 services-links-blocks" style="margin-right: 0px;">
                 <div class="col-md-2 col-xs-6 col-md-offset-3">
-              <a href="#renta">
+              <a href="#renta" class="click-scrolling">
               <div class="out-border-icon">
                   <div class="in-box-icon center-block">
                   <br>
@@ -99,7 +99,7 @@
               </a>
           </div>
           <div class="col-md-2 col-xs-6">
-              <a href="#mesas">
+              <a href="#mesas" class="click-scrolling">
               <div class="in-box-icon-block center-block">
               <br>
                 <img src="assets/img/icons/iconos-29.png" alt="" class="icon-service-middle center-block" style="margin-top: -15px;">
@@ -109,12 +109,12 @@
               </a>
           </div>
           <div class="col-md-2 col-xs-6">
-              <a href="#floral">
+              <a href="#floral" class="click-scrolling">
               <div class="out-border-icon">
                   <div class="in-box-icon center-block">
                   <br>
                     <img src="assets/img/icons/iconos-28.png" alt="" class="icon-service center-block" style="padding-bottom:20px; width: 55px; padding-top: 5px;">
-                    <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">diseño floral</h3>
+                    <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons" style="margin-top: 5px;">diseño floral</h3>
                     <br>
                   </div>
               </div>
@@ -155,7 +155,7 @@
           <div class="out-border" id="event-one-1">
             <div class="middle-border">
               <div class="in-box-event center-block">
-                <img src="assets/img/icons/iconos-27.png" alt="" class="icon-event center-block">
+                <img src="assets/img/icons/iconos-30.png" alt="" class="icon-event center-block">
                 <h3 class="nineteen Montserrat dark-grey text-center padding-block">RENTA DE <br>MOBILIARIO</h3>
                 <br>
                 <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
@@ -233,7 +233,7 @@
           <div class="out-border" id="event-one-1">
             <div class="middle-border">
               <div class="in-box-event center-block">
-                <img src="assets/img/icons/iconos-27.png" alt="" class="icon-event center-block">
+                <img src="assets/img/icons/iconos-29.png" alt="" class="icon-event center-block">
                 <h3 class="nineteen Montserrat dark-grey text-center padding-block">MESA DE <br> DULCES Y QUESOS</h3>
                 <br>
                 <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
@@ -315,7 +315,7 @@
           <div class="out-border" id="event-one-1">
             <div class="middle-border">
               <div class="in-box-event center-block">
-                <img src="assets/img/icons/iconos-27.png" alt="" class="icon-event center-block">
+                <img src="assets/img/icons/iconos-28.png" alt="" class="icon-event center-block">
                 <h3 class="nineteen Montserrat dark-grey text-center padding-block">DISEÑO FLORAL</h3>
                 <br>
                 <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
@@ -387,7 +387,7 @@
     </section>
     <section>
       <div class="row no-padd-right">
-        <div class="col-md-7 col-md-offset-4 shipping-section">
+        <div class="col-md-12 shipping-section text-center">
           <div class="block-shipping"></div><h3 class="Montserrat shipping-size grey shipping-title">Contamos con envío a domicilio</h3>
         </div>
       </div>  

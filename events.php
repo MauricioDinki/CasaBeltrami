@@ -100,7 +100,7 @@
          <div class="in-box-icon-block center-block">
          <br>
            <img src="assets/img/icons/iconos-08.png" alt="" class="icon-event center-block" style="padding-left: 5px;">
-           <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">baby <br>shower</h3>
+           <h3 class="nineteen Montserrat grey text-center small-caps line-icons" style="margin-top: 10px;">baby <br>shower</h3>
          </div>
          </a>
      </div>
@@ -1023,7 +1023,7 @@
       </div>
     </div>
   </section>
-  <section class="three-img" style="margin-bottom: 120px;">
+  <section class="three-img" style="margin-bottom: 0px; padding-bottom: 0px;">
     <div class="row events-web" style="margin-right: 0px;" id="scrolling">
       <a href="#lightbox" data-toggle="modal" data-slide-to="1" id="event-11">    
         <div class="col-md-4 img-events-one" style="position: relative;">
