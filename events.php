@@ -405,15 +405,7 @@
             <div class="modal-content">
               <div class="modal-body">
                 <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="http://placehold.it/900x500/777/" alt="First slide" class="img-responsive modal-image">
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/666/" alt="Second slide" class="img-responsive modal-image">
-                  </div>
-                  <div class="item">
-                    <img src="http://placehold.it/900x500/555/" alt="Third slide" class="img-responsive modal-image">
-                  </div>
+                
                 </div><!-- /.carousel-inner -->
                 <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
                   <img src="img/arrows.png" alt="" class="arrow-icon-modal">

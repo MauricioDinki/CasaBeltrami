@@ -85,9 +85,9 @@
       <div class="links-title-second center-block padd-bottom-20" style="margin-bottom: 0px;">
         <h3 class="Montserrat nineteen text-center">Conoce nuestros servicios:</h3>
       </div>
-        <div class="row padd-bottom-20 services-links-blocks" style="margin-right: 0px;">
-                <div class="col-md-2 col-xs-6 col-md-offset-3">
-              <a href="#renta" class="click-scrolling">
+        <div class="row padd-bottom-20 services-links-blocks services-web" style="margin-right: 0px;">
+          <div class="col-md-2 col-xs-6 col-md-offset-3">
+              <a href="#renta">
               <div class="out-border-icon">
                   <div class="in-box-icon center-block">
                   <br>
@@ -99,7 +99,7 @@
               </a>
           </div>
           <div class="col-md-2 col-xs-6">
-              <a href="#mesas" class="click-scrolling">
+              <a href="#mesas">
               <div class="in-box-icon-block center-block">
               <br>
                 <img src="assets/img/icons/iconos-29.png" alt="" class="icon-service-middle center-block" style="margin-top: -15px;">
@@ -109,7 +109,7 @@
               </a>
           </div>
           <div class="col-md-2 col-xs-6">
-              <a href="#floral" class="click-scrolling">
+              <a href="#floral">
               <div class="out-border-icon">
                   <div class="in-box-icon center-block">
                   <br>
@@ -120,7 +120,45 @@
               </div>
               </a>
           </div>
-               </div>
+        </div>
+        <div class="row padd-bottom-20 services-links-blocks services-mobile" style="margin-right: 0px;">
+          <div class="col-md-2 col-xs-6 col-md-offset-3">
+              <a href="#renta">
+              <div class="out-border-icon">
+                  <div class="in-box-icon center-block">
+                  <br>
+                    <img src="assets/img/icons/iconos-30.png" alt="" class="icon-service center-block" style="padding-bottom:0px; width: 35px; padding-top: 5px;">
+                    <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">renta de <br>mobiliario</h3>
+                    <br>
+                  </div>
+              </div>
+              </a>
+          </div>
+          <div class="col-md-2 col-xs-6">
+              <a href="#mesas">
+              <div class="out-border-icon">
+                  <div class="in-box-icon center-block">
+                  <br>
+                    <img src="assets/img/icons/iconos-29.png" alt="" class="icon-service center-block" style="padding-bottom:5px; width: 35px; padding-top: 5px;">
+                    <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons" style="margin-top: 5px;">mesa de <br>dulces y quesos</h3>
+                    <br>
+                  </div>
+              </div>
+              </a>
+          </div>
+          <div class="col-md-2 col-xs-6 col-xs-offset-3">
+              <a href="#floral">
+              <div class="out-border-icon">
+                  <div class="in-box-icon center-block">
+                  <br>
+                    <img src="assets/img/icons/iconos-28.png" alt="" class="icon-service center-block" style="padding-bottom:0px; width: 35px; padding-top: 5px;">
+                    <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons" style="margin-top: 5px;">diseño floral</h3>
+                    <br>
+                  </div>
+              </div>
+              </a>
+          </div>
+        </div>
     </section>
     <div class="container">
         <div class="modal fade and carousel slide" id="lightbox">
