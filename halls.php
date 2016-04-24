@@ -456,7 +456,7 @@
       </ul>
       </div>
     </section>
-        <section class="video">
+        <section class="video video_bambinos">
           <div class="video-container-halls padding-carousel">
             <div align="center" class="embed-responsive embed-responsive-16by9">
     <!--           <video autoplay loop class="embed-responsive-item">
