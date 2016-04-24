@@ -1290,17 +1290,19 @@ ul{
 @media only screen and (max-width:480px) { 
 .video_farfala{
     margin-top: 480px;
+    margin-bottom: -160px;
     }
 }
 @media only screen and (max-width:360px) { 
 .video_farfala{
     margin-top: 480px;
-    margin-bottom: 150px;
+    margin-bottom: -160px;
     }
 }
 @media only screen and (max-width:320px) { 
 .video_farfala{
     margin-top: 480px;
+    margin-bottom: -160px;
     }
 }
 
@@ -1324,5 +1326,30 @@ ul{
 @media only screen and (max-width:320px) { 
 .video_bambinos{
     margin-top: 480px;
+    }
+}
+
+
+@media only screen and (max-width:768px) { 
+.video_lincanto{
+    margin-top: 480px;
+    }
+}
+@media only screen and (max-width:480px) { 
+.video_lincanto{
+    margin-top: 430px;
+    margin-bottom: -150px;
+    }
+}
+@media only screen and (max-width:360px) { 
+.video_lincanto{
+      margin-top: 430px;
+    margin-bottom: -150px;
+    }
+}
+@media only screen and (max-width:320px) { 
+.video_lincanto{
+      margin-top: 430px;
+    margin-bottom: -150px;
     }
 }
