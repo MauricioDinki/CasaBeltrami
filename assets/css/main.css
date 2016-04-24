@@ -1282,6 +1282,29 @@ ul{
 	opacity: 1;
 }
 
+@media only screen and (max-width:768px) { 
+.video_farfala{
+    margin-top: 480px;
+    }
+}
+@media only screen and (max-width:480px) { 
+.video_farfala{
+    margin-top: 480px;
+    }
+}
+@media only screen and (max-width:360px) { 
+.video_farfala{
+    margin-top: 480px;
+    margin-bottom: 150px;
+    }
+}
+@media only screen and (max-width:320px) { 
+.video_farfala{
+    margin-top: 480px;
+    }
+}
+
+
 
 @media only screen and (max-width:768px) { 
 .video_bambinos{
