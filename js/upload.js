@@ -1,7 +1,7 @@
 $(function () {
     $('#subida').submit(function () {
 
-        var comprobar = $('#title').val().length* $('#foto').val().length*$('#salon').val().length* $('#decoration').val().length*$('#sub_service').val().length*$('#event').val().length* $('#desc').val().length* $('#status').val().length*$('#creation_date').val().length;
+        var comprobar =$('#foto').val().length*$('#salon').val().length* $('#decoration').val().length*$('#sub_service').val().length*$('#event').val().length* $('#status').val().length*$('#creation_date').val().length;
         
         
         if (comprobar > 0) {

@@ -249,7 +249,7 @@
       </ul>
       </div>
     </section>
-        <section class="video">
+        <section class="video video_lincanto">
           <div class="video-container-halls padding-carousel">
             <div align="center" class="embed-responsive embed-responsive-16by9">
                 <iframe src="https://player.vimeo.com/video/144181295?title=0&byline=0&portrait=0" width="500" height="20" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -343,7 +343,7 @@
       </ul>
       </div>
     </section>
-        <section class="video">
+        <section class="video video_farfala">
           <div class="video-container-halls padding-carousel">
             <div align="center" class="embed-responsive embed-responsive-16by9">
     <!--           <video autoplay loop class="embed-responsive-item">
@@ -440,7 +440,7 @@
       </ul>
       </div>
     </section>
-        <section class="video">
+        <section class="video video_bambinos">
           <div class="video-container-halls padding-carousel">
             <div align="center" class="embed-responsive embed-responsive-16by9">
     <!--           <video autoplay loop class="embed-responsive-item">

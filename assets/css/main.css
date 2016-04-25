@@ -1392,3 +1392,78 @@ ul{
 .datepicker table tr td span:hover {
     background: rgba(239,134,179, 0.61) !important; 
 }
+@media only screen and (max-width:768px) { 
+.video_farfala{
+    margin-top: 480px;
+    }
+}
+@media only screen and (max-width:480px) { 
+.video_farfala{
+    margin-top: 480px;
+    margin-bottom: -160px;
+    }
+}
+@media only screen and (max-width:360px) { 
+.video_farfala{
+    margin-top: 480px;
+    margin-bottom: -160px;
+    }
+}
+@media only screen and (max-width:320px) { 
+.video_farfala{
+    margin-top: 480px;
+    margin-bottom: -160px;
+    }
+}
+
+
+
+@media only screen and (max-width:768px) { 
+.video_bambinos{
+    margin-top: 480px;
+    }
+}
+@media only screen and (max-width:480px) { 
+.video_bambinos{
+    margin-top: 480px;
+    margin-bottom: -160px;
+    }
+}
+@media only screen and (max-width:360px) { 
+.video_bambinos{
+    margin-top: 480px;
+    margin-bottom: -160px;
+    }
+}
+@media only screen and (max-width:320px) { 
+.video_bambinos{
+    margin-top: 480px;
+    margin-bottom: -160px;
+    }
+}
+
+
+@media only screen and (max-width:768px) { 
+.video_lincanto{
+    margin-top: 480px;
+    }
+}
+@media only screen and (max-width:480px) { 
+.video_lincanto{
+    margin-top: 390px;
+    margin-bottom: -160px;
+    }
+}
+@media only screen and (max-width:360px) { 
+.video_lincanto{
+      margin-top: 390px;
+    margin-bottom: -160px;
+    }
+}
+@media only screen and (max-width:320px) { 
+.video_lincanto{
+      margin-top: 390px;
+    margin-bottom: -160px;
+    }
+}
+

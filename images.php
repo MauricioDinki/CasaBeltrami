@@ -171,7 +171,7 @@
                         <th style="text-align: center">Titulo</th>
                         <th style="text-align: center">Imagen</th>
                         <th style="text-align: center"> Estatus</th>
-                        <th style="text-align: center"> Opciones</th>
+                        
                        
                     </tr>
                 </thead>
@@ -195,11 +195,6 @@
                                  ?>
                             </td>
                            
-                            <td width="10%">
-                                <center>
-                                
-                                </center>
-                            </td>
                             
                             
                             
