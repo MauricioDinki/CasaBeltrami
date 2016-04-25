@@ -140,9 +140,13 @@
                                 <option value="Renta de mobiliario">Renta de mobiliario</option>
                                 <option value="Mesas de dulces y quesos">Mesas de dulces y quesos</option>
                                 <option value="Diseño floral">Diseño floral</option>
+                                <option value="Otro">Otro</option>
                         </select>
                         <div class="form-group">
                             <input type="text" name="persons" id="persons" class="form-control MontserratL" placeholder="Número de personas">
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" name="msg" id="msg" class="form-control MontserratL no-resize" placeholder="Agrega un mensaje" rows="6" cols="4"></textarea>
                         </div>
                     </div>
                 </div>  
@@ -204,6 +208,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/itemslide.min.js"></script>
     <script src="assets/js/affix.js"></script>
+    <script src="assets/js/calendarStyle.js"></script>
     
     
    
@@ -235,7 +240,8 @@ $(document).ready(function() {
             date_event:{required:true},
             type_event:{required:true},
             service:{required:true},
-            persons: { required:true, minlength: 1}
+            persons: { required:true, minlength: 1},
+            msg: { required:true, minlength: 2 }
         },
         messages: {
             name: "Debe introducir su nombre.",
@@ -244,12 +250,13 @@ $(document).ready(function() {
             date_event : "Debes seleccionar una opcion",
             type_event : "Debes seleccionar una opcion",
             service : "Debes seleccionar una opcion",
-            persons : "El campo Mensaje es obligatorio.",
+            persons : "El campo Personas es obligatorio.",
+            msj : "El campo Mensaje es obligatorio.",
         },
         submitHandler: function(form){
             var dataString = 'name='+$('#name').val()+'&email='+$('#email').val()+'&phone_number='+$('#phone_number').val()+
                     '&date_event='+$('#date_event').val()+ '&type_event='+$('#type_event').val()+ '&service='+$('#service').val()+
-                     '&persons='+$('#persons').val();
+                     '&persons='+$('#persons').val()+ '&persons='+$('#persons').val();
             $.ajax({
                 type: "POST",
                 url:"model/contacto_mail.php",

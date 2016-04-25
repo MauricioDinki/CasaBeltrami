@@ -81,142 +81,81 @@
       </div>
       </div>
     </section>
- <section class="icons-services">
-   <div class="row padd-bottom-20 services-web" style="margin-right: 0px;">
-     <div class="col-md-2 col-xs-6 col-md-offset-1">
-       <a href="#bambinos" class="click-scrolling">
-       <div class="out-border-icon">
-           <div class="in-box-icon center-block">
-           <br>
-             <img src="assets/img/icons/iconos-07.png" alt="" class="icon-event center-block">
-             <h3 class="nineteen Montserrat grey text-center small-caps line-icons">bautizo</h3>
-             <br>
-           </div>
-       </div>
-       </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-         <a href="#baby" class="click-scrolling">
-         <div class="in-box-icon-block center-block">
-         <br>
-           <img src="assets/img/icons/iconos-08.png" alt="" class="icon-event center-block" style="padding-left: 5px;">
-           <h3 class="nineteen Montserrat grey text-center small-caps line-icons" style="margin-top: 10px;">baby <br>shower</h3>
-         </div>
-         </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-         <a href="#boda" class="click-scrolling">
-         <div class="in-box-icon-block center-block">
-         <br>
-           <img src="assets/img/icons/iconos-21.png" alt="" class="icon-event center-block">
-           <h3 class="nineteen Montserrat grey text-center small-caps line-icons">boda</h3>
-           <br>
-         </div>
-         </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-         <a href="#comunion" class="click-scrolling">
-         <div class="in-box-icon-block center-block">
-         <br>
-           <img src="assets/img/icons/iconos-23.png" alt="" class="icon-event center-block">
-           <h3 class="nineteen Montserrat grey text-center small-caps line-icons">comunión</h3>
-           <br>
-         </div>
-         </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-       <a href="#iglesias" class="click-scrolling">
-       <div class="out-border-icon">
-           <div class="in-box-icon center-block">
-           <br>
-             <img src="assets/img/icons/iconos-22.png" alt="" class="icon-event center-block">
-             <h3 class="nineteen Montserrat grey text-center small-caps line-icons">iglesia</h3>
-             <br>
-           </div>
-       </div>
-       </a>
-     </div>
-   </div>
-   <div class="row padd-bottom-20 services-web" style="margin-right: 0px;">
-     <div class="col-md-2 col-xs-6 col-md-offset-3">
-         <a href="#despedida" class="click-scrolling">
-         <div class="out-border-icon">
-             <div class="in-box-icon center-block">
-             <br>
-               <img src="assets/img/icons/iconos-14.png" alt="" class="icon-event center-block">
-               <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">despedida <br>de soltera</h3>
-               <br>
-             </div>
-         </div>
-         </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-         <a href="#empresarial" class="click-scrolling">
-         <div class="in-box-icon-block center-block">
-         <br>
-           <img src="assets/img/icons/iconos-12.png" alt="" class="icon-event center-block">
-           <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">evento <br>empresarial </h3>
-           <br>
-         </div>
-         </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-         <a href="#infantil" class="click-scrolling">
-         <div class="out-border-icon">
-             <div class="in-box-icon center-block">
-             <br>
-               <img src="assets/img/icons/iconos-10.png" alt="" class="icon-event center-block">
-               <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">fiesta <br>infantil</h3>
-               <br>
-             </div>
-         </div>
-         </a>
-     </div>
-   </div>
-   <div class="row padd-bottom-20 services-web" style="margin-right: 0px; margin-bottom: 150px;">
-     <a href="#privada" class="click-scrolling">
-     <div class="col-md-2 col-xs-6 col-md-offset-3">
-           <div class="in-box-icon-block center-block">  
-           <br>
-             <img src="assets/img/icons/iconos-16.png" alt="" class="icon-event center-block">
-             <h3 class="nineteen Montserrat grey text-center small-caps no-margin line-icons">fiesta <br>privada</h3>
-           </div>
-     </div>
-     </a>
-     <div class="col-md-2 col-xs-6">
-       <a href="#graduacion" class="click-scrolling">
-       <div class="out-border-icon">
-           <div class="in-box-icon center-block">
-           <br>
-             <img src="assets/img/icons/iconos-15.png" alt="" class="icon-event center-block">
-             <h3 class="nineteen Montserrat grey text-center small-caps margin-mobile line-icons">graduación</h3>
-             <br>
-           </div>
-       </div>
-       </a>
-     </div>
-     <div class="col-md-2 col-xs-6">
-         <a href="#xvfiesta" class="click-scrolling">
-         <div class="in-box-icon-block center-block">
-         <br>
-           <img src="assets/img/icons/vestido.png" alt="" class="icon-event center-block">
-           <h3 class="nineteen Montserrat grey text-center small-caps margin-mobile line-icons">xv años</h3>
-           <br>
-         </div>
-         </a>
-     </div>
-   </div>
+ <section class="icons-services" style="padding-bottom: 100px;">
+   <div class="text-center">
+        <ul class="list-inline services-web">
+         <li class="dropdown">
+             <a href="events.php#bautizo-home" class="click-scrolling">
+                <img src="assets/img/new-icons/event-1.png" alt="" class="events-icons">
+             </a>
+         </li>
+         <li href="#halls" class="click-scrolling">
+             <a href="#init" class="dropdown-toggle MontserratL sixteen grey">
+                <img src="assets/img/new-icons/event-2.png" alt="" class="events-icons">
+             </a>
+         </li>
+         <li class="dropdown">
+             <a href="#events" class="click-scrolling">
+                <img src="assets/img/new-icons/event-3.png" alt="" class="events-icons"> 
+             </a>
+         </li>
+         <li class="dropdown">
+             <a href="#events" class="click-scrolling">
+                <img src="assets/img/new-icons/event-4.png" alt="" class="events-icons"> 
+             </a>
+         </li>
+         <li class="dropdown">
+             <a href="#events" class="click-scrolling">
+                <img src="assets/img/new-icons/event-5.png" alt="" class="events-icons"> 
+             </a>
+         </li>
+        </ul>
+        <ul class="list-inline services-web">
+         <li class="dropdown">
+             <a href="#services" class="click-scrolling">
+                <img src="assets/img/new-icons/event-6.png" alt="" class="events-icons">
+             </a>
+         </li>
+         <li href="#halls" class="click-scrolling">
+             <a href="#init" class="dropdown-toggle MontserratL sixteen grey">
+                <img src="assets/img/new-icons/event-7.png" alt="" class="events-icons">
+             </a>
+         </li>
+         <li class="dropdown">
+             <a href="#events" class="click-scrolling">
+                <img src="assets/img/new-icons/event-8.png" alt="" class="events-icons"> 
+             </a>
+         </li>
+        </ul>       
+        <ul class="list-inline services-web">
+         <li class="dropdown">
+             <a href="#services" class="click-scrolling">
+                <img src="assets/img/new-icons/event-9.png" alt="" class="events-icons">
+             </a>
+         </li>
+         <li href="#halls" class="click-scrolling">
+             <a href="#init" class="dropdown-toggle MontserratL sixteen grey">
+                <img src="assets/img/new-icons/event-10.png" alt="" class="events-icons">
+             </a>
+         </li>
+         <li class="dropdown">
+             <a href="#events" class="click-scrolling">
+                <img src="assets/img/new-icons/event-11.png" alt="" class="events-icons"> 
+             </a>
+         </li>
+        </ul>
+      </div>
    <div class="row padd-bottom-20 services-mobile" style="margin-right: 0px;">
      <div class="col-md-2 col-xs-6 col-md-offset-1">
        <a href="#bautizo" class="click-scrolling">
-       <div class="out-border-icon">
-           <div class="in-box-icon center-block">
-           <br>
-             <img src="assets/img/icons/iconos-07.png" alt="" class="icon-event center-block">
-             <h3 class="nineteen Montserrat grey text-center small-caps margin-mobile">bautizo</h3>
+         <div class="out-border-icon">
+             <div class="in-box-icon center-block">
              <br>
-           </div>
-       </div>
+               <img src="assets/img/icons/iconos-07.png" alt="" class="icon-event center-block">
+               <h3 class="nineteen Montserrat grey text-center small-caps margin-mobile">bautizo</h3>
+               <br>
+             </div>
+         </div>
        </a>
      </div>
      <div class="col-md-2 col-xs-6">
@@ -348,14 +287,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-07.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">BAUTIZO</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-07.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">BAUTIZO</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -429,14 +368,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-08.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">BABY <BR> SHOWER</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-08.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">BABY SHOWER</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -492,14 +431,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-21.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">BODA</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-21.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">BODA</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -555,14 +494,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-23.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">COMUNIÓN</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-23.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">COMUNIÓN</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -618,14 +557,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-22.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">IGLESIAS</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-22.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">IGLESIAS</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -681,14 +620,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-14.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">DESPEDIDA<br>DE SOLTERA</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-14.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">DESPEDIDA DE SOLTERA</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -744,14 +683,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-12.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">EVENTO <b>EMPRESARIAL</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-12.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">EVENTO EMPRESARIAL</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -807,14 +746,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-10.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">FIESTA <br>INFANTIL</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-10.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">FIESTA INFANTIL</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -870,14 +809,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-16.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">FIESTA <br>PRIVADA</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-16.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">FIESTA PRIVADA</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -933,14 +872,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/iconos-15.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">GRADUACIÓN</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/iconos-15.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">GRADUACIÓN</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -996,14 +935,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="out-border" id="event-one-1">
-          <div class="middle-border">
-            <div class="in-box-event center-block">
-              <img src="assets/img/icons/vestido.png" alt="" class="icon-event center-block">
-              <h3 class="nineteen Montserrat small-caps dark-grey text-center padding-block">XV AÑOS</h3>
-              <br>
-              <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-              <br>
+        <div class="col-sm-10 col-sm-offset-1">  
+          <div class="out-border" id="event-one-1">
+            <div class="middle-border">
+              <div class="in-box-event center-block">
+                <img src="assets/img/icons/vestido.png" alt="" class="icon-event center-block">
+                <h3 class="sixteen Montserrat small-caps dark-grey text-center padding-block">XV AÑOS</h3>
+                <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+              </div>
             </div>
           </div>
         </div>

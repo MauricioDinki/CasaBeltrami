@@ -82,40 +82,24 @@
       </div>
     </section>
     <section class="services-links">
-        <div class="row padd-bottom-20 services-links-blocks" style="margin-right: 0px;">
-          <div class="col-md-2 col-xs-6 col-md-offset-3">
-              <a href="#lincanto" class="click-scrolling">
-              <div class="out-border-icon">
-                  <div class="in-box-icon-opacity vertical-center">
-                  <br>
-                    <h3 class="nineteen Montserrat grey text-center small-caps center-block margin-mobile">L'INCANTO</h3>
-                    <br>
-                  </div>
-              </div>
-              </a>
-          </div>
-          <div class="col-md-2 col-xs-6">
-            <a href="#farfala" class="click-scrolling">
-            <div class="out-border-icon">
-              <div class="in-box-icon-opacity vertical-center">
-                <br>
-                <h3 class="nineteen Montserrat grey text-center small-caps center-block">FARFALA</h3>
-                <br>
-              </div>
-            </div>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-6">
-            <a href="#bambinos" class="click-scrolling">
-            <div class="out-border-icon">
-              <div class="in-box-icon-opacity vertical-center">
-                <br>
-                <h3 class="nineteen Montserrat grey text-center small-caps center-block">BAMBINOS</h3>
-                <br>
-              </div>
-            </div>
-            </a>
-          </div>
+        <div class="row padd-bottom-20 services-links-blocks text-center" style="margin-right: 0px;">
+          <ul class="list-inline">
+                 <li class="dropdown">
+                     <a href="#lincanto" class="click-scrolling">
+                        <img src="assets/img/new-icons/hall-1.png" alt="" class="halls-icon">
+                     </a>
+                 </li>
+                 <li class="dropdown">
+                     <a href="#farfala" class="click-scrolling">
+                        <img src="assets/img/new-icons/hall-2.png" alt="" class="halls-icon">
+                     </a>
+                 </li>
+                 <li class="dropdown">
+                     <a href="#bambinos" class="click-scrolling">
+                        <img src="assets/img/new-icons/hall-3.png" alt="" class="halls-icon"> 
+                     </a>
+                 </li>
+            </ul>       
         </div>
     </section>
     <div class="links-from-home" id="lincanto-home"></div>
@@ -132,13 +116,13 @@
           </a>
         </div>
         <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <h3 class="nineteen Couture dark-grey text-center padding-block hall-title">L'incanto</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
+          <div class="col-sm-10 col-sm-offset-1">   
+            <div class="out-border-lincanto" id="event-one-1">
+              <div class="middle-border">
+                <div class="in-box-event-lincanto center-block text-center">
+                  <img src="assets/img/new-icons/title-hall-1.png" class="halls-title">
+                  <h4 class="nineteen Times-italic white text-center" style="padding-bottom: 10px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -287,13 +271,13 @@
           </a>
         </div>
         <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <h3 class="nineteen Couture dark-grey text-center padding-block hall-title">farfala</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
+          <div class="col-sm-10 col-sm-offset-1">   
+            <div class="out-border-farfala" id="event-one-1">
+              <div class="middle-border">
+                <div class="in-box-event-farfala center-block text-center">
+                  <img src="assets/img/new-icons/title-hall-2.png" class="halls-title">
+                  <h4 class="nineteen Times-italic white text-center" style="padding-bottom: 10px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -384,13 +368,13 @@
           </a>
         </div>
         <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <h3 class="nineteen Couture dark-grey text-center padding-block hall-title">Bambinos</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
+          <div class="col-sm-10 col-sm-offset-1">   
+            <div class="out-border-bambinos" id="event-one-1">
+              <div class="middle-border">
+                <div class="in-box-event-bambinos center-block text-center">
+                  <img src="assets/img/new-icons/title-hall-3.png" class="halls-title">
+                  <h4 class="nineteen Times-italic white text-center" style="padding-bottom: 10px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                </div>
               </div>
             </div>
           </div>

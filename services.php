@@ -190,14 +190,14 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <img src="assets/img/icons/iconos-30.png" alt="" class="icon-event center-block">
-                <h3 class="nineteen Montserrat dark-grey text-center padding-block">RENTA DE <br>MOBILIARIO</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
+          <div class="col-sm-10 col-sm-offset-1">  
+            <div class="out-border" id="event-one-1">
+              <div class="middle-border">
+                <div class="in-box-event center-block">
+                  <img src="assets/img/icons/iconos-30.png" alt="" class="icon-event center-block">
+                  <h3 class="sixteen Montserrat dark-grey text-center padding-block">RENTA DE MOBILIARIO</h3>
+                  <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 18px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -268,14 +268,14 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <img src="assets/img/icons/iconos-29.png" alt="" class="icon-event center-block">
-                <h3 class="nineteen Montserrat dark-grey text-center padding-block">MESA DE <br> DULCES Y QUESOS</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
+          <div class="col-sm-10 col-sm-offset-1">  
+            <div class="out-border" id="event-one-1">
+              <div class="middle-border">
+                <div class="in-box-event center-block">
+                  <img src="assets/img/icons/iconos-29.png" alt="" class="icon-event center-block" style="margin-bottom: -20px;">
+                  <h3 class="sixteen Montserrat dark-grey text-center padding-block">MESA DE <br> DULCES Y QUESOS</h3>
+                  <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 20px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -350,14 +350,14 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="out-border" id="event-one-1">
-            <div class="middle-border">
-              <div class="in-box-event center-block">
-                <img src="assets/img/icons/iconos-28.png" alt="" class="icon-event center-block">
-                <h3 class="nineteen Montserrat dark-grey text-center padding-block">DISEÑO FLORAL</h3>
-                <br>
-                <h4 class="nineteen Times-italic grey text-center" style="padding-bottom: 1px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
-                <br>
+          <div class="col-sm-10 col-sm-offset-1">  
+            <div class="out-border" id="event-one-1">
+              <div class="middle-border">
+                <div class="in-box-event center-block">
+                  <img src="assets/img/icons/iconos-28.png" alt="" class="icon-event center-block">
+                  <h3 class="sixteen Montserrat dark-grey text-center padding-block">DISEÑO FLORAL</h3>
+                  <h4 class="sixteen Times-italic grey text-center" style="padding-bottom: 20px;">Conoce los servicios que Casa Beltrami ofrece, desde renta de mobiliario hasta diseño floral para cualquier evento.</h4>
+                </div>
               </div>
             </div>
           </div>
