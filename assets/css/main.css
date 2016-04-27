@@ -267,13 +267,13 @@ button:active{
 }
 
 /* Contact form */
-.lu-contact-form input[type="text"], 
-.lu-contact-form input[type="email"], 
+.lu-contact-form input[type="text"],
+.lu-contact-form input[type="email"],
 .lu-contact-form textarea {
   background: rgba( 255,255,255,0.9 );
   border-radius: 0;
 }
-.lu-contact-form input[type="text"], 
+.lu-contact-form input[type="text"],
 .lu-contact-form input[type="email"] {
   padding: 10px 12px;
   height: 46px;
@@ -326,7 +326,7 @@ button:active{
 .left-img{
 
 	background: linear-gradient(
-      rgba(255, 0, 0, 0.0), 
+      rgba(255, 0, 0, 0.0),
       rgba(0, 0, 0, 0.85)
     ),url('../img/fachada-2.jpg') no-repeat center center;
 		-webkit-background-size: cover;
@@ -338,7 +338,7 @@ button:active{
 .right-img{
 
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.0)
     ),url('../img/fachada-4.jpg') no-repeat center center;
 		-webkit-background-size: cover;
@@ -351,7 +351,7 @@ button:active{
 .right-img2{
 
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.35)
     ),url('../img/fachada-5.jpg') no-repeat center center;
 		-webkit-background-size: cover;
@@ -437,9 +437,9 @@ button:active{
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;
-	
+
 	min-height: 395px;
-	
+
 }
 .img-events-left-two{
 	background: url('../img/header.jpg') no-repeat center center;
@@ -448,7 +448,7 @@ button:active{
 		-moz-background-size: cover;
 		background-size: cover;;
 	min-height: 395px;
-	
+
 }
 .img-events-right-two{
 	background: url('../img/header.jpg') no-repeat center center;
@@ -457,11 +457,11 @@ button:active{
 		-moz-background-size: cover;
 		background-size: cover;;
 	min-height: 395px;
-	
+
 }
 .img-events-one{
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.35)
     ),url('../img/fija4.jpg') no-repeat center center;
 		-webkit-background-size: cover;
@@ -469,11 +469,11 @@ button:active{
 		-moz-background-size: cover;
 		background-size: cover;;
 	min-height: 400px;
-	
+
 }
 .img-events-two{
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.35)
     ),url('../img/mesas.jpg') no-repeat center center;
 		-webkit-background-size: cover;
@@ -481,7 +481,7 @@ button:active{
 		-moz-background-size: cover;
 		background-size: cover;;
 	min-height: 400px;
-	
+
 }
 .links-title{
 	padding-top: 50px;
@@ -491,7 +491,7 @@ button:active{
 }
 .img-events-three{
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.0), 
+      rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.35)
     ),url('../img/Fija2-2.jpg') no-repeat center center;
 		-webkit-background-size: cover;
@@ -499,7 +499,7 @@ button:active{
 		-moz-background-size: cover;
 		background-size: cover;;
 	min-height: 400px;
-	
+
 }
 .icon-event{
 	width: 45px;
@@ -582,7 +582,7 @@ button:active{
 .datepicker-inline {
 	background-color: rgba(255,255,255,0.6);
 	border-radius: none !important;
-	width: inherit !important; 
+	width: inherit !important;
 }
 .datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:focus, .datepicker table tr td.active:hover:focus, .datepicker table tr td.active.disabled:focus, .datepicker table tr td.active.disabled:hover:focus, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr td.active, .open .dropdown-toggle.datepicker table tr td.active:hover, .open .dropdown-toggle.datepicker table tr td.active.disabled, .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
     color: #4d4d4d !important;
@@ -638,6 +638,7 @@ tfoot{
     }
     .navbar-centered .nav > li {
         display: inline;
+				margin: -2px;
     }
     .navbar-centered .nav > li > a {
         display: inline-block;
@@ -803,7 +804,7 @@ ul{
   }
   .col-md-4{
   	padding: 20px;
-  	margin-left: 15px 
+  	margin-left: 15px
   }
   .three-img{
   	padding-bottom: 0px;
@@ -873,7 +874,7 @@ ul{
 	.CB-logo{
 		width: 100px;
 		height: auto;
-		padding-top: 30px; 
+		padding-top: 30px;
 		padding-bottom: 50px;
 		-webkit-transition: all 0.2s linear;
 		-moz-transition: all 0.2s linear;
@@ -935,7 +936,7 @@ ul{
 		min-height: 145px;
 	}
 	.services-links{
-		margin-top: 60vh; 
+		margin-top: 60vh;
 	}
 
 }
